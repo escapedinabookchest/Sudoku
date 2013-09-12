@@ -3,6 +3,10 @@
 
     <string name="app_name">Sudoku</string>
     <string name="action_settings">Settings</string>
-    <string name="titlescreen_name">Sudoku Android</string>
+    <string name="titlescreen_name">Sudoku voor Android!</string>
+    <string name="startgameButtonString">Start</string>
+    <string name="showinfoButtonString">Info</string>
+    <string name="infoDialogMessage">Android gui voor de sudoku app.</string>
+    <string name="infoDialogPositiveButtonText">Ok</string>
 
 </resources>

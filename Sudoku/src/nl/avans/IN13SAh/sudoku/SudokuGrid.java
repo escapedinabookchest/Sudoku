@@ -12,78 +12,121 @@ import android.widget.GridView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class SudokuGrid extends Activity
-{
-   GridView MyGrid;
-   
-   @Override
-   public void onCreate(Bundle savedInstanceState){
-      super.onCreate(savedInstanceState);
-      setContentView(R.layout.activity_main);
+// TODO: Auto-generated Javadoc
+/**
+ * The Class SudokuGrid. THis class contains logic and handlers for the playing
+ * field screen.
+ */
+public class SudokuGrid extends Activity {
 
-      /*Here we setContentView() to main.xml, get the GridView and then fill it with the
-                   ImageAdapter class that extend from BaseAdapter */
+	GridView MyGrid; // The gridview object that will be displayed on the
+						// screen.
 
-      MyGrid = (GridView)findViewById(R.id.MyGrid);
-      MyGrid.setAdapter(new ImageAdapter(this));
-   }
-   
-   public class ImageAdapter extends BaseAdapter
-   {
-      Context MyContext;
-      
-      public ImageAdapter(Context _MyContext)
-      {
-         MyContext = _MyContext;
-      }
-      
-      @Override
-      public int getCount()
-      {
-                        /* Set the number of element we want on the grid */
-         return 81;
-      }
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see android.app.Activity#onCreate(android.os.Bundle)
+	 */
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.sudokugrid_main); // Set the layout.
 
-      @Override
-      public View getView(int position, View convertView, ViewGroup parent)
-      {
-         View MyView = convertView;
-         
-         if ( convertView == null )
-         {
-            /*we define the view that will display on the grid*/
-            
-            //Inflate the layout
-            LayoutInflater li = getLayoutInflater();
-            MyView = li.inflate(R.layout.grid_item, null);
-            
-            // Add The Text!!!
-            TextView tv = (TextView)MyView.findViewById(R.id.grid_item_text);
-            tv.setText("" + position);
-            
-            MyView.setOnClickListener(new OnClickListener() {
-				
-				@Override
-				public void onClick(View v) {
-					TextView tv = (TextView) v.findViewById(R.id.grid_item_text);
-					Toast.makeText(SudokuGrid.this, tv.getText(), Toast.LENGTH_SHORT).show();
-				}
-			});
-         }
-         
-         return MyView;
-      }
+		MyGrid = (GridView) findViewById(R.id.MyGrid);
+		MyGrid.setAdapter(new ImageAdapter(this));
+	}
 
-      @Override
-      public Object getItem(int arg0) {
-         // TODO Auto-generated method stub
-         return null;
-      }
+	/**
+	 * The Class ImageAdapter.
+	 */
+	public class ImageAdapter extends BaseAdapter {
 
-      @Override
-      public long getItemId(int arg0) {
-         // TODO Auto-generated method stub
-         return 0;
-      }
-   }
+		/** The My context. */
+		Context MyContext;
+
+		/**
+		 * Instantiates a new image adapter.
+		 * 
+		 * @param _MyContext
+		 *            the _ my context
+		 */
+		public ImageAdapter(Context _MyContext) {
+			MyContext = _MyContext;
+		}
+
+		/*
+		 * (non-Javadoc)
+		 * 
+		 * @see android.widget.Adapter#getCount()
+		 */
+		@Override
+		public int getCount() {
+			return 81; // Return the size of the grid. TODO get constant from
+						// model.
+		}
+
+		/*
+		 * (non-Javadoc)
+		 * 
+		 * @see android.widget.Adapter#getView(int, android.view.View,
+		 * android.view.ViewGroup)
+		 */
+		@Override
+		public View getView(int position, View convertView, ViewGroup parent) {
+			View MyView = convertView; // The view object that represents a item
+										// in the grid. Use the position field
+										// to identify.
+
+			if (convertView == null) {
+				/* We define the view that will display on the grid */
+
+				// Inflate the layout using the grid_item layout file.
+				LayoutInflater li = getLayoutInflater();
+				MyView = li.inflate(R.layout.sudokugrid_item, null);
+
+				// Do something with the grid view items.
+				TextView tv = (TextView) MyView
+						.findViewById(R.id.grid_item_text);
+				tv.setText("" + position);
+
+				// On click event for the grid item.
+				MyView.setOnClickListener(new OnClickListener() {
+
+					@Override
+					public void onClick(View v) {
+						// Get the textview from the grid item view.
+						TextView tv = (TextView) v
+								.findViewById(R.id.grid_item_text);
+						// Print a toast, for testing. TODO call
+						Toast.makeText(SudokuGrid.this, tv.getText(),
+								Toast.LENGTH_SHORT).show();
+					}
+				});
+			}
+
+			return MyView;
+		}
+
+		/*
+		 * (non-Javadoc)
+		 * 
+		 * @see android.widget.Adapter#getItem(int)
+		 */
+		@Override
+		public Object getItem(int arg0) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+		/*
+		 * (non-Javadoc)
+		 * 
+		 * @see android.widget.Adapter#getItemId(int)
+		 */
+		@Override
+		public long getItemId(int arg0) {
+			// TODO Auto-generated method stub
+			return 0;
+		}
+	}
 }
