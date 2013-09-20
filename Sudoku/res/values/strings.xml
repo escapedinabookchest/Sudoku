@@ -8,5 +8,16 @@
     <string name="showinfoButtonString">Info</string>
     <string name="infoDialogMessage">Android gui voor de sudoku app.</string>
     <string name="infoDialogPositiveButtonText">Ok</string>
+    
+    <string name="back">Terug</string>
+    <string name="start">Start</string>
+    
+    <string name="sudokuDifficultyEasy">Makkelijk</string>
+    <string name="sudokuDifficultyMedium">Gemiddeld</string>
+    <string name="sudokuDifficultyHard">Moeilijk</string>
+    
+    <string name="sudokuSizeSmall">Klein</string>
+    <string name="sudokuSizeMedium">Normaal</string>
+    <string name="sudokuSizeLarge">Groot</string>
 
 </resources>

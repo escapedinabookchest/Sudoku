@@ -37,7 +37,7 @@ public class SudokuTitleScreen extends Activity {
 			@Override
 			public void onClick(View arg0) {
 				Intent intent = new Intent(SudokuTitleScreen.this,
-						SudokuGrid.class);
+						LevelSelect.class);
 				startActivity(intent);
 			}
 		});
