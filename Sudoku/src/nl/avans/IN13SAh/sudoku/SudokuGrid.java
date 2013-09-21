@@ -2,6 +2,7 @@ package nl.avans.IN13SAh.sudoku;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -33,24 +34,27 @@ public class SudokuGrid extends Activity {
 		setContentView(R.layout.sudokugrid_main); // Set the layout.
 
 		MyGrid = (GridView) findViewById(R.id.MyGrid);
-		MyGrid.setAdapter(new ImageAdapter(this));
+		MyGrid.setAdapter(new VakjeAdapter(this));
 	}
 
 	/**
-	 * The Class ImageAdapter.
+	 * The Class VakjeAdapter.
 	 */
-	public class ImageAdapter extends BaseAdapter {
+	public class VakjeAdapter extends BaseAdapter {
 
 		/** The My context. */
 		Context MyContext;
+		private int selection = -1;
+
+		private int[][] test = new int[9][9];
 
 		/**
-		 * Instantiates a new image adapter.
+		 * Instantiates a new VakjeAdapter.
 		 * 
 		 * @param _MyContext
 		 *            the _ my context
 		 */
-		public ImageAdapter(Context _MyContext) {
+		public VakjeAdapter(Context _MyContext) {
 			MyContext = _MyContext;
 		}
 
@@ -73,36 +77,44 @@ public class SudokuGrid extends Activity {
 		 */
 		@Override
 		public View getView(int position, View convertView, ViewGroup parent) {
-			View MyView = convertView; // The view object that represents a item
-										// in the grid. Use the position field
-										// to identify.
+			View MyView = null; // The view object that represents a item
+								// in the grid. Use the position field
+								// to identify.
 
-			if (convertView == null) {
-				/* We define the view that will display on the grid */
+			/* We define the view that will display on the grid */
 
-				// Inflate the layout using the grid_item layout file.
-				LayoutInflater li = getLayoutInflater();
-				MyView = li.inflate(R.layout.sudokugrid_item, null);
+			// Inflate the layout using the grid_item layout file.
+			LayoutInflater li = getLayoutInflater();
+			MyView = li.inflate(R.layout.sudokugrid_item, null);
 
-				// Do something with the grid view items.
-				TextView tv = (TextView) MyView
-						.findViewById(R.id.grid_item_text);
-				tv.setText("" + position);
+			// Do something with the grid view items.
+			TextView tv = (TextView) MyView.findViewById(R.id.grid_item_text);
+			tv.setText("" + position);
 
-				// On click event for the grid item.
-				MyView.setOnClickListener(new OnClickListener() {
+			MyView.setTag(new Integer(position));
 
-					@Override
-					public void onClick(View v) {
-						// Get the textview from the grid item view.
-						TextView tv = (TextView) v
-								.findViewById(R.id.grid_item_text);
-						// Print a toast, for testing. TODO call
-						Toast.makeText(SudokuGrid.this, tv.getText(),
-								Toast.LENGTH_SHORT).show();
-					}
-				});
-			}
+			// On click event for the grid item.
+			MyView.setOnClickListener(new OnClickListener() {
+
+				@Override
+				public void onClick(View v) {
+					// Get the textview from the grid item view.
+
+					// kleuren weg
+					selection = (Integer) v.getTag();
+
+					TextView tv = (TextView) v
+							.findViewById(R.id.grid_item_text);
+					// Print a toast, for testing. TODO call
+					Toast.makeText(SudokuGrid.this, tv.getText(),
+							Toast.LENGTH_SHORT).show();
+
+					VakjeAdapter.this.notifyDataSetChanged();
+				}
+			});
+
+			if (position == selection)
+				MyView.setBackgroundColor(Color.YELLOW);
 
 			return MyView;
 		}
