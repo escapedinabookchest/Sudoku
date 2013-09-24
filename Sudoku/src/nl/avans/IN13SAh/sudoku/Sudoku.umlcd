@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.yattasolutions.uml.diagrams.classifier:ClassDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.yattasolutions.diagrams="http://ns.yatta-solutions.com/umllab/diagrams/1.1.0" xmlns:com.yattasolutions.uml.diagrams.classifier="http://ns.yatta-solutions.com/umllab/diagrams/classifier/1.1.0" xmi:id="_BrpNMCQ7EeOesd2YLEG2Yw">
+  <modelElement href="Sudoku.uml#_CaQmsCQ7EeOesd2YLEG2Yw"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_EdIdYCQ7EeOesd2YLEG2Yw" source="_EdeboCQ7EeOesd2YLEG2Yw">
+    <modelElement href="Sudoku.uml#_DMUVwCQ7EeOesd2YLEG2Yw"/>
+    <stereotypes xmi:id="_EdIdYSQ7EeOesd2YLEG2Yw" name="Reference">
+      <modelElement href="Sudoku.uml#_DMf78CQ7EeOesd2YLEG2Yw"/>
+    </stereotypes>
+    <nameVisual xmi:id="_EdIdYiQ7EeOesd2YLEG2Yw" text=""/>
+    <sourceRole xmi:id="_EdIdYyQ7EeOesd2YLEG2Yw" aggregationKind="NONE" name="">
+      <modelElement href="Sudoku.uml#_DMUVwSQ7EeOesd2YLEG2Yw"/>
+      <visibility xmi:id="_EdIdZCQ7EeOesd2YLEG2Yw" label="+"/>
+      <cardinality xmi:id="_EdIdZSQ7EeOesd2YLEG2Yw" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_EdIdZiQ7EeOesd2YLEG2Yw" aggregationKind="NONE" name="btnBack" navigable="true">
+      <modelElement href="Sudoku.uml#_DG1Y0CQ7EeOesd2YLEG2Yw"/>
+      <visibility xmi:id="_EdIdZyQ7EeOesd2YLEG2Yw" label="-"/>
+      <cardinality xmi:id="_EdIdaCQ7EeOesd2YLEG2Yw" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_EdPyICQ7EeOesd2YLEG2Yw" source="_EdeboCQ7EeOesd2YLEG2Yw">
+    <modelElement href="Sudoku.uml#_DMgjACQ7EeOesd2YLEG2Yw"/>
+    <stereotypes xmi:id="_EdPyISQ7EeOesd2YLEG2Yw" name="Reference">
+      <modelElement href="Sudoku.uml#_DMnQsCQ7EeOesd2YLEG2Yw"/>
+    </stereotypes>
+    <nameVisual xmi:id="_EdPyIiQ7EeOesd2YLEG2Yw" text=""/>
+    <sourceRole xmi:id="_EdPyIyQ7EeOesd2YLEG2Yw" aggregationKind="NONE" name="">
+      <modelElement href="Sudoku.uml#_DMgjASQ7EeOesd2YLEG2Yw"/>
+      <visibility xmi:id="_EdPyJCQ7EeOesd2YLEG2Yw" label="+"/>
+      <cardinality xmi:id="_EdPyJSQ7EeOesd2YLEG2Yw" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_EdPyJiQ7EeOesd2YLEG2Yw" aggregationKind="NONE" name="btnStart" navigable="true">
+      <modelElement href="Sudoku.uml#_DHHFoCQ7EeOesd2YLEG2Yw"/>
+      <visibility xmi:id="_EdPyJyQ7EeOesd2YLEG2Yw" label="-"/>
+      <cardinality xmi:id="_EdPyKCQ7EeOesd2YLEG2Yw" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_EdSOYCQ7EeOesd2YLEG2Yw" source="_EdeboCQ7EeOesd2YLEG2Yw">
+    <modelElement href="Sudoku.uml#_DMn3wCQ7EeOesd2YLEG2Yw"/>
+    <stereotypes xmi:id="_EdSOYSQ7EeOesd2YLEG2Yw" name="Reference">
+      <modelElement href="Sudoku.uml#_DMulcCQ7EeOesd2YLEG2Yw"/>
+    </stereotypes>
+    <nameVisual xmi:id="_EdSOYiQ7EeOesd2YLEG2Yw" text=""/>
+    <sourceRole xmi:id="_EdSOYyQ7EeOesd2YLEG2Yw" aggregationKind="NONE" name="">
+      <modelElement href="Sudoku.uml#_DMn3wSQ7EeOesd2YLEG2Yw"/>
+      <visibility xmi:id="_EdSOZCQ7EeOesd2YLEG2Yw" label="+"/>
+      <cardinality xmi:id="_EdSOZSQ7EeOesd2YLEG2Yw" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_EdSOZiQ7EeOesd2YLEG2Yw" aggregationKind="NONE" name="radioDifficulty" navigable="true">
+      <modelElement href="Sudoku.uml#_DHXkUCQ7EeOesd2YLEG2Yw"/>
+      <visibility xmi:id="_EdSOZyQ7EeOesd2YLEG2Yw" label="-"/>
+      <cardinality xmi:id="_EdSOaCQ7EeOesd2YLEG2Yw" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_EdUDkCQ7EeOesd2YLEG2Yw" source="_EdeboCQ7EeOesd2YLEG2Yw">
+    <modelElement href="Sudoku.uml#_DMvMgCQ7EeOesd2YLEG2Yw"/>
+    <stereotypes xmi:id="_EdUDkSQ7EeOesd2YLEG2Yw" name="Reference">
+      <modelElement href="Sudoku.uml#_DMxBsCQ7EeOesd2YLEG2Yw"/>
+    </stereotypes>
+    <nameVisual xmi:id="_EdUDkiQ7EeOesd2YLEG2Yw" text=""/>
+    <sourceRole xmi:id="_EdUDkyQ7EeOesd2YLEG2Yw" aggregationKind="NONE" name="">
+      <modelElement href="Sudoku.uml#_DMvMgSQ7EeOesd2YLEG2Yw"/>
+      <visibility xmi:id="_EdUDlCQ7EeOesd2YLEG2Yw" label="+"/>
+      <cardinality xmi:id="_EdUDlSQ7EeOesd2YLEG2Yw" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_EdUDliQ7EeOesd2YLEG2Yw" aggregationKind="NONE" name="radioSize" navigable="true">
+      <modelElement href="Sudoku.uml#_DHgHMCQ7EeOesd2YLEG2Yw"/>
+      <visibility xmi:id="_EdUDlyQ7EeOesd2YLEG2Yw" label="-"/>
+      <cardinality xmi:id="_EdUDmCQ7EeOesd2YLEG2Yw" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_EdaKMCQ7EeOesd2YLEG2Yw" source="_EdeboCQ7EeOesd2YLEG2Yw">
+    <modelElement href="Sudoku.uml#_DMxBsSQ7EeOesd2YLEG2Yw"/>
+    <stereotypes xmi:id="_EdaKMSQ7EeOesd2YLEG2Yw" name="Reference">
+      <modelElement href="Sudoku.uml#_DNL4cCQ7EeOesd2YLEG2Yw"/>
+    </stereotypes>
+    <nameVisual xmi:id="_EdaKMiQ7EeOesd2YLEG2Yw" text=""/>
+    <sourceRole xmi:id="_EdaKMyQ7EeOesd2YLEG2Yw" aggregationKind="NONE" name="">
+      <modelElement href="Sudoku.uml#_DMxBsiQ7EeOesd2YLEG2Yw"/>
+      <visibility xmi:id="_EdaKNCQ7EeOesd2YLEG2Yw" label="+"/>
+      <cardinality xmi:id="_EdaKNSQ7EeOesd2YLEG2Yw" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_EdaKNiQ7EeOesd2YLEG2Yw" aggregationKind="NONE" name="radioDifficultyButton" navigable="true">
+      <modelElement href="Sudoku.uml#_DHrtYCQ7EeOesd2YLEG2Yw"/>
+      <visibility xmi:id="_EdaKNyQ7EeOesd2YLEG2Yw" label="-"/>
+      <cardinality xmi:id="_EdaKOCQ7EeOesd2YLEG2Yw" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_EddNgCQ7EeOesd2YLEG2Yw" source="_EdeboCQ7EeOesd2YLEG2Yw">
+    <modelElement href="Sudoku.uml#_DNMfgCQ7EeOesd2YLEG2Yw"/>
+    <stereotypes xmi:id="_EddNgSQ7EeOesd2YLEG2Yw" name="Reference">
+      <modelElement href="Sudoku.uml#_DNTNMCQ7EeOesd2YLEG2Yw"/>
+    </stereotypes>
+    <nameVisual xmi:id="_EddNgiQ7EeOesd2YLEG2Yw" text=""/>
+    <sourceRole xmi:id="_EddNgyQ7EeOesd2YLEG2Yw" aggregationKind="NONE" name="">
+      <modelElement href="Sudoku.uml#_DNMfgSQ7EeOesd2YLEG2Yw"/>
+      <visibility xmi:id="_EddNhCQ7EeOesd2YLEG2Yw" label="+"/>
+      <cardinality xmi:id="_EddNhSQ7EeOesd2YLEG2Yw" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_EddNhiQ7EeOesd2YLEG2Yw" aggregationKind="NONE" name="radioSizeButton" navigable="true">
+      <modelElement href="Sudoku.uml#_DH1eYCQ7EeOesd2YLEG2Yw"/>
+      <visibility xmi:id="_EddNhyQ7EeOesd2YLEG2Yw" label="-"/>
+      <cardinality xmi:id="_EddNiCQ7EeOesd2YLEG2Yw" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_EeCcUSQ7EeOesd2YLEG2Yw" targetItem="_EeUJICQ7EeOesd2YLEG2Yw" sourceItem="_EeCcUCQ7EeOesd2YLEG2Yw"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_EePQoCQ7EeOesd2YLEG2Yw" source="_EeUJICQ7EeOesd2YLEG2Yw">
+    <modelElement href="Sudoku.uml#_DNT0QCQ7EeOesd2YLEG2Yw"/>
+    <stereotypes xmi:id="_EePQoSQ7EeOesd2YLEG2Yw" name="Reference">
+      <modelElement href="Sudoku.uml#_DNeMUCQ7EeOesd2YLEG2Yw"/>
+    </stereotypes>
+    <nameVisual xmi:id="_EePQoiQ7EeOesd2YLEG2Yw" text=""/>
+    <sourceRole xmi:id="_EePQoyQ7EeOesd2YLEG2Yw" aggregationKind="NONE" name="">
+      <modelElement href="Sudoku.uml#_DNT0QSQ7EeOesd2YLEG2Yw"/>
+      <visibility xmi:id="_EePQpCQ7EeOesd2YLEG2Yw" label="+"/>
+      <cardinality xmi:id="_EePQpSQ7EeOesd2YLEG2Yw" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_EePQpiQ7EeOesd2YLEG2Yw" aggregationKind="NONE" name="MyGrid" navigable="true">
+      <modelElement href="Sudoku.uml#_DIJAYCQ7EeOesd2YLEG2Yw"/>
+      <visibility xmi:id="_EePQpyQ7EeOesd2YLEG2Yw" label="~"/>
+      <cardinality xmi:id="_EePQqCQ7EeOesd2YLEG2Yw" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_EelO4SQ7EeOesd2YLEG2Yw" targetItem="_Ee9pYCQ7EeOesd2YLEG2Yw" sourceItem="_EelO4CQ7EeOesd2YLEG2Yw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_EerVgSQ7EeOesd2YLEG2Yw" targetItem="_Ee-QjSQ7EeOesd2YLEG2Yw" sourceItem="_EerVgCQ7EeOesd2YLEG2Yw"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_Ee9CUCQ7EeOesd2YLEG2Yw" source="_Ee9pYCQ7EeOesd2YLEG2Yw">
+    <modelElement href="Sudoku.uml#_DNezYCQ7EeOesd2YLEG2Yw"/>
+    <stereotypes xmi:id="_Ee9CUSQ7EeOesd2YLEG2Yw" name="Reference">
+      <modelElement href="Sudoku.uml#_DNgokCQ7EeOesd2YLEG2Yw"/>
+    </stereotypes>
+    <nameVisual xmi:id="_Ee9CUiQ7EeOesd2YLEG2Yw" text=""/>
+    <sourceRole xmi:id="_Ee9CUyQ7EeOesd2YLEG2Yw" aggregationKind="NONE" name="">
+      <modelElement href="Sudoku.uml#_DNezYSQ7EeOesd2YLEG2Yw"/>
+      <visibility xmi:id="_Ee9CVCQ7EeOesd2YLEG2Yw" label="+"/>
+      <cardinality xmi:id="_Ee9CVSQ7EeOesd2YLEG2Yw" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_Ee9CViQ7EeOesd2YLEG2Yw" aggregationKind="NONE" name="MyContext" navigable="true">
+      <modelElement href="Sudoku.uml#_DIT_gCQ7EeOesd2YLEG2Yw"/>
+      <visibility xmi:id="_Ee9CVyQ7EeOesd2YLEG2Yw" label="~"/>
+      <cardinality xmi:id="_Ee9CWCQ7EeOesd2YLEG2Yw" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_EfsCICQ7EeOesd2YLEG2Yw" targetItem="_EgFqwCQ7EeOesd2YLEG2Yw" sourceItem="_EfrbECQ7EeOesd2YLEG2Yw"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_EfspMCQ7EeOesd2YLEG2Yw" source="_EgFqwCQ7EeOesd2YLEG2Yw">
+    <modelElement href="Sudoku.uml#_DNgokSQ7EeOesd2YLEG2Yw"/>
+    <stereotypes xmi:id="_Ef6roCQ7EeOesd2YLEG2Yw" name="Reference">
+      <modelElement href="Sudoku.uml#_DNvSECQ7EeOesd2YLEG2Yw"/>
+    </stereotypes>
+    <nameVisual xmi:id="_Efyv0CQ7EeOesd2YLEG2Yw" text=""/>
+    <sourceRole xmi:id="_EfzW4CQ7EeOesd2YLEG2Yw" aggregationKind="NONE" name="">
+      <modelElement href="Sudoku.uml#_DNgokiQ7EeOesd2YLEG2Yw"/>
+      <visibility xmi:id="_Ef8g0SQ7EeOesd2YLEG2Yw" label="+"/>
+      <cardinality xmi:id="_Ef8g0CQ7EeOesd2YLEG2Yw" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_Ef6EkCQ7EeOesd2YLEG2Yw" aggregationKind="NONE" name="startButton" navigable="true">
+      <modelElement href="Sudoku.uml#_DJK7ICQ7EeOesd2YLEG2Yw"/>
+      <visibility xmi:id="_Ef9H4SQ7EeOesd2YLEG2Yw" label="-"/>
+      <cardinality xmi:id="_Ef9H4CQ7EeOesd2YLEG2Yw" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_EfwTkCQ7EeOesd2YLEG2Yw" source="_EgFqwCQ7EeOesd2YLEG2Yw">
+    <modelElement href="Sudoku.uml#_DNvSESQ7EeOesd2YLEG2Yw"/>
+    <stereotypes xmi:id="_Ef75wCQ7EeOesd2YLEG2Yw" name="Reference">
+      <modelElement href="Sudoku.uml#_DOFQUCQ7EeOesd2YLEG2Yw"/>
+    </stereotypes>
+    <nameVisual xmi:id="_Ef6roSQ7EeOesd2YLEG2Yw" text=""/>
+    <sourceRole xmi:id="_Ef6roiQ7EeOesd2YLEG2Yw" aggregationKind="NONE" name="">
+      <modelElement href="Sudoku.uml#_DNvSEiQ7EeOesd2YLEG2Yw"/>
+      <visibility xmi:id="_EgALMCQ7EeOesd2YLEG2Yw" label="+"/>
+      <cardinality xmi:id="_Ef-WACQ7EeOesd2YLEG2Yw" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_Ef7SsCQ7EeOesd2YLEG2Yw" aggregationKind="NONE" name="infoButton" navigable="true">
+      <modelElement href="Sudoku.uml#_DJS28CQ7EeOesd2YLEG2Yw"/>
+      <visibility xmi:id="_EgAyQCQ7EeOesd2YLEG2Yw" label="-"/>
+      <cardinality xmi:id="_EgALMSQ7EeOesd2YLEG2Yw" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_EeCcUCQ7EeOesd2YLEG2Yw" sourceConnectionVisual="_EeCcUSQ7EeOesd2YLEG2Yw" text="The Class SudokuGrid. THis class contains logic and handlers for the playing&#xA;field screen." item="_EeUJICQ7EeOesd2YLEG2Yw">
+    <modelElement href="Sudoku.uml#_DLJRECQ7EeOesd2YLEG2Yw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_EelO4CQ7EeOesd2YLEG2Yw" sourceConnectionVisual="_EelO4SQ7EeOesd2YLEG2Yw" text="The Class VakjeAdapter." item="_Ee9pYCQ7EeOesd2YLEG2Yw">
+    <modelElement href="Sudoku.uml#_DLMUYCQ7EeOesd2YLEG2Yw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_EerVgCQ7EeOesd2YLEG2Yw" sourceConnectionVisual="_EerVgSQ7EeOesd2YLEG2Yw" text="Instantiates a new VakjeAdapter.&#xA;&#x9;&#x9; * &#xA;&#x9;&#x9; * @param _MyContext&#xA;&#x9;&#x9; *            the _ my context" item="_Ee-QjSQ7EeOesd2YLEG2Yw">
+    <modelElement href="Sudoku.uml#_DLM7cCQ7EeOesd2YLEG2Yw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_EfrbECQ7EeOesd2YLEG2Yw" sourceConnectionVisual="_EfsCICQ7EeOesd2YLEG2Yw" text="The Class SudokuTitleScreen. Represents the title screen that is launched&#xA;first." item="_EgFqwCQ7EeOesd2YLEG2Yw">
+    <modelElement href="Sudoku.uml#_DLOJkCQ7EeOesd2YLEG2Yw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_EdeboCQ7EeOesd2YLEG2Yw" name="LevelSelect" associationsOut="_EdIdYCQ7EeOesd2YLEG2Yw _EdPyICQ7EeOesd2YLEG2Yw _EdSOYCQ7EeOesd2YLEG2Yw _EdUDkCQ7EeOesd2YLEG2Yw _EdaKMCQ7EeOesd2YLEG2Yw _EddNgCQ7EeOesd2YLEG2Yw">
+    <modelElement href="Sudoku.uml#_CtBxsCQ7EeOesd2YLEG2Yw"/>
+    <visualProperties xmi:id="_EdeboSQ7EeOesd2YLEG2Yw" position="-390.0,16.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_EdeboiQ7EeOesd2YLEG2Yw" label="+"/>
+    <attributes xmi:id="_EdeboyQ7EeOesd2YLEG2Yw" name="btnBack">
+      <modelElement href="Sudoku.uml#_DG1Y0CQ7EeOesd2YLEG2Yw"/>
+      <stereotypes xmi:id="_EdebpCQ7EeOesd2YLEG2Yw" name="LegacyStyledElement">
+        <modelElement href="Sudoku.uml#_DG5qQCQ7EeOesd2YLEG2Yw"/>
+      </stereotypes>
+      <stereotypes xmi:id="_EdebpSQ7EeOesd2YLEG2Yw" name="LegacyStyledElement">
+        <modelElement href="Sudoku.uml#_DG5qQCQ7EeOesd2YLEG2Yw"/>
+      </stereotypes>
+      <visibility xmi:id="_EdebpiQ7EeOesd2YLEG2Yw" label="-"/>
+      <cardinality xmi:id="_EdebpyQ7EeOesd2YLEG2Yw" label="1" max="1" min="1"/>
+      <type xmi:id="_EdebqCQ7EeOesd2YLEG2Yw" name="Button">
+        <modelElement href="Sudoku.uml#_C-AM8CQ7EeOesd2YLEG2Yw"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_EdebqSQ7EeOesd2YLEG2Yw" name="btnStart">
+      <modelElement href="Sudoku.uml#_DHHFoCQ7EeOesd2YLEG2Yw"/>
+      <stereotypes xmi:id="_EdebqiQ7EeOesd2YLEG2Yw" name="LegacyStyledElement">
+        <modelElement href="Sudoku.uml#_DHVvICQ7EeOesd2YLEG2Yw"/>
+      </stereotypes>
+      <stereotypes xmi:id="_EdebqyQ7EeOesd2YLEG2Yw" name="LegacyStyledElement">
+        <modelElement href="Sudoku.uml#_DHVvICQ7EeOesd2YLEG2Yw"/>
+      </stereotypes>
+      <visibility xmi:id="_EdebrCQ7EeOesd2YLEG2Yw" label="-"/>
+      <cardinality xmi:id="_EdebrSQ7EeOesd2YLEG2Yw" label="1" max="1" min="1"/>
+      <type xmi:id="_EdebriQ7EeOesd2YLEG2Yw" name="Button">
+        <modelElement href="Sudoku.uml#_C-AM8CQ7EeOesd2YLEG2Yw"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_EdebryQ7EeOesd2YLEG2Yw" name="radioDifficulty">
+      <modelElement href="Sudoku.uml#_DHXkUCQ7EeOesd2YLEG2Yw"/>
+      <stereotypes xmi:id="_EdebsCQ7EeOesd2YLEG2Yw" name="LegacyStyledElement">
+        <modelElement href="Sudoku.uml#_DHZZgCQ7EeOesd2YLEG2Yw"/>
+      </stereotypes>
+      <stereotypes xmi:id="_EdebsSQ7EeOesd2YLEG2Yw" name="LegacyStyledElement">
+        <modelElement href="Sudoku.uml#_DHZZgCQ7EeOesd2YLEG2Yw"/>
+      </stereotypes>
+      <visibility xmi:id="_EdebsiQ7EeOesd2YLEG2Yw" label="-"/>
+      <cardinality xmi:id="_EdebsyQ7EeOesd2YLEG2Yw" label="1" max="1" min="1"/>
+      <type xmi:id="_EdebtCQ7EeOesd2YLEG2Yw" name="RadioGroup">
+        <modelElement href="Sudoku.uml#_C-LzISQ7EeOesd2YLEG2Yw"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_EdebtSQ7EeOesd2YLEG2Yw" name="radioSize">
+      <modelElement href="Sudoku.uml#_DHgHMCQ7EeOesd2YLEG2Yw"/>
+      <stereotypes xmi:id="_EdebtiQ7EeOesd2YLEG2Yw" name="LegacyStyledElement">
+        <modelElement href="Sudoku.uml#_DHmN0CQ7EeOesd2YLEG2Yw"/>
+      </stereotypes>
+      <stereotypes xmi:id="_EdebtyQ7EeOesd2YLEG2Yw" name="LegacyStyledElement">
+        <modelElement href="Sudoku.uml#_DHmN0CQ7EeOesd2YLEG2Yw"/>
+      </stereotypes>
+      <visibility xmi:id="_EdebuCQ7EeOesd2YLEG2Yw" label="-"/>
+      <cardinality xmi:id="_EdebuSQ7EeOesd2YLEG2Yw" label="1" max="1" min="1"/>
+      <type xmi:id="_EdebuiQ7EeOesd2YLEG2Yw" name="RadioGroup">
+        <modelElement href="Sudoku.uml#_C-LzISQ7EeOesd2YLEG2Yw"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_EdebuyQ7EeOesd2YLEG2Yw" name="radioDifficultyButton">
+      <modelElement href="Sudoku.uml#_DHrtYCQ7EeOesd2YLEG2Yw"/>
+      <stereotypes xmi:id="_EdebvCQ7EeOesd2YLEG2Yw" name="LegacyStyledElement">
+        <modelElement href="Sudoku.uml#_DHtikCQ7EeOesd2YLEG2Yw"/>
+      </stereotypes>
+      <stereotypes xmi:id="_EdebvSQ7EeOesd2YLEG2Yw" name="LegacyStyledElement">
+        <modelElement href="Sudoku.uml#_DHtikCQ7EeOesd2YLEG2Yw"/>
+      </stereotypes>
+      <visibility xmi:id="_EdebviQ7EeOesd2YLEG2Yw" label="-"/>
+      <cardinality xmi:id="_EdebvyQ7EeOesd2YLEG2Yw" label="1" max="1" min="1"/>
+      <type xmi:id="_EdebwCQ7EeOesd2YLEG2Yw" name="RadioButton">
+        <modelElement href="Sudoku.uml#_C-CpMCQ7EeOesd2YLEG2Yw"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_EdebwSQ7EeOesd2YLEG2Yw" name="radioSizeButton">
+      <modelElement href="Sudoku.uml#_DH1eYCQ7EeOesd2YLEG2Yw"/>
+      <stereotypes xmi:id="_EdebwiQ7EeOesd2YLEG2Yw" name="LegacyStyledElement">
+        <modelElement href="Sudoku.uml#_DH8zICQ7EeOesd2YLEG2Yw"/>
+      </stereotypes>
+      <stereotypes xmi:id="_EdebwyQ7EeOesd2YLEG2Yw" name="LegacyStyledElement">
+        <modelElement href="Sudoku.uml#_DH8zICQ7EeOesd2YLEG2Yw"/>
+      </stereotypes>
+      <visibility xmi:id="_EdebxCQ7EeOesd2YLEG2Yw" label="-"/>
+      <cardinality xmi:id="_EdebxSQ7EeOesd2YLEG2Yw" label="1" max="1" min="1"/>
+      <type xmi:id="_EdebxiQ7EeOesd2YLEG2Yw" name="RadioButton">
+        <modelElement href="Sudoku.uml#_C-CpMCQ7EeOesd2YLEG2Yw"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_EdebxyQ7EeOesd2YLEG2Yw" name="addButtonListener">
+      <modelElement href="Sudoku.uml#_Ctd2kCQ7EeOesd2YLEG2Yw"/>
+      <visibility xmi:id="_EdebyCQ7EeOesd2YLEG2Yw" label="-"/>
+    </operations>
+    <operations xmi:id="_EdebySQ7EeOesd2YLEG2Yw" name="onCreate">
+      <modelElement href="Sudoku.uml#_DAzpUCQ7EeOesd2YLEG2Yw"/>
+      <visibility xmi:id="_EdebyiQ7EeOesd2YLEG2Yw" label="+"/>
+      <parameters xmi:id="_EdebyyQ7EeOesd2YLEG2Yw" name="savedInstanceState">
+        <modelElement href="Sudoku.uml#_DA0QYCQ7EeOesd2YLEG2Yw"/>
+        <type xmi:id="_EdebzCQ7EeOesd2YLEG2Yw" name="Bundle">
+          <modelElement href="Sudoku.uml#_C9t5ESQ7EeOesd2YLEG2Yw"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_EdebzSQ7EeOesd2YLEG2Yw" name="onClick">
+      <modelElement href="Sudoku.uml#_DA2FkCQ7EeOesd2YLEG2Yw"/>
+      <visibility xmi:id="_EdebziQ7EeOesd2YLEG2Yw" label="+"/>
+      <parameters xmi:id="_EdebzyQ7EeOesd2YLEG2Yw" name="v">
+        <modelElement href="Sudoku.uml#_DA2FkSQ7EeOesd2YLEG2Yw"/>
+        <type xmi:id="_Edeb0CQ7EeOesd2YLEG2Yw" name="View">
+          <modelElement href="Sudoku.uml#_C91N0CQ7EeOesd2YLEG2Yw"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_EeUJICQ7EeOesd2YLEG2Yw" comments="_EeCcUCQ7EeOesd2YLEG2Yw" targetConnectionVisual="_EeCcUSQ7EeOesd2YLEG2Yw" name="SudokuGrid" associationsOut="_EePQoCQ7EeOesd2YLEG2Yw">
+    <modelElement href="Sudoku.uml#_Cuua0CQ7EeOesd2YLEG2Yw"/>
+    <visualProperties xmi:id="_EeUJISQ7EeOesd2YLEG2Yw" position="45.0,18.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_EeUJIiQ7EeOesd2YLEG2Yw" label="+"/>
+    <attributes xmi:id="_EeUJIyQ7EeOesd2YLEG2Yw" name="MyGrid">
+      <modelElement href="Sudoku.uml#_DIJAYCQ7EeOesd2YLEG2Yw"/>
+      <stereotypes xmi:id="_EeUJJCQ7EeOesd2YLEG2Yw" name="LegacyStyledElement">
+        <modelElement href="Sudoku.uml#_DISxYCQ7EeOesd2YLEG2Yw"/>
+      </stereotypes>
+      <stereotypes xmi:id="_EeUJJSQ7EeOesd2YLEG2Yw" name="LegacyStyledElement">
+        <modelElement href="Sudoku.uml#_DISxYCQ7EeOesd2YLEG2Yw"/>
+      </stereotypes>
+      <visibility xmi:id="_EeUJJiQ7EeOesd2YLEG2Yw" label="~"/>
+      <cardinality xmi:id="_EeUJJyQ7EeOesd2YLEG2Yw" label="1" max="1" min="1"/>
+      <type xmi:id="_EeUJKCQ7EeOesd2YLEG2Yw" name="GridView">
+        <modelElement href="Sudoku.uml#_C_MfwSQ7EeOesd2YLEG2Yw"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_EeUJKSQ7EeOesd2YLEG2Yw" name="onCreate">
+      <modelElement href="Sudoku.uml#_DA7lICQ7EeOesd2YLEG2Yw"/>
+      <stereotypes xmi:id="_EeUJKiQ7EeOesd2YLEG2Yw" name="LegacyStyledElement">
+        <modelElement href="Sudoku.uml#_DA8zQCQ7EeOesd2YLEG2Yw"/>
+      </stereotypes>
+      <stereotypes xmi:id="_EeUJKyQ7EeOesd2YLEG2Yw" name="Annotations">
+        <modelElement href="Sudoku.uml#_DA-ocCQ7EeOesd2YLEG2Yw"/>
+      </stereotypes>
+      <visibility xmi:id="_EeUJLCQ7EeOesd2YLEG2Yw" label="+"/>
+      <parameters xmi:id="_EeUJLSQ7EeOesd2YLEG2Yw" name="savedInstanceState">
+        <modelElement href="Sudoku.uml#_DA7lISQ7EeOesd2YLEG2Yw"/>
+        <type xmi:id="_EeUJLiQ7EeOesd2YLEG2Yw" name="Bundle">
+          <modelElement href="Sudoku.uml#_C9t5ESQ7EeOesd2YLEG2Yw"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_Ee9pYCQ7EeOesd2YLEG2Yw" comments="_EelO4CQ7EeOesd2YLEG2Yw" targetConnectionVisual="_EelO4SQ7EeOesd2YLEG2Yw" name="VakjeAdapter" associationsOut="_Ee9CUCQ7EeOesd2YLEG2Yw">
+    <modelElement href="Sudoku.uml#_Cu2WoCQ7EeOesd2YLEG2Yw"/>
+    <visualProperties xmi:id="_Ee9pYSQ7EeOesd2YLEG2Yw" position="41.0,147.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_Ee9pYiQ7EeOesd2YLEG2Yw" label="+"/>
+    <attributes xmi:id="_Ee9pYyQ7EeOesd2YLEG2Yw" name="MyContext">
+      <modelElement href="Sudoku.uml#_DIT_gCQ7EeOesd2YLEG2Yw"/>
+      <stereotypes xmi:id="_Ee9pZCQ7EeOesd2YLEG2Yw" name="LegacyStyledElement">
+        <modelElement href="Sudoku.uml#_DIatMCQ7EeOesd2YLEG2Yw"/>
+      </stereotypes>
+      <stereotypes xmi:id="_Ee9pZSQ7EeOesd2YLEG2Yw" name="LegacyStyledElement">
+        <modelElement href="Sudoku.uml#_DIatMCQ7EeOesd2YLEG2Yw"/>
+      </stereotypes>
+      <visibility xmi:id="_Ee9pZiQ7EeOesd2YLEG2Yw" label="~"/>
+      <cardinality xmi:id="_Ee9pZyQ7EeOesd2YLEG2Yw" label="1" max="1" min="1"/>
+      <type xmi:id="_Ee9paCQ7EeOesd2YLEG2Yw" name="Context">
+        <modelElement href="Sudoku.uml#_C-0FQCQ7EeOesd2YLEG2Yw"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_Ee9paSQ7EeOesd2YLEG2Yw" defaultValue="-1" name="selection">
+      <modelElement href="Sudoku.uml#_DImTYCQ7EeOesd2YLEG2Yw"/>
+      <stereotypes xmi:id="_Ee9paiQ7EeOesd2YLEG2Yw" name="LegacyStyledElement">
+        <modelElement href="Sudoku.uml#_DIovoCQ7EeOesd2YLEG2Yw"/>
+      </stereotypes>
+      <visibility xmi:id="_Ee9payQ7EeOesd2YLEG2Yw" label="-"/>
+      <cardinality xmi:id="_Ee9pbCQ7EeOesd2YLEG2Yw" label="1" max="1" min="1"/>
+      <type xmi:id="_Ee-QcCQ7EeOesd2YLEG2Yw" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_Ee-QcSQ7EeOesd2YLEG2Yw" defaultValue="new int[9][9]" name="test">
+      <modelElement href="Sudoku.uml#_DIpWsCQ7EeOesd2YLEG2Yw"/>
+      <stereotypes xmi:id="_Ee-QciQ7EeOesd2YLEG2Yw" name="Array">
+        <modelElement href="Sudoku.uml#_DIuPMCQ7EeOesd2YLEG2Yw"/>
+      </stereotypes>
+      <stereotypes xmi:id="_Ee-QcyQ7EeOesd2YLEG2Yw" name="LegacyStyledElement">
+        <modelElement href="Sudoku.uml#_DIx5kCQ7EeOesd2YLEG2Yw"/>
+      </stereotypes>
+      <visibility xmi:id="_Ee-QdCQ7EeOesd2YLEG2Yw" label="-"/>
+      <cardinality xmi:id="_Ee-QdSQ7EeOesd2YLEG2Yw" label="1..*" max="-1" min="1"/>
+      <type xmi:id="_Ee-QdiQ7EeOesd2YLEG2Yw" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_Ee-QdyQ7EeOesd2YLEG2Yw" name="getCount">
+      <modelElement href="Sudoku.uml#_CvJ4oCQ7EeOesd2YLEG2Yw"/>
+      <stereotypes xmi:id="_Ee-QeCQ7EeOesd2YLEG2Yw" name="LegacyStyledElement">
+        <modelElement href="Sudoku.uml#_CvM78CQ7EeOesd2YLEG2Yw"/>
+      </stereotypes>
+      <stereotypes xmi:id="_Ee-QeSQ7EeOesd2YLEG2Yw" name="Annotations">
+        <modelElement href="Sudoku.uml#_CvTpoCQ7EeOesd2YLEG2Yw"/>
+      </stereotypes>
+      <visibility xmi:id="_Ee-QeiQ7EeOesd2YLEG2Yw" label="+"/>
+      <outParameters xmi:id="_Ee-QeyQ7EeOesd2YLEG2Yw">
+        <modelElement href="Sudoku.uml#_CvLt0CQ7EeOesd2YLEG2Yw"/>
+        <type xmi:id="_Ee-QfCQ7EeOesd2YLEG2Yw" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_Ee-QfSQ7EeOesd2YLEG2Yw" name="getItem">
+      <modelElement href="Sudoku.uml#_CviTICQ7EeOesd2YLEG2Yw"/>
+      <stereotypes xmi:id="_Ee-QfiQ7EeOesd2YLEG2Yw" name="LegacyStyledElement">
+        <modelElement href="Sudoku.uml#_CvpA0CQ7EeOesd2YLEG2Yw"/>
+      </stereotypes>
+      <stereotypes xmi:id="_Ee-QfyQ7EeOesd2YLEG2Yw" name="Annotations">
+        <modelElement href="Sudoku.uml#_Cvq2ACQ7EeOesd2YLEG2Yw"/>
+      </stereotypes>
+      <visibility xmi:id="_Ee-QgCQ7EeOesd2YLEG2Yw" label="+"/>
+      <outParameters xmi:id="_Ee-QgSQ7EeOesd2YLEG2Yw">
+        <modelElement href="Sudoku.uml#_DBXqASQ7EeOesd2YLEG2Yw"/>
+        <type xmi:id="_Ee-QgiQ7EeOesd2YLEG2Yw" name="Object">
+          <modelElement href="Sudoku.uml#_DBVNwSQ7EeOesd2YLEG2Yw"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_Ee-QgyQ7EeOesd2YLEG2Yw" name="arg0">
+        <modelElement href="Sudoku.uml#_CviTISQ7EeOesd2YLEG2Yw"/>
+        <type xmi:id="_Ee-QhCQ7EeOesd2YLEG2Yw" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_Ee-QhSQ7EeOesd2YLEG2Yw" name="getItemId">
+      <modelElement href="Sudoku.uml#_Cvt5UCQ7EeOesd2YLEG2Yw"/>
+      <stereotypes xmi:id="_Ee-QhiQ7EeOesd2YLEG2Yw" name="LegacyStyledElement">
+        <modelElement href="Sudoku.uml#_Cv3qUCQ7EeOesd2YLEG2Yw"/>
+      </stereotypes>
+      <stereotypes xmi:id="_Ee-QhyQ7EeOesd2YLEG2Yw" name="Annotations">
+        <modelElement href="Sudoku.uml#_Cv5fgCQ7EeOesd2YLEG2Yw"/>
+      </stereotypes>
+      <visibility xmi:id="_Ee-QiCQ7EeOesd2YLEG2Yw" label="+"/>
+      <outParameters xmi:id="_Ee-QiSQ7EeOesd2YLEG2Yw">
+        <modelElement href="Sudoku.uml#_Cv3DQCQ7EeOesd2YLEG2Yw"/>
+        <type xmi:id="_Ee-QiiQ7EeOesd2YLEG2Yw" name="long">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_Ee-QiyQ7EeOesd2YLEG2Yw" name="arg0">
+        <modelElement href="Sudoku.uml#_Cvw8oCQ7EeOesd2YLEG2Yw"/>
+        <type xmi:id="_Ee-QjCQ7EeOesd2YLEG2Yw" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_Ee-QjSQ7EeOesd2YLEG2Yw" comments="_EerVgCQ7EeOesd2YLEG2Yw" targetConnectionVisual="_EerVgSQ7EeOesd2YLEG2Yw" name="VakjeAdapter">
+      <modelElement href="Sudoku.uml#_DBIZcCQ7EeOesd2YLEG2Yw"/>
+      <keywords xmi:id="_Ee-QjiQ7EeOesd2YLEG2Yw" keyword="create"/>
+      <visibility xmi:id="_Ee-QjyQ7EeOesd2YLEG2Yw" label="+"/>
+      <outParameters xmi:id="_Ee-QkCQ7EeOesd2YLEG2Yw">
+        <modelElement href="Sudoku.uml#_DBJnkSQ7EeOesd2YLEG2Yw"/>
+        <type xmi:id="_Ee-QkSQ7EeOesd2YLEG2Yw" name="VakjeAdapter">
+          <modelElement href="Sudoku.uml#_Cu2WoCQ7EeOesd2YLEG2Yw"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_Ee-QkiQ7EeOesd2YLEG2Yw" name="_MyContext">
+        <modelElement href="Sudoku.uml#_DBIZcSQ7EeOesd2YLEG2Yw"/>
+        <type xmi:id="_Ee-QkyQ7EeOesd2YLEG2Yw" name="Context">
+          <modelElement href="Sudoku.uml#_C-0FQCQ7EeOesd2YLEG2Yw"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_Ee-QlCQ7EeOesd2YLEG2Yw" name="getView">
+      <modelElement href="Sudoku.uml#_DBNR8CQ7EeOesd2YLEG2Yw"/>
+      <stereotypes xmi:id="_Ee-QlSQ7EeOesd2YLEG2Yw" name="LegacyStyledElement">
+        <modelElement href="Sudoku.uml#_DBQVQCQ7EeOesd2YLEG2Yw"/>
+      </stereotypes>
+      <stereotypes xmi:id="_Ee-QliQ7EeOesd2YLEG2Yw" name="Annotations">
+        <modelElement href="Sudoku.uml#_DBSxgCQ7EeOesd2YLEG2Yw"/>
+      </stereotypes>
+      <visibility xmi:id="_Ee-QlyQ7EeOesd2YLEG2Yw" label="+"/>
+      <outParameters xmi:id="_Ee-QmCQ7EeOesd2YLEG2Yw">
+        <modelElement href="Sudoku.uml#_DBPuMCQ7EeOesd2YLEG2Yw"/>
+        <type xmi:id="_Ee-QmSQ7EeOesd2YLEG2Yw" name="View">
+          <modelElement href="Sudoku.uml#_C91N0CQ7EeOesd2YLEG2Yw"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_Ee-QmiQ7EeOesd2YLEG2Yw" name="position">
+        <modelElement href="Sudoku.uml#_DBN5ACQ7EeOesd2YLEG2Yw"/>
+        <type xmi:id="_Ee-QmyQ7EeOesd2YLEG2Yw" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_Ee-QnCQ7EeOesd2YLEG2Yw" name="convertView">
+        <modelElement href="Sudoku.uml#_DBN5ASQ7EeOesd2YLEG2Yw"/>
+        <type xmi:id="_Ee-QnSQ7EeOesd2YLEG2Yw" name="View">
+          <modelElement href="Sudoku.uml#_C91N0CQ7EeOesd2YLEG2Yw"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_Ee-QniQ7EeOesd2YLEG2Yw" name="parent">
+        <modelElement href="Sudoku.uml#_DBOgECQ7EeOesd2YLEG2Yw"/>
+        <type xmi:id="_Ee-QnyQ7EeOesd2YLEG2Yw" name="ViewGroup">
+          <modelElement href="Sudoku.uml#_C_DV0CQ7EeOesd2YLEG2Yw"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_EgFqwCQ7EeOesd2YLEG2Yw" comments="_EfrbECQ7EeOesd2YLEG2Yw" targetConnectionVisual="_EfsCICQ7EeOesd2YLEG2Yw" name="SudokuTitleScreen" associationsOut="_EfspMCQ7EeOesd2YLEG2Yw _EfwTkCQ7EeOesd2YLEG2Yw">
+    <modelElement href="Sudoku.uml#_CxVC4CQ7EeOesd2YLEG2Yw"/>
+    <visualProperties xmi:id="_EgFqwSQ7EeOesd2YLEG2Yw" position="664.0,13.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_EgFqwiQ7EeOesd2YLEG2Yw" label="+"/>
+    <attributes xmi:id="_EgFqwyQ7EeOesd2YLEG2Yw" name="startButton">
+      <modelElement href="Sudoku.uml#_DJK7ICQ7EeOesd2YLEG2Yw"/>
+      <stereotypes xmi:id="_EgFqxCQ7EeOesd2YLEG2Yw" name="LegacyStyledElement">
+        <modelElement href="Sudoku.uml#_DJMwUCQ7EeOesd2YLEG2Yw"/>
+      </stereotypes>
+      <stereotypes xmi:id="_Ef9u8CQ7EeOesd2YLEG2Yw" name="LegacyStyledElement">
+        <modelElement href="Sudoku.uml#_DJMwUCQ7EeOesd2YLEG2Yw"/>
+      </stereotypes>
+      <visibility xmi:id="_EgFqxSQ7EeOesd2YLEG2Yw" label="-"/>
+      <cardinality xmi:id="_EgFqxiQ7EeOesd2YLEG2Yw" label="1" max="1" min="1"/>
+      <type xmi:id="_EgFqxyQ7EeOesd2YLEG2Yw" name="Button">
+        <modelElement href="Sudoku.uml#_C-AM8CQ7EeOesd2YLEG2Yw"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_EgFqyCQ7EeOesd2YLEG2Yw" name="infoButton">
+      <modelElement href="Sudoku.uml#_DJS28CQ7EeOesd2YLEG2Yw"/>
+      <stereotypes xmi:id="_EgFqySQ7EeOesd2YLEG2Yw" name="LegacyStyledElement">
+        <modelElement href="Sudoku.uml#_DJg5YCQ7EeOesd2YLEG2Yw"/>
+      </stereotypes>
+      <stereotypes xmi:id="_EgAyQSQ7EeOesd2YLEG2Yw" name="LegacyStyledElement">
+        <modelElement href="Sudoku.uml#_DJg5YCQ7EeOesd2YLEG2Yw"/>
+      </stereotypes>
+      <visibility xmi:id="_EgFqyiQ7EeOesd2YLEG2Yw" label="-"/>
+      <cardinality xmi:id="_EgFqyyQ7EeOesd2YLEG2Yw" label="1" max="1" min="1"/>
+      <type xmi:id="_EgG44CQ7EeOesd2YLEG2Yw" name="Button">
+        <modelElement href="Sudoku.uml#_C-AM8CQ7EeOesd2YLEG2Yw"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_EgG44SQ7EeOesd2YLEG2Yw" name="onCreate">
+      <modelElement href="Sudoku.uml#_DBovwCQ7EeOesd2YLEG2Yw"/>
+      <stereotypes xmi:id="_EgG44iQ7EeOesd2YLEG2Yw" name="LegacyStyledElement">
+        <modelElement href="Sudoku.uml#_DBrMACQ7EeOesd2YLEG2Yw"/>
+      </stereotypes>
+      <stereotypes xmi:id="_EgG44yQ7EeOesd2YLEG2Yw" name="Annotations">
+        <modelElement href="Sudoku.uml#_DBsaICQ7EeOesd2YLEG2Yw"/>
+      </stereotypes>
+      <visibility xmi:id="_EgG45CQ7EeOesd2YLEG2Yw" label="#"/>
+      <parameters xmi:id="_EgG45SQ7EeOesd2YLEG2Yw" name="savedInstanceState">
+        <modelElement href="Sudoku.uml#_DBpW0CQ7EeOesd2YLEG2Yw"/>
+        <type xmi:id="_EgG45iQ7EeOesd2YLEG2Yw" name="Bundle">
+          <modelElement href="Sudoku.uml#_C9t5ESQ7EeOesd2YLEG2Yw"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+</com.yattasolutions.uml.diagrams.classifier:ClassDiagram>

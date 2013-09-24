@@ -1,0 +1,771 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:UMLLabProfile="http:///schemas/UMLLabProfile/NS/0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xsi:schemaLocation="http:///schemas/UMLLabProfile/NS/0 pathmap://UMLLAB_PROFILES/UMLLab.profile.uml#UMLLabProfile-Annotation_2-UMLLabProfile">
+  <uml:Model xmi:id="_Bp6H0CQ7EeOesd2YLEG2Yw" name="Sudoku">
+    <eAnnotations xmi:id="_B2OskCQ7EeOesd2YLEG2Yw" source="http://ns.yatta.de/umllab">
+      <contents xmi:type="ecore:EAnnotation" xmi:id="_B2OskSQ7EeOesd2YLEG2Yw" source="codegen">
+        <details xmi:id="_B2OskiQ7EeOesd2YLEG2Yw" key="codegenDirectory" value="/Sudoku/src"/>
+        <details xmi:id="_ENp28CQ7EeOesd2YLEG2Yw" key="AssociatedSourceCode" value="/Sudoku/gen/nl/avans/IN13SAh/sudoku/BuildConfig.java;583078098/1;/Sudoku/gen/nl/avans/IN13SAh/sudoku/R.java;3507717572/1;/Sudoku/src/nl/avans/IN13SAh/sudoku/LevelSelect.java;2277833994/1;/Sudoku/src/nl/avans/IN13SAh/sudoku/SudokuGrid.java;1451924191/1;/Sudoku/src/nl/avans/IN13SAh/sudoku/SudokuTitleScreen.java;2478433191/1;"/>
+      </contents>
+    </eAnnotations>
+    <elementImport xmi:id="_CoP_YCQ7EeOesd2YLEG2Yw">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+    </elementImport>
+    <elementImport xmi:id="_CoTCsCQ7EeOesd2YLEG2Yw">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#byte"/>
+    </elementImport>
+    <elementImport xmi:id="_CoTCsSQ7EeOesd2YLEG2Yw">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#char"/>
+    </elementImport>
+    <elementImport xmi:id="_CoTpwCQ7EeOesd2YLEG2Yw">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+    </elementImport>
+    <elementImport xmi:id="_CoTpwSQ7EeOesd2YLEG2Yw">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#float"/>
+    </elementImport>
+    <elementImport xmi:id="_CoUQ0CQ7EeOesd2YLEG2Yw">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+    </elementImport>
+    <elementImport xmi:id="_CoUQ0SQ7EeOesd2YLEG2Yw">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+    </elementImport>
+    <elementImport xmi:id="_CoUQ0iQ7EeOesd2YLEG2Yw">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#short"/>
+    </elementImport>
+    <elementImport xmi:id="_CtMJwCQ7EeOesd2YLEG2Yw">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </elementImport>
+    <packagedElement xmi:type="uml:Package" xmi:id="_CaOKcCQ7EeOesd2YLEG2Yw" name="nl">
+      <packagedElement xmi:type="uml:Package" xmi:id="_CaOxgCQ7EeOesd2YLEG2Yw" name="avans">
+        <packagedElement xmi:type="uml:Package" xmi:id="_CaOxgSQ7EeOesd2YLEG2Yw" name="IN13SAh">
+          <packagedElement xmi:type="uml:Package" xmi:id="_CaQmsCQ7EeOesd2YLEG2Yw" name="sudoku">
+            <packagedElement xmi:type="uml:Class" xmi:id="_CoMVACQ7EeOesd2YLEG2Yw" name="BuildConfig" isLeaf="true">
+              <eAnnotations xmi:id="_CoOKMCQ7EeOesd2YLEG2Yw" source="http://ns.yatta.de/umllab">
+                <contents xmi:type="ecore:EAnnotation" xmi:id="_CoOKMSQ7EeOesd2YLEG2Yw" source="codegen">
+                  <details xmi:id="_CoOKMiQ7EeOesd2YLEG2Yw" key="codegenDirectory" value="/Sudoku/gen"/>
+                </contents>
+              </eAnnotations>
+              <ownedAttribute xmi:id="_DCNXgCQ7EeOesd2YLEG2Yw" name="DEBUG" isLeaf="true" isStatic="true" isReadOnly="true">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+                <defaultValue xmi:type="uml:LiteralString" xmi:id="_DCOloCQ7EeOesd2YLEG2Yw" value="true"/>
+              </ownedAttribute>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_Coa-gCQ7EeOesd2YLEG2Yw" name="R" isLeaf="true">
+              <eAnnotations xmi:id="_Cof3ACQ7EeOesd2YLEG2Yw" source="http://ns.yatta.de/umllab">
+                <contents xmi:type="ecore:EAnnotation" xmi:id="_Cof3ASQ7EeOesd2YLEG2Yw" source="codegen">
+                  <details xmi:id="_Cof3AiQ7EeOesd2YLEG2Yw" key="codegenDirectory" value="/Sudoku/gen"/>
+                </contents>
+              </eAnnotations>
+              <nestedClassifier xmi:type="uml:Class" xmi:id="_CokvgCQ7EeOesd2YLEG2Yw" name="attr" isLeaf="true">
+                <eAnnotations xmi:id="_ColWkCQ7EeOesd2YLEG2Yw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+                  <details xmi:id="_ColWkSQ7EeOesd2YLEG2Yw" key="static"/>
+                </eAnnotations>
+              </nestedClassifier>
+              <nestedClassifier xmi:type="uml:Class" xmi:id="_CordMCQ7EeOesd2YLEG2Yw" name="dimen" isLeaf="true">
+                <eAnnotations xmi:id="_CosEQCQ7EeOesd2YLEG2Yw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+                  <details xmi:id="_CosEQSQ7EeOesd2YLEG2Yw" key="static"/>
+                </eAnnotations>
+                <ownedAttribute xmi:id="_DCkj4CQ7EeOesd2YLEG2Yw" name="activity_horizontal_margin" isLeaf="true" isStatic="true" isReadOnly="true">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_DCnAICQ7EeOesd2YLEG2Yw" value="0x7f040000"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:id="_DCpcYCQ7EeOesd2YLEG2Yw" name="activity_vertical_margin" isLeaf="true" isStatic="true" isReadOnly="true">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_DCuU4CQ7EeOesd2YLEG2Yw" value="0x7f040001"/>
+                </ownedAttribute>
+              </nestedClassifier>
+              <nestedClassifier xmi:type="uml:Class" xmi:id="_CowVsCQ7EeOesd2YLEG2Yw" name="drawable" isLeaf="true">
+                <eAnnotations xmi:id="_Co2cUCQ7EeOesd2YLEG2Yw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+                  <details xmi:id="_Co2cUSQ7EeOesd2YLEG2Yw" key="static"/>
+                </eAnnotations>
+                <ownedAttribute xmi:id="_DCymUCQ7EeOesd2YLEG2Yw" name="ic_launcher" isLeaf="true" isStatic="true" isReadOnly="true">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_DC1poCQ7EeOesd2YLEG2Yw" value="0x7f020000"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:id="_DC4s8CQ7EeOesd2YLEG2Yw" name="vakje" isLeaf="true" isStatic="true" isReadOnly="true">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_DC8XUCQ7EeOesd2YLEG2Yw" value="0x7f020001"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:id="_DC_aoCQ7EeOesd2YLEG2Yw" name="vakjedonker" isLeaf="true" isStatic="true" isReadOnly="true">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_DDAowCQ7EeOesd2YLEG2Yw" value="0x7f020002"/>
+                </ownedAttribute>
+              </nestedClassifier>
+              <nestedClassifier xmi:type="uml:Class" xmi:id="_CpA0YCQ7EeOesd2YLEG2Yw" name="id" isLeaf="true">
+                <eAnnotations xmi:id="_CpBbcCQ7EeOesd2YLEG2Yw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+                  <details xmi:id="_CpBbcSQ7EeOesd2YLEG2Yw" key="static"/>
+                </eAnnotations>
+                <ownedAttribute xmi:id="_DDE6MCQ7EeOesd2YLEG2Yw" name="GridItem" isLeaf="true" isStatic="true" isReadOnly="true">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_DDGvYCQ7EeOesd2YLEG2Yw" value="0x7f080000"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:id="_DDIkkCQ7EeOesd2YLEG2Yw" name="MyGrid" isLeaf="true" isStatic="true" isReadOnly="true">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_DDLA0CQ7EeOesd2YLEG2Yw" value="0x7f080002"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:id="_DDOEICQ7EeOesd2YLEG2Yw" name="action_settings" isLeaf="true" isStatic="true" isReadOnly="true">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_DDPSQCQ7EeOesd2YLEG2Yw" value="0x7f080020"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:id="_DDRugCQ7EeOesd2YLEG2Yw" name="btnBack" isLeaf="true" isStatic="true" isReadOnly="true">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_DDTjsCQ7EeOesd2YLEG2Yw" value="0x7f08001b"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:id="_DDV_8CQ7EeOesd2YLEG2Yw" name="btnStart" isLeaf="true" isStatic="true" isReadOnly="true">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_DDZqUCQ7EeOesd2YLEG2Yw" value="0x7f08001c"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:id="_DDcGkCQ7EeOesd2YLEG2Yw" name="button1" isLeaf="true" isStatic="true" isReadOnly="true">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_DDhmICQ7EeOesd2YLEG2Yw" value="0x7f080007"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:id="_DDkCYCQ7EeOesd2YLEG2Yw" name="button2" isLeaf="true" isStatic="true" isReadOnly="true">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_DDoT0CQ7EeOesd2YLEG2Yw" value="0x7f080008"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:id="_DDrXICQ7EeOesd2YLEG2Yw" name="button3" isLeaf="true" isStatic="true" isReadOnly="true">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_DDslQCQ7EeOesd2YLEG2Yw" value="0x7f080009"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:id="_DDvBgCQ7EeOesd2YLEG2Yw" name="button4" isLeaf="true" isStatic="true" isReadOnly="true">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_DDyE0CQ7EeOesd2YLEG2Yw" value="0x7f08000b"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:id="_DDzS8CQ7EeOesd2YLEG2Yw" name="button6" isLeaf="true" isStatic="true" isReadOnly="true">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_DDz6ACQ7EeOesd2YLEG2Yw" value="0x7f08000c"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:id="_DD1IICQ7EeOesd2YLEG2Yw" name="button7" isLeaf="true" isStatic="true" isReadOnly="true">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_DD2WQCQ7EeOesd2YLEG2Yw" value="0x7f08000e"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:id="_DD6AoCQ7EeOesd2YLEG2Yw" name="button8" isLeaf="true" isStatic="true" isReadOnly="true">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_DD6nsCQ7EeOesd2YLEG2Yw" value="0x7f08000f"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:id="_DEE_wCQ7EeOesd2YLEG2Yw" name="button9" isLeaf="true" isStatic="true" isReadOnly="true">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_DELtcCQ7EeOesd2YLEG2Yw" value="0x7f080010"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:id="_DEPX0CQ7EeOesd2YLEG2Yw" name="buttonClear" isLeaf="true" isStatic="true" isReadOnly="true">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_DEXToCQ7EeOesd2YLEG2Yw" value="0x7f080012"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:id="_DEaW8CQ7EeOesd2YLEG2Yw" name="buttonGenerate" isLeaf="true" isStatic="true" isReadOnly="true">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_DEczMCQ7EeOesd2YLEG2Yw" value="0x7f080005"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:id="_DEhrsCQ7EeOesd2YLEG2Yw" name="buttonSolve" isLeaf="true" isStatic="true" isReadOnly="true">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_DEkH8CQ7EeOesd2YLEG2Yw" value="0x7f080004"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:id="_DEnLQCQ7EeOesd2YLEG2Yw" name="dificultyEasy" isLeaf="true" isStatic="true" isReadOnly="true">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_DEqOkCQ7EeOesd2YLEG2Yw" value="0x7f080014"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:id="_DEsDwCQ7EeOesd2YLEG2Yw" name="dificultyHard" isLeaf="true" isStatic="true" isReadOnly="true">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_DEugACQ7EeOesd2YLEG2Yw" value="0x7f080016"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:id="_DEvuICQ7EeOesd2YLEG2Yw" name="dificultyMedium" isLeaf="true" isStatic="true" isReadOnly="true">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_DEw8QCQ7EeOesd2YLEG2Yw" value="0x7f080015"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:id="_DEz_kCQ7EeOesd2YLEG2Yw" name="grid_item_text" isLeaf="true" isStatic="true" isReadOnly="true">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_DE0moCQ7EeOesd2YLEG2Yw" value="0x7f080001"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:id="_DE10wCQ7EeOesd2YLEG2Yw" name="radioDifficulty" isLeaf="true" isStatic="true" isReadOnly="true">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_DE44ECQ7EeOesd2YLEG2Yw" value="0x7f080013"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:id="_DE6GMCQ7EeOesd2YLEG2Yw" name="radioSize" isLeaf="true" isStatic="true" isReadOnly="true">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_DE6tQCQ7EeOesd2YLEG2Yw" value="0x7f080017"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:id="_DE9wkCQ7EeOesd2YLEG2Yw" name="showinfoButton" isLeaf="true" isStatic="true" isReadOnly="true">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_DE--sCQ7EeOesd2YLEG2Yw" value="0x7f08001f"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:id="_DE_lwCQ7EeOesd2YLEG2Yw" name="sizeLarge" isLeaf="true" isStatic="true" isReadOnly="true">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_DFCpECQ7EeOesd2YLEG2Yw" value="0x7f08001a"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:id="_DFD3MCQ7EeOesd2YLEG2Yw" name="sizeMedium" isLeaf="true" isStatic="true" isReadOnly="true">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_DFEeQCQ7EeOesd2YLEG2Yw" value="0x7f080019"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:id="_DFJWwCQ7EeOesd2YLEG2Yw" name="sizeSmall" isLeaf="true" isStatic="true" isReadOnly="true">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_DFMaECQ7EeOesd2YLEG2Yw" value="0x7f080018"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:id="_DFNoMCQ7EeOesd2YLEG2Yw" name="startgameButton" isLeaf="true" isStatic="true" isReadOnly="true">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_DFOPQCQ7EeOesd2YLEG2Yw" value="0x7f08001e"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:id="_DFRSkCQ7EeOesd2YLEG2Yw" name="tableRow0" isLeaf="true" isStatic="true" isReadOnly="true">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_DFSgsCQ7EeOesd2YLEG2Yw" value="0x7f080003"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:id="_DFUV4CQ7EeOesd2YLEG2Yw" name="tableRow1" isLeaf="true" isStatic="true" isReadOnly="true">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_DFVkACQ7EeOesd2YLEG2Yw" value="0x7f080006"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:id="_DFWLECQ7EeOesd2YLEG2Yw" name="tableRow2" isLeaf="true" isStatic="true" isReadOnly="true">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_DFXZMCQ7EeOesd2YLEG2Yw" value="0x7f08000a"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:id="_DFYAQCQ7EeOesd2YLEG2Yw" name="tableRow3" isLeaf="true" isStatic="true" isReadOnly="true">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_DFZOYCQ7EeOesd2YLEG2Yw" value="0x7f08000d"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:id="_DFf8ECQ7EeOesd2YLEG2Yw" name="tableRow4" isLeaf="true" isStatic="true" isReadOnly="true">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_DFgjICQ7EeOesd2YLEG2Yw" value="0x7f080011"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:id="_DFhxQCQ7EeOesd2YLEG2Yw" name="textView1" isLeaf="true" isStatic="true" isReadOnly="true">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_DFiYUCQ7EeOesd2YLEG2Yw" value="0x7f08001d"/>
+                </ownedAttribute>
+              </nestedClassifier>
+              <nestedClassifier xmi:type="uml:Class" xmi:id="_Cp-dsCQ7EeOesd2YLEG2Yw" name="layout" isLeaf="true">
+                <eAnnotations xmi:id="_Cp_EwCQ7EeOesd2YLEG2Yw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+                  <details xmi:id="_Cp_EwSQ7EeOesd2YLEG2Yw" key="static"/>
+                </eAnnotations>
+                <ownedAttribute xmi:id="_DFmCsCQ7EeOesd2YLEG2Yw" name="sudokugrid_item" isLeaf="true" isStatic="true" isReadOnly="true">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_DFmpwCQ7EeOesd2YLEG2Yw" value="0x7f030000"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:id="_DFn34CQ7EeOesd2YLEG2Yw" name="sudokugrid_main" isLeaf="true" isStatic="true" isReadOnly="true">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_DFpGACQ7EeOesd2YLEG2Yw" value="0x7f030001"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:id="_DFptECQ7EeOesd2YLEG2Yw" name="sudokulevel_select" isLeaf="true" isStatic="true" isReadOnly="true">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_DFq7MCQ7EeOesd2YLEG2Yw" value="0x7f030002"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:id="_DFriQCQ7EeOesd2YLEG2Yw" name="sudokutitlescreen_main" isLeaf="true" isStatic="true" isReadOnly="true">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_DFswYCQ7EeOesd2YLEG2Yw" value="0x7f030003"/>
+                </ownedAttribute>
+              </nestedClassifier>
+              <nestedClassifier xmi:type="uml:Class" xmi:id="_CqI1wCQ7EeOesd2YLEG2Yw" name="menu" isLeaf="true">
+                <eAnnotations xmi:id="_CqI1wSQ7EeOesd2YLEG2Yw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+                  <details xmi:id="_CqJc0CQ7EeOesd2YLEG2Yw" key="static"/>
+                </eAnnotations>
+                <ownedAttribute xmi:id="_DFt-gCQ7EeOesd2YLEG2Yw" name="main" isLeaf="true" isStatic="true" isReadOnly="true">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_DFvMoCQ7EeOesd2YLEG2Yw" value="0x7f070000"/>
+                </ownedAttribute>
+              </nestedClassifier>
+              <nestedClassifier xmi:type="uml:Class" xmi:id="_CqL5ECQ7EeOesd2YLEG2Yw" name="string" isLeaf="true">
+                <eAnnotations xmi:id="_CqMgICQ7EeOesd2YLEG2Yw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+                  <details xmi:id="_CqNHMCQ7EeOesd2YLEG2Yw" key="static"/>
+                </eAnnotations>
+                <ownedAttribute xmi:id="_DFxB0CQ7EeOesd2YLEG2Yw" name="action_settings" isLeaf="true" isStatic="true" isReadOnly="true">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_DFxo4CQ7EeOesd2YLEG2Yw" value="0x7f050001"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:id="_DFy3ACQ7EeOesd2YLEG2Yw" name="app_name" isLeaf="true" isStatic="true" isReadOnly="true">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_DF3IcCQ7EeOesd2YLEG2Yw" value="0x7f050000"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:id="_DF6y0CQ7EeOesd2YLEG2Yw" name="back" isLeaf="true" isStatic="true" isReadOnly="true">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_DF8A8CQ7EeOesd2YLEG2Yw" value="0x7f050007"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:id="_DF8oACQ7EeOesd2YLEG2Yw" name="infoDialogMessage" isLeaf="true" isStatic="true" isReadOnly="true">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_DF_EQCQ7EeOesd2YLEG2Yw" value="0x7f050005"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:id="_DGASYCQ7EeOesd2YLEG2Yw" name="infoDialogPositiveButtonText" isLeaf="true" isStatic="true" isReadOnly="true">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_DGA5cCQ7EeOesd2YLEG2Yw" value="0x7f050006"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:id="_DGCHkCQ7EeOesd2YLEG2Yw" name="showinfoButtonString" isLeaf="true" isStatic="true" isReadOnly="true">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_DGCuoCQ7EeOesd2YLEG2Yw" value="0x7f050004"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:id="_DGD8wCQ7EeOesd2YLEG2Yw" name="start" isLeaf="true" isStatic="true" isReadOnly="true">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_DGEj0CQ7EeOesd2YLEG2Yw" value="0x7f050008"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:id="_DGFx8CQ7EeOesd2YLEG2Yw" name="startgameButtonString" isLeaf="true" isStatic="true" isReadOnly="true">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_DGHAECQ7EeOesd2YLEG2Yw" value="0x7f050003"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:id="_DGHnICQ7EeOesd2YLEG2Yw" name="sudokuDifficultyEasy" isLeaf="true" isStatic="true" isReadOnly="true">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_DGI1QCQ7EeOesd2YLEG2Yw" value="0x7f050009"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:id="_DGJcUCQ7EeOesd2YLEG2Yw" name="sudokuDifficultyHard" isLeaf="true" isStatic="true" isReadOnly="true">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_DGKqcCQ7EeOesd2YLEG2Yw" value="0x7f05000b"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:id="_DGLRgCQ7EeOesd2YLEG2Yw" name="sudokuDifficultyMedium" isLeaf="true" isStatic="true" isReadOnly="true">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_DGMfoCQ7EeOesd2YLEG2Yw" value="0x7f05000a"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:id="_DGNGsCQ7EeOesd2YLEG2Yw" name="sudokuSizeLarge" isLeaf="true" isStatic="true" isReadOnly="true">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_DGOU0CQ7EeOesd2YLEG2Yw" value="0x7f05000e"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:id="_DGO74CQ7EeOesd2YLEG2Yw" name="sudokuSizeMedium" isLeaf="true" isStatic="true" isReadOnly="true">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_DGQKACQ7EeOesd2YLEG2Yw" value="0x7f05000d"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:id="_DGQxECQ7EeOesd2YLEG2Yw" name="sudokuSizeSmall" isLeaf="true" isStatic="true" isReadOnly="true">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_DGR_MCQ7EeOesd2YLEG2Yw" value="0x7f05000c"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:id="_DGSmQCQ7EeOesd2YLEG2Yw" name="titlescreen_name" isLeaf="true" isStatic="true" isReadOnly="true">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_DGT0YCQ7EeOesd2YLEG2Yw" value="0x7f050002"/>
+                </ownedAttribute>
+              </nestedClassifier>
+              <nestedClassifier xmi:type="uml:Class" xmi:id="_Cqk6oCQ7EeOesd2YLEG2Yw" name="style" isLeaf="true">
+                <eAnnotations xmi:id="_CqlhsCQ7EeOesd2YLEG2Yw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+                  <details xmi:id="_CqlhsSQ7EeOesd2YLEG2Yw" key="static"/>
+                </eAnnotations>
+                <ownedAttribute xmi:id="_DGVpkCQ7EeOesd2YLEG2Yw" name="AppBaseTheme" isLeaf="true" isStatic="true" isReadOnly="true">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_DGYs4CQ7EeOesd2YLEG2Yw" value="0x7f060000"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:id="_DGbJICQ7EeOesd2YLEG2Yw" name="AppTheme" isLeaf="true" isStatic="true" isReadOnly="true">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_DGc-UCQ7EeOesd2YLEG2Yw" value="0x7f060001"/>
+                </ownedAttribute>
+              </nestedClassifier>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_CtBxsCQ7EeOesd2YLEG2Yw" clientDependency="_DAuw0CQ7EeOesd2YLEG2Yw" name="LevelSelect">
+              <generalization xmi:id="_DA3TsCQ7EeOesd2YLEG2Yw" general="_C9eogCQ7EeOesd2YLEG2Yw"/>
+              <ownedAttribute xmi:id="_DG1Y0CQ7EeOesd2YLEG2Yw" name="btnBack" visibility="private" type="_C-AM8CQ7EeOesd2YLEG2Yw" association="_DMUVwCQ7EeOesd2YLEG2Yw"/>
+              <ownedAttribute xmi:id="_DHHFoCQ7EeOesd2YLEG2Yw" name="btnStart" visibility="private" type="_C-AM8CQ7EeOesd2YLEG2Yw" association="_DMgjACQ7EeOesd2YLEG2Yw"/>
+              <ownedAttribute xmi:id="_DHXkUCQ7EeOesd2YLEG2Yw" name="radioDifficulty" visibility="private" type="_C-LzISQ7EeOesd2YLEG2Yw" association="_DMn3wCQ7EeOesd2YLEG2Yw"/>
+              <ownedAttribute xmi:id="_DHgHMCQ7EeOesd2YLEG2Yw" name="radioSize" visibility="private" type="_C-LzISQ7EeOesd2YLEG2Yw" association="_DMvMgCQ7EeOesd2YLEG2Yw"/>
+              <ownedAttribute xmi:id="_DHrtYCQ7EeOesd2YLEG2Yw" name="radioDifficultyButton" visibility="private" type="_C-CpMCQ7EeOesd2YLEG2Yw" association="_DMxBsSQ7EeOesd2YLEG2Yw"/>
+              <ownedAttribute xmi:id="_DH1eYCQ7EeOesd2YLEG2Yw" name="radioSizeButton" visibility="private" type="_C-CpMCQ7EeOesd2YLEG2Yw" association="_DNMfgCQ7EeOesd2YLEG2Yw"/>
+              <interfaceRealization xmi:id="_DAuw0CQ7EeOesd2YLEG2Yw" client="_CtBxsCQ7EeOesd2YLEG2Yw" supplier="_C99JoSQ7EeOesd2YLEG2Yw" contract="_C99JoSQ7EeOesd2YLEG2Yw"/>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_DJ5T4CQ7EeOesd2YLEG2Yw" name="onCreate" specification="_DAzpUCQ7EeOesd2YLEG2Yw">
+                <ownedParameter xmi:id="_DJ5T4SQ7EeOesd2YLEG2Yw" name="savedInstanceState" type="_C9t5ESQ7EeOesd2YLEG2Yw"/>
+                <language>java</language>
+                <body>super.onCreate(savedInstanceState);&#xD;
+		setContentView(R.layout.sudokulevel_select);&#xD;
+		&#xD;
+		addButtonListener();&#xD;
+	</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_DJ-zcCQ7EeOesd2YLEG2Yw" name="addButtonListener" specification="_Ctd2kCQ7EeOesd2YLEG2Yw">
+                <language>java</language>
+                <body>btnBack = (Button) findViewById(R.id.btnBack);&#xD;
+		btnStart = (Button) findViewById(R.id.btnStart);&#xD;
+		&#xD;
+		radioDifficulty = (RadioGroup) findViewById(R.id.radioDifficulty);&#xD;
+		radioSize = (RadioGroup) findViewById(R.id.radioSize);&#xD;
+		&#xD;
+		btnBack.setOnClickListener(this);&#xD;
+		btnStart.setOnClickListener(this);&#xD;
+	</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_DJ_agCQ7EeOesd2YLEG2Yw" name="onClick" specification="_DA2FkCQ7EeOesd2YLEG2Yw">
+                <ownedParameter xmi:id="_DJ_agSQ7EeOesd2YLEG2Yw" name="v" type="_C91N0CQ7EeOesd2YLEG2Yw"/>
+                <language>java</language>
+                <body>radioDifficultyButton = (RadioButton) findViewById(radioDifficulty.getCheckedRadioButtonId());&#xD;
+		radioSizeButton = (RadioButton) findViewById(radioSize.getCheckedRadioButtonId());&#xD;
+		&#xD;
+		switch(v.getId()) {&#xD;
+		case R.id.btnBack:&#xD;
+			finish();&#xD;
+			break;&#xD;
+		case R.id.btnStart:&#xD;
+			Toast.makeText(this, radioDifficultyButton.getText() + &quot; - &quot; + radioSizeButton.getText(), Toast.LENGTH_SHORT).show();&#xD;
+			//TODO: send info to model&#xD;
+			&#xD;
+			Intent intent = new Intent(this, SudokuGrid.class);&#xD;
+			startActivity(intent);&#xD;
+			break;&#xD;
+		}&#xD;
+	</body>
+              </ownedBehavior>
+              <ownedOperation xmi:id="_Ctd2kCQ7EeOesd2YLEG2Yw" name="addButtonListener" visibility="private" method="_DJ-zcCQ7EeOesd2YLEG2Yw"/>
+              <ownedOperation xmi:id="_DAzpUCQ7EeOesd2YLEG2Yw" name="onCreate" method="_DJ5T4CQ7EeOesd2YLEG2Yw">
+                <ownedParameter xmi:id="_DA0QYCQ7EeOesd2YLEG2Yw" name="savedInstanceState" type="_C9t5ESQ7EeOesd2YLEG2Yw"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_DA2FkCQ7EeOesd2YLEG2Yw" name="onClick" method="_DJ_agCQ7EeOesd2YLEG2Yw">
+                <ownedParameter xmi:id="_DA2FkSQ7EeOesd2YLEG2Yw" name="v" type="_C91N0CQ7EeOesd2YLEG2Yw"/>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_Cuua0CQ7EeOesd2YLEG2Yw" name="SudokuGrid">
+              <ownedComment xmi:id="_DLJRECQ7EeOesd2YLEG2Yw">
+                <body>The Class SudokuGrid. THis class contains logic and handlers for the playing
+field screen.</body>
+              </ownedComment>
+              <generalization xmi:id="_DBdJkCQ7EeOesd2YLEG2Yw" general="_C9eogCQ7EeOesd2YLEG2Yw"/>
+              <ownedAttribute xmi:id="_DIJAYCQ7EeOesd2YLEG2Yw" name="MyGrid" visibility="package" type="_C_MfwSQ7EeOesd2YLEG2Yw" association="_DNT0QCQ7EeOesd2YLEG2Yw"/>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_DKLAsCQ7EeOesd2YLEG2Yw" name="onCreate" specification="_DA7lICQ7EeOesd2YLEG2Yw">
+                <ownedParameter xmi:id="_DKLAsSQ7EeOesd2YLEG2Yw" name="savedInstanceState" type="_C9t5ESQ7EeOesd2YLEG2Yw"/>
+                <language>java</language>
+                <body>super.onCreate(savedInstanceState);
+		setContentView(R.layout.sudokugrid_main); // Set the layout.
+
+		MyGrid = (GridView) findViewById(R.id.MyGrid);
+		MyGrid.setAdapter(new VakjeAdapter(this));
+	</body>
+              </ownedBehavior>
+              <ownedOperation xmi:id="_DA7lICQ7EeOesd2YLEG2Yw" name="onCreate" method="_DKLAsCQ7EeOesd2YLEG2Yw">
+                <ownedParameter xmi:id="_DA7lISQ7EeOesd2YLEG2Yw" name="savedInstanceState" type="_C9t5ESQ7EeOesd2YLEG2Yw"/>
+              </ownedOperation>
+              <nestedClassifier xmi:type="uml:Class" xmi:id="_Cu2WoCQ7EeOesd2YLEG2Yw" name="VakjeAdapter">
+                <ownedComment xmi:id="_DLMUYCQ7EeOesd2YLEG2Yw">
+                  <body>The Class VakjeAdapter.</body>
+                </ownedComment>
+                <generalization xmi:id="_DBY4ICQ7EeOesd2YLEG2Yw" general="_C_KDgSQ7EeOesd2YLEG2Yw"/>
+                <ownedAttribute xmi:id="_DIT_gCQ7EeOesd2YLEG2Yw" name="MyContext" visibility="package" type="_C-0FQCQ7EeOesd2YLEG2Yw" association="_DNezYCQ7EeOesd2YLEG2Yw"/>
+                <ownedAttribute xmi:id="_DImTYCQ7EeOesd2YLEG2Yw" name="selection" visibility="private">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_DIm6cCQ7EeOesd2YLEG2Yw" value="-1"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:id="_DIpWsCQ7EeOesd2YLEG2Yw" name="test" visibility="private">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DIp9wCQ7EeOesd2YLEG2Yw" value="*"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_DIu2QCQ7EeOesd2YLEG2Yw" value="new int[9][9]"/>
+                </ownedAttribute>
+                <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_DKMO0CQ7EeOesd2YLEG2Yw" name="VakjeAdapter" specification="_DBIZcCQ7EeOesd2YLEG2Yw">
+                  <ownedParameter xmi:id="_DKMO0SQ7EeOesd2YLEG2Yw" name="_MyContext" type="_C-0FQCQ7EeOesd2YLEG2Yw"/>
+                  <ownedParameter xmi:id="_DKMO0iQ7EeOesd2YLEG2Yw" type="_Cu2WoCQ7EeOesd2YLEG2Yw" direction="return">
+                    <name xsi:nil="true"/>
+                  </ownedParameter>
+                  <language>java</language>
+                  <body>MyContext = _MyContext;
+		</body>
+                </ownedBehavior>
+                <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_DKRuYCQ7EeOesd2YLEG2Yw" name="getCount" specification="_CvJ4oCQ7EeOesd2YLEG2Yw">
+                  <ownedParameter xmi:id="_DKRuYSQ7EeOesd2YLEG2Yw" direction="return">
+                    <name xsi:nil="true"/>
+                    <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  </ownedParameter>
+                  <language>java</language>
+                  <body>return 81; // Return the size of the grid. TODO get constant from
+						// model.
+		</body>
+                </ownedBehavior>
+                <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_DKS8gCQ7EeOesd2YLEG2Yw" name="getView" specification="_DBNR8CQ7EeOesd2YLEG2Yw">
+                  <ownedParameter xmi:id="_DKS8gSQ7EeOesd2YLEG2Yw" name="position">
+                    <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  </ownedParameter>
+                  <ownedParameter xmi:id="_DKS8giQ7EeOesd2YLEG2Yw" name="convertView" type="_C91N0CQ7EeOesd2YLEG2Yw"/>
+                  <ownedParameter xmi:id="_DKS8gyQ7EeOesd2YLEG2Yw" name="parent" type="_C_DV0CQ7EeOesd2YLEG2Yw"/>
+                  <ownedParameter xmi:id="_DKS8hCQ7EeOesd2YLEG2Yw" type="_C91N0CQ7EeOesd2YLEG2Yw" direction="return">
+                    <name xsi:nil="true"/>
+                  </ownedParameter>
+                  <language>java</language>
+                  <body>View MyView = null; // The view object that represents a item
+								// in the grid. Use the position field
+								// to identify.
+
+			/* We define the view that will display on the grid */
+
+			// Inflate the layout using the grid_item layout file.
+			LayoutInflater li = getLayoutInflater();
+			MyView = li.inflate(R.layout.sudokugrid_item, null);
+
+			// Do something with the grid view items.
+			TextView tv = (TextView) MyView.findViewById(R.id.grid_item_text);
+			tv.setText(&quot;&quot; + position);
+
+			MyView.setTag(new Integer(position));
+
+			// On click event for the grid item.
+			MyView.setOnClickListener(new OnClickListener() {
+
+				@Override
+				public void onClick(View v) {
+					// Get the textview from the grid item view.
+
+					// kleuren weg
+					selection = (Integer) v.getTag();
+
+					TextView tv = (TextView) v
+							.findViewById(R.id.grid_item_text);
+					// Print a toast, for testing. TODO call
+					Toast.makeText(SudokuGrid.this, tv.getText(),
+							Toast.LENGTH_SHORT).show();
+
+					VakjeAdapter.this.notifyDataSetChanged();
+				}
+			});
+
+			if (position == selection)
+				MyView.setBackgroundColor(Color.YELLOW);
+
+			return MyView;
+		</body>
+                </ownedBehavior>
+                <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_DKVYwCQ7EeOesd2YLEG2Yw" name="getItem" specification="_CviTICQ7EeOesd2YLEG2Yw">
+                  <ownedParameter xmi:id="_DKVYwSQ7EeOesd2YLEG2Yw" name="arg0">
+                    <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  </ownedParameter>
+                  <ownedParameter xmi:id="_DKVYwiQ7EeOesd2YLEG2Yw" type="_DBVNwSQ7EeOesd2YLEG2Yw" direction="return">
+                    <name xsi:nil="true"/>
+                  </ownedParameter>
+                  <language>java</language>
+                  <body>return null;
+		</body>
+                </ownedBehavior>
+                <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_DKctgCQ7EeOesd2YLEG2Yw" name="getItemId" specification="_Cvt5UCQ7EeOesd2YLEG2Yw">
+                  <ownedParameter xmi:id="_DKctgSQ7EeOesd2YLEG2Yw" name="arg0">
+                    <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  </ownedParameter>
+                  <ownedParameter xmi:id="_DKctgiQ7EeOesd2YLEG2Yw" direction="return">
+                    <name xsi:nil="true"/>
+                    <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+                  </ownedParameter>
+                  <language>java</language>
+                  <body>return 0;
+		</body>
+                </ownedBehavior>
+                <ownedOperation xmi:id="_CvJ4oCQ7EeOesd2YLEG2Yw" name="getCount" method="_DKRuYCQ7EeOesd2YLEG2Yw">
+                  <ownedParameter xmi:id="_CvLt0CQ7EeOesd2YLEG2Yw" direction="return">
+                    <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  </ownedParameter>
+                </ownedOperation>
+                <ownedOperation xmi:id="_CviTICQ7EeOesd2YLEG2Yw" name="getItem" method="_DKVYwCQ7EeOesd2YLEG2Yw">
+                  <ownedParameter xmi:id="_CviTISQ7EeOesd2YLEG2Yw" name="arg0">
+                    <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  </ownedParameter>
+                  <ownedParameter xmi:id="_DBXqASQ7EeOesd2YLEG2Yw" type="_DBVNwSQ7EeOesd2YLEG2Yw" direction="return"/>
+                </ownedOperation>
+                <ownedOperation xmi:id="_Cvt5UCQ7EeOesd2YLEG2Yw" name="getItemId" method="_DKctgCQ7EeOesd2YLEG2Yw">
+                  <ownedParameter xmi:id="_Cvw8oCQ7EeOesd2YLEG2Yw" name="arg0">
+                    <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  </ownedParameter>
+                  <ownedParameter xmi:id="_Cv3DQCQ7EeOesd2YLEG2Yw" direction="return">
+                    <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+                  </ownedParameter>
+                </ownedOperation>
+                <ownedOperation xmi:id="_DBIZcCQ7EeOesd2YLEG2Yw" name="VakjeAdapter" method="_DKMO0CQ7EeOesd2YLEG2Yw">
+                  <eAnnotations xmi:id="_DBJAgCQ7EeOesd2YLEG2Yw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+                    <details xmi:id="_DBJnkCQ7EeOesd2YLEG2Yw" key="create"/>
+                  </eAnnotations>
+                  <ownedComment xmi:id="_DLM7cCQ7EeOesd2YLEG2Yw">
+                    <body>Instantiates a new VakjeAdapter.
+		 * 
+		 * @param _MyContext
+		 *            the _ my context</body>
+                  </ownedComment>
+                  <ownedParameter xmi:id="_DBIZcSQ7EeOesd2YLEG2Yw" name="_MyContext" type="_C-0FQCQ7EeOesd2YLEG2Yw"/>
+                  <ownedParameter xmi:id="_DBJnkSQ7EeOesd2YLEG2Yw" type="_Cu2WoCQ7EeOesd2YLEG2Yw" direction="return"/>
+                </ownedOperation>
+                <ownedOperation xmi:id="_DBNR8CQ7EeOesd2YLEG2Yw" name="getView" method="_DKS8gCQ7EeOesd2YLEG2Yw">
+                  <ownedParameter xmi:id="_DBN5ACQ7EeOesd2YLEG2Yw" name="position">
+                    <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                  </ownedParameter>
+                  <ownedParameter xmi:id="_DBN5ASQ7EeOesd2YLEG2Yw" name="convertView" type="_C91N0CQ7EeOesd2YLEG2Yw"/>
+                  <ownedParameter xmi:id="_DBOgECQ7EeOesd2YLEG2Yw" name="parent" type="_C_DV0CQ7EeOesd2YLEG2Yw"/>
+                  <ownedParameter xmi:id="_DBPuMCQ7EeOesd2YLEG2Yw" type="_C91N0CQ7EeOesd2YLEG2Yw" direction="return"/>
+                </ownedOperation>
+              </nestedClassifier>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_CxVC4CQ7EeOesd2YLEG2Yw" name="SudokuTitleScreen">
+              <ownedComment xmi:id="_DLOJkCQ7EeOesd2YLEG2Yw">
+                <body>The Class SudokuTitleScreen. Represents the title screen that is launched
+first.</body>
+              </ownedComment>
+              <generalization xmi:id="_DBtBMCQ7EeOesd2YLEG2Yw" general="_C9eogCQ7EeOesd2YLEG2Yw"/>
+              <ownedAttribute xmi:id="_DJK7ICQ7EeOesd2YLEG2Yw" name="startButton" visibility="private" type="_C-AM8CQ7EeOesd2YLEG2Yw" association="_DNgokSQ7EeOesd2YLEG2Yw"/>
+              <ownedAttribute xmi:id="_DJS28CQ7EeOesd2YLEG2Yw" name="infoButton" visibility="private" type="_C-AM8CQ7EeOesd2YLEG2Yw" association="_DNvSESQ7EeOesd2YLEG2Yw"/>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_DKlQYCQ7EeOesd2YLEG2Yw" name="onCreate" specification="_DBovwCQ7EeOesd2YLEG2Yw">
+                <ownedParameter xmi:id="_DKlQYSQ7EeOesd2YLEG2Yw" name="savedInstanceState" type="_C9t5ESQ7EeOesd2YLEG2Yw"/>
+                <language>java</language>
+                <body>super.onCreate(savedInstanceState);
+		setContentView(R.layout.sudokutitlescreen_main);
+
+		startButton = (Button) findViewById(R.id.startgameButton);
+		infoButton = (Button) findViewById(R.id.showinfoButton);
+
+		startButton.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				Intent intent = new Intent(SudokuTitleScreen.this,
+						LevelSelect.class);
+				startActivity(intent);
+			}
+		});
+
+		infoButton.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				AlertDialog.Builder builder = new AlertDialog.Builder(
+						SudokuTitleScreen.this);
+				builder.setMessage(R.string.infoDialogMessage)
+						.setPositiveButton(
+								R.string.infoDialogPositiveButtonText,
+								new DialogInterface.OnClickListener() {
+
+									@Override
+									public void onClick(DialogInterface dialog,
+											int which) {
+										// TODO Auto-generated method stub
+
+									}
+								});
+			}
+		});
+	</body>
+              </ownedBehavior>
+              <ownedOperation xmi:id="_DBovwCQ7EeOesd2YLEG2Yw" name="onCreate" visibility="protected" method="_DKlQYCQ7EeOesd2YLEG2Yw">
+                <ownedParameter xmi:id="_DBpW0CQ7EeOesd2YLEG2Yw" name="savedInstanceState" type="_C9t5ESQ7EeOesd2YLEG2Yw"/>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Association" xmi:id="_DMUVwCQ7EeOesd2YLEG2Yw" name="" memberEnd="_DMUVwSQ7EeOesd2YLEG2Yw _DG1Y0CQ7EeOesd2YLEG2Yw">
+              <ownedEnd xmi:id="_DMUVwSQ7EeOesd2YLEG2Yw" name="" type="_CtBxsCQ7EeOesd2YLEG2Yw" association="_DMUVwCQ7EeOesd2YLEG2Yw"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Association" xmi:id="_DMgjACQ7EeOesd2YLEG2Yw" name="" memberEnd="_DMgjASQ7EeOesd2YLEG2Yw _DHHFoCQ7EeOesd2YLEG2Yw">
+              <ownedEnd xmi:id="_DMgjASQ7EeOesd2YLEG2Yw" name="" type="_CtBxsCQ7EeOesd2YLEG2Yw" association="_DMgjACQ7EeOesd2YLEG2Yw"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Association" xmi:id="_DMn3wCQ7EeOesd2YLEG2Yw" name="" memberEnd="_DMn3wSQ7EeOesd2YLEG2Yw _DHXkUCQ7EeOesd2YLEG2Yw">
+              <ownedEnd xmi:id="_DMn3wSQ7EeOesd2YLEG2Yw" name="" type="_CtBxsCQ7EeOesd2YLEG2Yw" association="_DMn3wCQ7EeOesd2YLEG2Yw"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Association" xmi:id="_DMvMgCQ7EeOesd2YLEG2Yw" name="" memberEnd="_DMvMgSQ7EeOesd2YLEG2Yw _DHgHMCQ7EeOesd2YLEG2Yw">
+              <ownedEnd xmi:id="_DMvMgSQ7EeOesd2YLEG2Yw" name="" type="_CtBxsCQ7EeOesd2YLEG2Yw" association="_DMvMgCQ7EeOesd2YLEG2Yw"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Association" xmi:id="_DMxBsSQ7EeOesd2YLEG2Yw" name="" memberEnd="_DMxBsiQ7EeOesd2YLEG2Yw _DHrtYCQ7EeOesd2YLEG2Yw">
+              <ownedEnd xmi:id="_DMxBsiQ7EeOesd2YLEG2Yw" name="" type="_CtBxsCQ7EeOesd2YLEG2Yw" association="_DMxBsSQ7EeOesd2YLEG2Yw"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Association" xmi:id="_DNMfgCQ7EeOesd2YLEG2Yw" name="" memberEnd="_DNMfgSQ7EeOesd2YLEG2Yw _DH1eYCQ7EeOesd2YLEG2Yw">
+              <ownedEnd xmi:id="_DNMfgSQ7EeOesd2YLEG2Yw" name="" type="_CtBxsCQ7EeOesd2YLEG2Yw" association="_DNMfgCQ7EeOesd2YLEG2Yw"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Association" xmi:id="_DNT0QCQ7EeOesd2YLEG2Yw" name="" memberEnd="_DNT0QSQ7EeOesd2YLEG2Yw _DIJAYCQ7EeOesd2YLEG2Yw">
+              <ownedEnd xmi:id="_DNT0QSQ7EeOesd2YLEG2Yw" name="" type="_Cuua0CQ7EeOesd2YLEG2Yw" association="_DNT0QCQ7EeOesd2YLEG2Yw"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Association" xmi:id="_DNezYCQ7EeOesd2YLEG2Yw" name="" memberEnd="_DNezYSQ7EeOesd2YLEG2Yw _DIT_gCQ7EeOesd2YLEG2Yw">
+              <ownedEnd xmi:id="_DNezYSQ7EeOesd2YLEG2Yw" name="" type="_Cu2WoCQ7EeOesd2YLEG2Yw" association="_DNezYCQ7EeOesd2YLEG2Yw"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Association" xmi:id="_DNgokSQ7EeOesd2YLEG2Yw" name="" memberEnd="_DNgokiQ7EeOesd2YLEG2Yw _DJK7ICQ7EeOesd2YLEG2Yw">
+              <ownedEnd xmi:id="_DNgokiQ7EeOesd2YLEG2Yw" name="" type="_CxVC4CQ7EeOesd2YLEG2Yw" association="_DNgokSQ7EeOesd2YLEG2Yw"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Association" xmi:id="_DNvSESQ7EeOesd2YLEG2Yw" name="" memberEnd="_DNvSEiQ7EeOesd2YLEG2Yw _DJS28CQ7EeOesd2YLEG2Yw">
+              <ownedEnd xmi:id="_DNvSEiQ7EeOesd2YLEG2Yw" name="" type="_CxVC4CQ7EeOesd2YLEG2Yw" association="_DNvSESQ7EeOesd2YLEG2Yw"/>
+            </packagedElement>
+          </packagedElement>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_CeltECQ7EeOesd2YLEG2Yw" name="android">
+      <packagedElement xmi:type="uml:Package" xmi:id="_CerzsCQ7EeOesd2YLEG2Yw" name="app">
+        <packagedElement xmi:type="uml:Class" xmi:id="_C9eogCQ7EeOesd2YLEG2Yw" name="Activity"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_C_31MCQ7EeOesd2YLEG2Yw" name="AlertDialog"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_CesawCQ7EeOesd2YLEG2Yw" name="content">
+        <packagedElement xmi:type="uml:Class" xmi:id="_C9oZgCQ7EeOesd2YLEG2Yw" name="Intent"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_C-0FQCQ7EeOesd2YLEG2Yw" name="Context"/>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_DAAYECQ7EeOesd2YLEG2Yw" name="DialogInterface"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_CetB0CQ7EeOesd2YLEG2Yw" name="os">
+        <packagedElement xmi:type="uml:Class" xmi:id="_C9t5ESQ7EeOesd2YLEG2Yw" name="Bundle"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_CexTQCQ7EeOesd2YLEG2Yw" name="view">
+        <packagedElement xmi:type="uml:Package" xmi:id="_Cex6UCQ7EeOesd2YLEG2Yw" name="View">
+          <packagedElement xmi:type="uml:Interface" xmi:id="_C99JoSQ7EeOesd2YLEG2Yw" name="OnClickListener"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_C91N0CQ7EeOesd2YLEG2Yw" name="View"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_C-92QSQ7EeOesd2YLEG2Yw" name="LayoutInflater"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_C_DV0CQ7EeOesd2YLEG2Yw" name="ViewGroup"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_CezIcCQ7EeOesd2YLEG2Yw" name="widget">
+        <packagedElement xmi:type="uml:Class" xmi:id="_C-AM8CQ7EeOesd2YLEG2Yw" name="Button"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_C-CpMCQ7EeOesd2YLEG2Yw" name="RadioButton"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_C-LzISQ7EeOesd2YLEG2Yw" name="RadioGroup"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_C-O2cCQ7EeOesd2YLEG2Yw" name="Toast"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_C_KDgSQ7EeOesd2YLEG2Yw" name="BaseAdapter"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_C_MfwSQ7EeOesd2YLEG2Yw" name="GridView"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_C_T0gCQ7EeOesd2YLEG2Yw" name="TextView"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_Cf2RUCQ7EeOesd2YLEG2Yw" name="graphics">
+        <packagedElement xmi:type="uml:Class" xmi:id="_C-3voSQ7EeOesd2YLEG2Yw" name="Color"/>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_DBUmsCQ7EeOesd2YLEG2Yw" name="java">
+      <packagedElement xmi:type="uml:Package" xmi:id="_DBVNwCQ7EeOesd2YLEG2Yw" name="lang">
+        <packagedElement xmi:type="uml:Class" xmi:id="_DBVNwSQ7EeOesd2YLEG2Yw" name="Object"/>
+      </packagedElement>
+    </packagedElement>
+    <profileApplication xmi:id="_B2UMICQ7EeOesd2YLEG2Yw">
+      <eAnnotations xmi:id="_B2YdkCQ7EeOesd2YLEG2Yw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://UMLLAB_PROFILES/UMLLab.profile.uml#UMLLabProfile-Annotation_2-UMLLabProfile"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://UMLLAB_PROFILES/UMLLab.profile.uml#UMLLabProfile"/>
+    </profileApplication>
+  </uml:Model>
+  <UMLLabProfile:TargetLanguage xmi:id="_B2ZEoCQ7EeOesd2YLEG2Yw" base_Package="_Bp6H0CQ7EeOesd2YLEG2Yw">
+    <languageName>java</languageName>
+  </UMLLabProfile:TargetLanguage>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_CvM78CQ7EeOesd2YLEG2Yw" base_Element="_CvJ4oCQ7EeOesd2YLEG2Yw"/>
+  <UMLLabProfile:Annotations xmi:id="_CvTpoCQ7EeOesd2YLEG2Yw" base_Element="_CvJ4oCQ7EeOesd2YLEG2Yw">
+    <annotations xmi:id="_CvXUACQ7EeOesd2YLEG2Yw" name="Override"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_CvpA0CQ7EeOesd2YLEG2Yw" base_Element="_CviTICQ7EeOesd2YLEG2Yw"/>
+  <UMLLabProfile:Annotations xmi:id="_Cvq2ACQ7EeOesd2YLEG2Yw" base_Element="_CviTICQ7EeOesd2YLEG2Yw">
+    <annotations xmi:id="_CvrdECQ7EeOesd2YLEG2Yw" name="Override"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_Cv3qUCQ7EeOesd2YLEG2Yw" base_Element="_Cvt5UCQ7EeOesd2YLEG2Yw"/>
+  <UMLLabProfile:Annotations xmi:id="_Cv5fgCQ7EeOesd2YLEG2Yw" base_Element="_Cvt5UCQ7EeOesd2YLEG2Yw">
+    <annotations xmi:id="_Cv6GkCQ7EeOesd2YLEG2Yw" name="Override"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:Reference xmi:id="_C9mkUCQ7EeOesd2YLEG2Yw" base_Element="_C9eogCQ7EeOesd2YLEG2Yw"/>
+  <UMLLabProfile:Reference xmi:id="_C9t5ECQ7EeOesd2YLEG2Yw" base_Element="_C9oZgCQ7EeOesd2YLEG2Yw"/>
+  <UMLLabProfile:Reference xmi:id="_C90mwCQ7EeOesd2YLEG2Yw" base_Element="_C9t5ESQ7EeOesd2YLEG2Yw"/>
+  <UMLLabProfile:Reference xmi:id="_C99JoCQ7EeOesd2YLEG2Yw" base_Element="_C91N0CQ7EeOesd2YLEG2Yw"/>
+  <UMLLabProfile:Reference xmi:id="_C9_l4CQ7EeOesd2YLEG2Yw" base_Element="_C99JoSQ7EeOesd2YLEG2Yw"/>
+  <UMLLabProfile:Reference xmi:id="_C-CCICQ7EeOesd2YLEG2Yw" base_Element="_C-AM8CQ7EeOesd2YLEG2Yw"/>
+  <UMLLabProfile:Reference xmi:id="_C-LzICQ7EeOesd2YLEG2Yw" base_Element="_C-CpMCQ7EeOesd2YLEG2Yw"/>
+  <UMLLabProfile:Reference xmi:id="_C-OPYCQ7EeOesd2YLEG2Yw" base_Element="_C-LzISQ7EeOesd2YLEG2Yw"/>
+  <UMLLabProfile:Reference xmi:id="_C-TH4CQ7EeOesd2YLEG2Yw" base_Element="_C-O2cCQ7EeOesd2YLEG2Yw"/>
+  <UMLLabProfile:Reference xmi:id="_C-3voCQ7EeOesd2YLEG2Yw" base_Element="_C-0FQCQ7EeOesd2YLEG2Yw"/>
+  <UMLLabProfile:Reference xmi:id="_C-92QCQ7EeOesd2YLEG2Yw" base_Element="_C-3voSQ7EeOesd2YLEG2Yw"/>
+  <UMLLabProfile:Reference xmi:id="_C_CuwCQ7EeOesd2YLEG2Yw" base_Element="_C-92QSQ7EeOesd2YLEG2Yw"/>
+  <UMLLabProfile:Reference xmi:id="_C_KDgCQ7EeOesd2YLEG2Yw" base_Element="_C_DV0CQ7EeOesd2YLEG2Yw"/>
+  <UMLLabProfile:Reference xmi:id="_C_MfwCQ7EeOesd2YLEG2Yw" base_Element="_C_KDgSQ7EeOesd2YLEG2Yw"/>
+  <UMLLabProfile:Reference xmi:id="_C_TNcCQ7EeOesd2YLEG2Yw" base_Element="_C_MfwSQ7EeOesd2YLEG2Yw"/>
+  <UMLLabProfile:Reference xmi:id="_C_VpsCQ7EeOesd2YLEG2Yw" base_Element="_C_T0gCQ7EeOesd2YLEG2Yw"/>
+  <UMLLabProfile:Reference xmi:id="_C__xACQ7EeOesd2YLEG2Yw" base_Element="_C_31MCQ7EeOesd2YLEG2Yw"/>
+  <UMLLabProfile:Reference xmi:id="_DACNQCQ7EeOesd2YLEG2Yw" base_Element="_DAAYECQ7EeOesd2YLEG2Yw"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_DA8zQCQ7EeOesd2YLEG2Yw" base_Element="_DA7lICQ7EeOesd2YLEG2Yw"/>
+  <UMLLabProfile:Annotations xmi:id="_DA-ocCQ7EeOesd2YLEG2Yw" base_Element="_DA7lICQ7EeOesd2YLEG2Yw">
+    <annotations xmi:id="_DA_PgCQ7EeOesd2YLEG2Yw" name="Override"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_DBQVQCQ7EeOesd2YLEG2Yw" base_Element="_DBNR8CQ7EeOesd2YLEG2Yw"/>
+  <UMLLabProfile:Annotations xmi:id="_DBSxgCQ7EeOesd2YLEG2Yw" base_Element="_DBNR8CQ7EeOesd2YLEG2Yw">
+    <annotations xmi:id="_DBTYkCQ7EeOesd2YLEG2Yw" name="Override"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:Reference xmi:id="_DBXqACQ7EeOesd2YLEG2Yw" base_Element="_DBVNwSQ7EeOesd2YLEG2Yw"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_DBrMACQ7EeOesd2YLEG2Yw" base_Element="_DBovwCQ7EeOesd2YLEG2Yw"/>
+  <UMLLabProfile:Annotations xmi:id="_DBsaICQ7EeOesd2YLEG2Yw" base_Element="_DBovwCQ7EeOesd2YLEG2Yw">
+    <annotations xmi:id="_DBsaISQ7EeOesd2YLEG2Yw" name="Override"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_DCUFMCQ7EeOesd2YLEG2Yw" base_Element="_DCNXgCQ7EeOesd2YLEG2Yw"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_DG5qQCQ7EeOesd2YLEG2Yw" base_Element="_DG1Y0CQ7EeOesd2YLEG2Yw"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_DHVvICQ7EeOesd2YLEG2Yw" base_Element="_DHHFoCQ7EeOesd2YLEG2Yw"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_DHZZgCQ7EeOesd2YLEG2Yw" base_Element="_DHXkUCQ7EeOesd2YLEG2Yw"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_DHmN0CQ7EeOesd2YLEG2Yw" base_Element="_DHgHMCQ7EeOesd2YLEG2Yw"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_DHtikCQ7EeOesd2YLEG2Yw" base_Element="_DHrtYCQ7EeOesd2YLEG2Yw"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_DH8zICQ7EeOesd2YLEG2Yw" base_Element="_DH1eYCQ7EeOesd2YLEG2Yw"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_DISxYCQ7EeOesd2YLEG2Yw" base_Element="_DIJAYCQ7EeOesd2YLEG2Yw"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_DIatMCQ7EeOesd2YLEG2Yw" base_Element="_DIT_gCQ7EeOesd2YLEG2Yw"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_DIovoCQ7EeOesd2YLEG2Yw" base_Element="_DImTYCQ7EeOesd2YLEG2Yw"/>
+  <UMLLabProfile:Array xmi:id="_DIuPMCQ7EeOesd2YLEG2Yw" dimensions="2" base_Element="_DIpWsCQ7EeOesd2YLEG2Yw"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_DIx5kCQ7EeOesd2YLEG2Yw" base_Element="_DIpWsCQ7EeOesd2YLEG2Yw"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_DJMwUCQ7EeOesd2YLEG2Yw" base_Element="_DJK7ICQ7EeOesd2YLEG2Yw"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_DJg5YCQ7EeOesd2YLEG2Yw" base_Element="_DJS28CQ7EeOesd2YLEG2Yw"/>
+  <UMLLabProfile:Reference xmi:id="_DMf78CQ7EeOesd2YLEG2Yw" base_Element="_DMUVwCQ7EeOesd2YLEG2Yw"/>
+  <UMLLabProfile:Reference xmi:id="_DMnQsCQ7EeOesd2YLEG2Yw" base_Element="_DMgjACQ7EeOesd2YLEG2Yw"/>
+  <UMLLabProfile:Reference xmi:id="_DMulcCQ7EeOesd2YLEG2Yw" base_Element="_DMn3wCQ7EeOesd2YLEG2Yw"/>
+  <UMLLabProfile:Reference xmi:id="_DMxBsCQ7EeOesd2YLEG2Yw" base_Element="_DMvMgCQ7EeOesd2YLEG2Yw"/>
+  <UMLLabProfile:Reference xmi:id="_DNL4cCQ7EeOesd2YLEG2Yw" base_Element="_DMxBsSQ7EeOesd2YLEG2Yw"/>
+  <UMLLabProfile:Reference xmi:id="_DNTNMCQ7EeOesd2YLEG2Yw" base_Element="_DNMfgCQ7EeOesd2YLEG2Yw"/>
+  <UMLLabProfile:Reference xmi:id="_DNeMUCQ7EeOesd2YLEG2Yw" base_Element="_DNT0QCQ7EeOesd2YLEG2Yw"/>
+  <UMLLabProfile:Reference xmi:id="_DNgokCQ7EeOesd2YLEG2Yw" base_Element="_DNezYCQ7EeOesd2YLEG2Yw"/>
+  <UMLLabProfile:Reference xmi:id="_DNvSECQ7EeOesd2YLEG2Yw" base_Element="_DNgokSQ7EeOesd2YLEG2Yw"/>
+  <UMLLabProfile:Reference xmi:id="_DOFQUCQ7EeOesd2YLEG2Yw" base_Element="_DNvSESQ7EeOesd2YLEG2Yw"/>
+</xmi:XMI>
