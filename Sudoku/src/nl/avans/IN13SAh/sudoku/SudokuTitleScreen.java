@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.TextView;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -46,21 +47,25 @@ public class SudokuTitleScreen extends Activity {
 
 			@Override
 			public void onClick(View arg0) {
-				AlertDialog.Builder builder = new AlertDialog.Builder(
-						SudokuTitleScreen.this);
-				builder.setMessage(R.string.infoDialogMessage)
-						.setPositiveButton(
-								R.string.infoDialogPositiveButtonText,
-								new DialogInterface.OnClickListener() {
-
-									@Override
-									public void onClick(DialogInterface dialog,
-											int which) {
-										// TODO Auto-generated method stub
-
-									}
-								});
+				showAbout();
 			}
 		});
 	}
+	
+	protected void showAbout() {
+        // Inflate the about message contents
+        View messageView = getLayoutInflater().inflate(R.layout.about, null, false);
+ 
+        // When linking text, force to always use default color. This works
+        // around a pressed color state bug.
+        TextView textView = (TextView) messageView.findViewById(R.id.about_credits);
+        int defaultColor = textView.getTextColors().getDefaultColor();
+        textView.setTextColor(defaultColor);
+ 
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(R.string.app_name);
+        builder.setView(messageView);
+        builder.create();
+        builder.show();
+    }
 }

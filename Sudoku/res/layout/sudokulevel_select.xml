@@ -1,78 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
 
-    <RadioGroup
-        android:id="@+id/radioDifficulty"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
-        
-	    <RadioButton
-	        android:id="@+id/dificultyEasy"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:text="@string/sudokuDifficultyEasy" />
-	    
-	    <RadioButton
-	        android:id="@+id/dificultyMedium"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:text="@string/sudokuDifficultyMedium"
-	        android:checked="true" />
-	    
-	    <RadioButton
-	        android:id="@+id/dificultyHard"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:text="@string/sudokuDifficultyHard" />
-	</RadioGroup>
-    
-    <RadioGroup
-        android:id="@+id/radioSize"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
-	    
-	    <RadioButton
-	        android:id="@+id/sizeSmall"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_marginTop="@dimen/activity_vertical_margin"
-	        android:text="@string/sudokuSizeSmall" />
-	    
-	    <RadioButton
-	        android:id="@+id/sizeMedium"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:text="@string/sudokuSizeMedium"
-	        android:checked="true" />
-	    
-	    <RadioButton
-	        android:id="@+id/sizeLarge"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:text="@string/sudokuSizeLarge" />
-	</RadioGroup>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content">
 
-    <LinearLayout
-    	android:layout_width="wrap_content"
-    	android:layout_height="wrap_content"
-    	android:orientation="horizontal">
-    
-	    <Button
-	        android:id="@+id/btnBack"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_marginTop="@dimen/activity_vertical_margin"
-	        android:text="@string/back" />
+	<LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="vertical">
 	    
-	    <Button
-	        android:id="@+id/btnStart"
-	        android:layout_width="wrap_content"
+	    <TextView
+	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
 	        android:layout_marginTop="@dimen/activity_vertical_margin"
-	        android:text="@string/start" />
+	        android:textSize="20sp"
+	        android:text="@string/sudokuDifficulty" />
+	
+	    <RadioGroup
+	        android:id="@+id/radioDifficulty"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content" >
+	        
+		    <RadioButton
+		        android:id="@+id/dificultyEasy"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="@string/sudokuDifficultyEasy" />
+		    
+		    <RadioButton
+		        android:id="@+id/dificultyMedium"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="@string/sudokuDifficultyMedium"
+		        android:checked="true" />
+		    
+		    <RadioButton
+		        android:id="@+id/dificultyHard"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="@string/sudokuDifficultyHard" />
+		</RadioGroup>
+		
+	    <TextView
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginTop="@dimen/activity_vertical_margin"
+	        android:textSize="20sp"
+	        android:text="@string/sudokuSize" />
+	    
+	    <RadioGroup
+	        android:id="@+id/radioSize"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content" >
+		    
+		    <RadioButton
+		        android:id="@+id/sizeSmall"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="@string/sudokuSizeSmall" />
+		    
+		    <RadioButton
+		        android:id="@+id/sizeMedium"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="@string/sudokuSizeMedium"
+		        android:checked="true" />
+		    
+		    <RadioButton
+		        android:id="@+id/sizeLarge"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="@string/sudokuSizeLarge" />
+		</RadioGroup>
+	
+	    <LinearLayout
+	    	android:layout_width="wrap_content"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="horizontal">
+	    
+		    <Button
+		        android:id="@+id/btnBack"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="@string/back" />
+		    
+		    <Button
+		        android:id="@+id/btnStart"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="@string/start" />
+		</LinearLayout>
 	</LinearLayout>
-    
-</LinearLayout>
+</ScrollView>

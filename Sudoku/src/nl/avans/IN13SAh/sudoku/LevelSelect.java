@@ -19,7 +19,8 @@ public class LevelSelect extends Activity implements OnClickListener {
 	private RadioButton radioDifficultyButton;
 	private RadioButton radioSizeButton;
 	
-	public void onCreate(Bundle savedInstanceState) {
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.sudokulevel_select);
 		
