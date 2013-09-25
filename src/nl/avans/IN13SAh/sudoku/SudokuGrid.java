@@ -1,5 +1,6 @@
 package nl.avans.IN13SAh.sudoku;
 
+import nl.avans.game.Game;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
@@ -24,6 +25,7 @@ public class SudokuGrid extends Activity {
 	GridView MyGrid; // The gridview object that will be displayed on the
 						// screen.
 	VakjeAdapter adapter;
+	Game game = new Game();
 	IGUItemp game = new IGUItempConcrete();
 	Button button1, button2, button3, button4, button5, button6, button7,
 			button8, button9;
