@@ -25,8 +25,7 @@ public class SudokuGrid extends Activity {
 	GridView MyGrid; // The gridview object that will be displayed on the
 						// screen.
 	VakjeAdapter adapter;
-	Game game = new Game();
-	IGUItemp game = new IGUItempConcrete();
+	Game game = new Game(9, 1);
 	Button button1, button2, button3, button4, button5, button6, button7,
 			button8, button9;
 	Button buttonClear, buttonSolve, buttonGenerate;
@@ -155,7 +154,7 @@ public class SudokuGrid extends Activity {
 
 			@Override
 			public void onClick(View arg0) {
-				game.solveGame();
+				// game.solveGame(); FIXME
 				adapter.notifyDataSetChanged();
 			}
 		});
@@ -164,7 +163,7 @@ public class SudokuGrid extends Activity {
 
 			@Override
 			public void onClick(View arg0) {
-				game.generateGame();
+				// game.generateGame(); FIXME
 				adapter.notifyDataSetChanged();
 			}
 		});
