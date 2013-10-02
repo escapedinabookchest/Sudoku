@@ -25,7 +25,7 @@ public class SudokuGrid extends Activity {
 	GridView MyGrid; // The gridview object that will be displayed on the
 						// screen.
 	VakjeAdapter adapter;
-	Game game = new Game(9, 1);
+	Game game;
 	Button button1, button2, button3, button4, button5, button6, button7,
 			button8, button9;
 	Button buttonClear, buttonSolve, buttonGenerate;
@@ -39,6 +39,8 @@ public class SudokuGrid extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.sudokugrid_main); // Set the layout.
+
+		game = new Game(9, 0);
 
 		MyGrid = (GridView) findViewById(R.id.MyGrid);
 		adapter = new VakjeAdapter(this);
@@ -64,7 +66,10 @@ public class SudokuGrid extends Activity {
 
 			@Override
 			public void onClick(View arg0) {
-				game.setCurrentValue(0, 1, 1);
+				int position = adapter.getSelection();
+				int x = position % 9;
+				int y = position / 9;
+				game.setCurrentValue(x, y, 1);
 				adapter.notifyDataSetChanged();
 			}
 		});
@@ -73,7 +78,10 @@ public class SudokuGrid extends Activity {
 
 			@Override
 			public void onClick(View arg0) {
-				game.setCurrentValue(0, 1, 2);
+				int position = adapter.getSelection();
+				int x = position % 9;
+				int y = position / 9;
+				game.setCurrentValue(x, y, 2);
 				adapter.notifyDataSetChanged();
 			}
 		});
@@ -82,7 +90,10 @@ public class SudokuGrid extends Activity {
 
 			@Override
 			public void onClick(View arg0) {
-				game.setCurrentValue(0, 1, 3);
+				int position = adapter.getSelection();
+				int x = position % 9;
+				int y = position / 9;
+				game.setCurrentValue(x, y, 3);
 				adapter.notifyDataSetChanged();
 			}
 		});
@@ -91,7 +102,10 @@ public class SudokuGrid extends Activity {
 
 			@Override
 			public void onClick(View arg0) {
-				game.setCurrentValue(0, 1, 4);
+				int position = adapter.getSelection();
+				int x = position % 9;
+				int y = position / 9;
+				game.setCurrentValue(x, y, 4);
 				adapter.notifyDataSetChanged();
 			}
 		});
@@ -100,7 +114,10 @@ public class SudokuGrid extends Activity {
 
 			@Override
 			public void onClick(View arg0) {
-				game.setCurrentValue(0, 1, 5);
+				int position = adapter.getSelection();
+				int x = position % 9;
+				int y = position / 9;
+				game.setCurrentValue(x, y, 5);
 				adapter.notifyDataSetChanged();
 			}
 		});
@@ -109,7 +126,10 @@ public class SudokuGrid extends Activity {
 
 			@Override
 			public void onClick(View arg0) {
-				game.setCurrentValue(0, 1, 6);
+				int position = adapter.getSelection();
+				int x = position % 9;
+				int y = position / 9;
+				game.setCurrentValue(x, y, 6);
 				adapter.notifyDataSetChanged();
 			}
 		});
@@ -118,7 +138,10 @@ public class SudokuGrid extends Activity {
 
 			@Override
 			public void onClick(View arg0) {
-				game.setCurrentValue(0, 1, 7);
+				int position = adapter.getSelection();
+				int x = position % 9;
+				int y = position / 9;
+				game.setCurrentValue(x, y, 7);
 				adapter.notifyDataSetChanged();
 			}
 		});
@@ -127,7 +150,10 @@ public class SudokuGrid extends Activity {
 
 			@Override
 			public void onClick(View arg0) {
-				game.setCurrentValue(0, 1, 8);
+				int position = adapter.getSelection();
+				int x = position % 9;
+				int y = position / 9;
+				game.setCurrentValue(x, y, 8);
 				adapter.notifyDataSetChanged();
 			}
 		});
@@ -136,7 +162,10 @@ public class SudokuGrid extends Activity {
 
 			@Override
 			public void onClick(View arg0) {
-				game.setCurrentValue(0, 1, 9);
+				int position = adapter.getSelection();
+				int x = position % 9;
+				int y = position / 9;
+				game.setCurrentValue(x, y, 9);
 				adapter.notifyDataSetChanged();
 			}
 		});
@@ -145,7 +174,10 @@ public class SudokuGrid extends Activity {
 
 			@Override
 			public void onClick(View arg0) {
-				game.setCurrentValue(0, 1, 0);
+				int position = adapter.getSelection();
+				int x = position % 9;
+				int y = position / 9;
+				game.setCurrentValue(x, y, 0);
 				adapter.notifyDataSetChanged();
 			}
 		});
@@ -220,8 +252,11 @@ public class SudokuGrid extends Activity {
 			MyView = li.inflate(R.layout.sudokugrid_item, null);
 
 			// Do something with the grid view items.
+			int x = position % 9;
+			int y = position / 9;
+
 			TextView tv = (TextView) MyView.findViewById(R.id.grid_item_text);
-			tv.setText("" + game.getCurrentValue(position, position));
+			tv.setText("" + game.getCurrentValue(x, y));
 
 			MyView.setTag(new Integer(position));
 
@@ -260,6 +295,10 @@ public class SudokuGrid extends Activity {
 		public Object getItem(int arg0) {
 			// TODO Auto-generated method stub
 			return null;
+		}
+
+		public int getSelection() {
+			return selection;
 		}
 
 		/*
