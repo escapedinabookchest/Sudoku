@@ -31,6 +31,10 @@ public class SudokuGrid extends Activity {
 	GridView MyGrid; // The gridview object that will be displayed on the
 						// screen.
 	VakjeAdapter adapter;
+<<<<<<< HEAD
+=======
+	Game game;
+>>>>>>> b5be5a4389b1183b8c1d8bd29f2b311c48d1ae28
 	Button button1, button2, button3, button4, button5, button6, button7,
 			button8, button9;
 	Button buttonClear, buttonSolve, buttonGenerate;
@@ -43,6 +47,7 @@ public class SudokuGrid extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+<<<<<<< HEAD
 		// We'll be creating an image that is 100 pixels wide and 200 pixels
 		// tall.
 		int width = 100;
@@ -93,6 +98,170 @@ public class SudokuGrid extends Activity {
 
 		// Show this layout in our activity.
 		setContentView(layout);
+=======
+		setContentView(R.layout.sudokugrid_main); // Set the layout.
+
+		game = new Game(9, 0);
+
+		MyGrid = (GridView) findViewById(R.id.MyGrid);
+		adapter = new VakjeAdapter(this);
+		MyGrid.setAdapter(adapter);
+
+		// buttons
+		button1 = (Button) findViewById(R.id.button1);
+		button2 = (Button) findViewById(R.id.button2);
+		button3 = (Button) findViewById(R.id.button3);
+		button4 = (Button) findViewById(R.id.button4);
+		button5 = (Button) findViewById(R.id.button5);
+		button6 = (Button) findViewById(R.id.button6);
+		button7 = (Button) findViewById(R.id.button7);
+		button8 = (Button) findViewById(R.id.button8);
+		button9 = (Button) findViewById(R.id.button9);
+		buttonClear = (Button) findViewById(R.id.buttonClear);
+		buttonSolve = (Button) findViewById(R.id.buttonSolve);
+		buttonGenerate = (Button) findViewById(R.id.buttonGenerate);
+
+		// TODO selection position naar x,y converteren en invullen bij
+		// listeners.
+		button1.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				int position = adapter.getSelection();
+				int x = position % 9;
+				int y = position / 9;
+				game.setCurrentValue(x, y, 1);
+				adapter.notifyDataSetChanged();
+			}
+		});
+
+		button2.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				int position = adapter.getSelection();
+				int x = position % 9;
+				int y = position / 9;
+				game.setCurrentValue(x, y, 2);
+				adapter.notifyDataSetChanged();
+			}
+		});
+
+		button3.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				int position = adapter.getSelection();
+				int x = position % 9;
+				int y = position / 9;
+				game.setCurrentValue(x, y, 3);
+				adapter.notifyDataSetChanged();
+			}
+		});
+
+		button4.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				int position = adapter.getSelection();
+				int x = position % 9;
+				int y = position / 9;
+				game.setCurrentValue(x, y, 4);
+				adapter.notifyDataSetChanged();
+			}
+		});
+
+		button5.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				int position = adapter.getSelection();
+				int x = position % 9;
+				int y = position / 9;
+				game.setCurrentValue(x, y, 5);
+				adapter.notifyDataSetChanged();
+			}
+		});
+
+		button6.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				int position = adapter.getSelection();
+				int x = position % 9;
+				int y = position / 9;
+				game.setCurrentValue(x, y, 6);
+				adapter.notifyDataSetChanged();
+			}
+		});
+
+		button7.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				int position = adapter.getSelection();
+				int x = position % 9;
+				int y = position / 9;
+				game.setCurrentValue(x, y, 7);
+				adapter.notifyDataSetChanged();
+			}
+		});
+
+		button8.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				int position = adapter.getSelection();
+				int x = position % 9;
+				int y = position / 9;
+				game.setCurrentValue(x, y, 8);
+				adapter.notifyDataSetChanged();
+			}
+		});
+
+		button9.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				int position = adapter.getSelection();
+				int x = position % 9;
+				int y = position / 9;
+				game.setCurrentValue(x, y, 9);
+				adapter.notifyDataSetChanged();
+			}
+		});
+
+		buttonClear.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				int position = adapter.getSelection();
+				int x = position % 9;
+				int y = position / 9;
+				game.setCurrentValue(x, y, 0);
+				adapter.notifyDataSetChanged();
+			}
+		});
+
+		buttonSolve.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				// game.solveGame(); FIXME
+				adapter.notifyDataSetChanged();
+			}
+		});
+
+		buttonGenerate.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				// game.generateGame(); FIXME
+				adapter.notifyDataSetChanged();
+			}
+		});
+
+>>>>>>> b5be5a4389b1183b8c1d8bd29f2b311c48d1ae28
 	}
 
 	/**
@@ -146,8 +315,15 @@ public class SudokuGrid extends Activity {
 			MyView = li.inflate(R.layout.sudokugrid_item, null);
 
 			// Do something with the grid view items.
+			int x = position % 9;
+			int y = position / 9;
+
 			TextView tv = (TextView) MyView.findViewById(R.id.grid_item_text);
+<<<<<<< HEAD
 			// tv.setText("" + game.getCurrentValue(position, position));
+=======
+			tv.setText("" + game.getCurrentValue(x, y));
+>>>>>>> b5be5a4389b1183b8c1d8bd29f2b311c48d1ae28
 
 			MyView.setTag(new Integer(position));
 
@@ -186,6 +362,10 @@ public class SudokuGrid extends Activity {
 		public Object getItem(int arg0) {
 			// TODO Auto-generated method stub
 			return null;
+		}
+
+		public int getSelection() {
+			return selection;
 		}
 
 		/*
