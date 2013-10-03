@@ -2,17 +2,10 @@ package nl.avans.IN13SAh.sudoku;
 
 import nl.avans.game.Game;
 import android.app.Activity;
-import android.content.Context;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.ViewGroup;
-import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.GridView;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.widget.LinearLayout;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -23,7 +16,6 @@ public class SudokuGrid extends Activity {
 
 	GridView MyGrid; // The gridview object that will be displayed on the
 						// screen.
-	VakjeAdapter adapter;
 	Game game;
 
 	/*
@@ -35,119 +27,54 @@ public class SudokuGrid extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
+		game = new Game(9, 0);
+
+		LinearLayout ll = new LinearLayout(this);
+		ll.setLayoutParams(new LinearLayout.LayoutParams(
+				LinearLayout.LayoutParams.FILL_PARENT,
+				LinearLayout.LayoutParams.FILL_PARENT));
+		ll.setOrientation(LinearLayout.VERTICAL);
+
+		LinearLayout bll = new LinearLayout(this);
+		bll.setLayoutParams(new LinearLayout.LayoutParams(
+				LinearLayout.LayoutParams.WRAP_CONTENT,
+				LinearLayout.LayoutParams.WRAP_CONTENT));
+
 		CanvasView view = new CanvasView(this);
-		setContentView(view);
+
+		Button b1 = new Button(this);
+		b1.setText("1");
+		Button b2 = new Button(this);
+		b2.setText("2");
+		Button b3 = new Button(this);
+		b3.setText("3");
+		Button b4 = new Button(this);
+		b4.setText("4");
+		Button b5 = new Button(this);
+		b5.setText("5");
+		Button b6 = new Button(this);
+		b6.setText("6");
+		Button b7 = new Button(this);
+		b7.setText("7");
+		Button b8 = new Button(this);
+		b8.setText("8");
+		Button b9 = new Button(this);
+		b9.setText("9");
+
+		bll.addView(b1);
+		bll.addView(b2);
+		bll.addView(b3);
+		bll.addView(b4);
+		bll.addView(b5);
+		bll.addView(b6);
+		bll.addView(b7);
+		bll.addView(b8);
+		bll.addView(b9);
+
+		ll.addView(bll);
+		ll.addView(view);
+
+		setContentView(ll);
 		view.requestFocus();
-	}
-
-	/**
-	 * The Class VakjeAdapter.
-	 */
-	public class VakjeAdapter extends BaseAdapter {
-
-		/** The My context. */
-		Context MyContext;
-		private int selection = -1;
-
-		/**
-		 * Instantiates a new VakjeAdapter.
-		 * 
-		 * @param _MyContext
-		 *            the _ my context
-		 */
-		public VakjeAdapter(Context _MyContext) {
-			MyContext = _MyContext;
-		}
-
-		/*
-		 * (non-Javadoc)
-		 * 
-		 * @see android.widget.Adapter#getCount()
-		 */
-		@Override
-		public int getCount() {
-			// return game.getNumberOfColumns() * game.getNumberOfRows();
-			return 0;
-		}
-
-		/*
-		 * (non-Javadoc)
-		 * 
-		 * @see android.widget.Adapter#getView(int, android.view.View,
-		 * android.view.ViewGroup)
-		 */
-		@Override
-		public View getView(int position, View convertView, ViewGroup parent) {
-			View MyView = null; // The view object that represents a item
-								// in the grid. Use the position field
-								// to identify.
-
-			/* We define the view that will display on the grid */
-
-			// Inflate the layout using the grid_item layout file.
-			LayoutInflater li = getLayoutInflater();
-			MyView = li.inflate(R.layout.sudokugrid_item, null);
-
-			// Do something with the grid view items.
-			int x = position % 9;
-			int y = position / 9;
-
-			TextView tv = (TextView) MyView.findViewById(R.id.grid_item_text);
-
-			tv.setText("" + game.getCurrentValue(x, y));
-
-			MyView.setTag(Integer.valueOf(position));
-
-			// On click event for the grid item.
-			MyView.setOnClickListener(new OnClickListener() {
-
-				@Override
-				public void onClick(View v) {
-					// Get the textview from the grid item view.
-
-					// kleuren weg
-					selection = (Integer) v.getTag();
-
-					TextView tv = (TextView) v
-							.findViewById(R.id.grid_item_text);
-					// Print a toast, for testing. TODO call
-					Toast.makeText(SudokuGrid.this, tv.getText(),
-							Toast.LENGTH_SHORT).show();
-
-					VakjeAdapter.this.notifyDataSetChanged();
-				}
-			});
-
-			if (position == selection)
-				MyView.setBackgroundColor(Color.YELLOW);
-
-			return MyView;
-		}
-
-		/*
-		 * (non-Javadoc)
-		 * 
-		 * @see android.widget.Adapter#getItem(int)
-		 */
-		@Override
-		public Object getItem(int arg0) {
-			// TODO Auto-generated method stub
-			return null;
-		}
-
-		public int getSelection() {
-			return selection;
-		}
-
-		/*
-		 * (non-Javadoc)
-		 * 
-		 * @see android.widget.Adapter#getItemId(int)
-		 */
-		@Override
-		public long getItemId(int arg0) {
-			// TODO Auto-generated method stub
-			return 0;
-		}
 	}
 }

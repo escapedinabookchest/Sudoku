@@ -55,8 +55,7 @@ class CanvasView extends View {
 			return super.onTouchEvent(event);
 
 		select((int) (event.getX() / width), (int) (event.getY() / height));
-
-		Log.d("PuzzleView", "onTouchEvent: #{@selX}, #{@selY}");
+		Log.d("PuzzleView", "onTouchEvent: " + selX + ", " + selY);
 		return true;
 	}
 
@@ -165,12 +164,12 @@ class CanvasView extends View {
 		super.onSizeChanged(w, h, oldw, oldh);
 	}
 
-	public Rect getRect(int x, int y, Rect rect) {
+	private Rect getRect(int x, int y, Rect rect) {
 		rect.set(x * width, y * height, x * width + width, y * height + height);
 		return rect;
 	}
 
-	public Paint loadColor(int key) {
+	private Paint loadColor(int key) {
 		Paint paint = new Paint();
 		paint.setColor(getResources().getColor(key));
 		return paint;
