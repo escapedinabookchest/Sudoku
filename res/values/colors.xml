@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="puzzle_background">#FFFFFF</color>
-    <color name="puzzle_dark">#808080</color>
-    <color name="puzzle_hilite">#FFA500</color>
-    <color name="puzzle_light">#C0C0C0</color>
-    <color name="puzzle_foreground">#00FF00</color>
-    <color name="puzzle_selected">#800080</color>
+    <color name="puzzle_dark">#000000</color>
+    <color name="puzzle_hilite">#000000</color>
+    <color name="puzzle_light">#B6B6B4</color>
+    <color name="puzzle_foreground">#000000</color>
+    <color name="puzzle_selected">#FFFF00</color>
 </resources>

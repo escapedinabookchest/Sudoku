@@ -49,8 +49,6 @@ public class SudokuGrid extends Activity {
 		Context MyContext;
 		private int selection = -1;
 
-		private int[][] test = new int[9][9];
-
 		/**
 		 * Instantiates a new VakjeAdapter.
 		 * 
@@ -98,7 +96,7 @@ public class SudokuGrid extends Activity {
 
 			tv.setText("" + game.getCurrentValue(x, y));
 
-			MyView.setTag(new Integer(position));
+			MyView.setTag(Integer.valueOf(position));
 
 			// On click event for the grid item.
 			MyView.setOnClickListener(new OnClickListener() {

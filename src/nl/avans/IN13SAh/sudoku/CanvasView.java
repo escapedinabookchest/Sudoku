@@ -89,6 +89,7 @@ class CanvasView extends View {
 		// draw board
 		// line colors
 		Paint dark = loadColor(R.color.puzzle_dark);
+		dark.setStrokeWidth(2);
 		Paint hilite = loadColor(R.color.puzzle_hilite);
 		Paint light = loadColor(R.color.puzzle_light);
 
@@ -130,8 +131,8 @@ class CanvasView extends View {
 		while (i < 9) {
 			j = 0;
 			while (j < 9) {
-				canvas.drawText("test" /* game.getTileString(i, j) */, i
-						* width + x, j * height + y, foreground);
+				canvas.drawText("1" /* game.getTileString(i, j) */, i * width
+						+ x, j * height + y, foreground);
 				j++;
 			}
 			i++;
@@ -150,6 +151,7 @@ class CanvasView extends View {
 
 		// draw selection
 		Paint selected = loadColor(R.color.puzzle_selected);
+		selected.setAlpha(80);
 		canvas.drawRect(selRect, selected);
 		super.onDraw(canvas);
 	}
@@ -173,12 +175,4 @@ class CanvasView extends View {
 		paint.setColor(getResources().getColor(key));
 		return paint;
 	}
-
-	/*
-	 * public boolean setSelectedTile(int tile) { if
-	 * (@game.setTileIfValid(@selX, @selY, tile)) invalidate else
-	 * Log.d("PuzzleView", "setSelectedTile: invalid #{tile}")
-	 * startAnimation(AnimationUtils.loadAnimation(@game, R.anim.shake)) end
-	 * true }
-	 */
 }

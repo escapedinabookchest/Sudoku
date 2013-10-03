@@ -2,7 +2,6 @@ package nl.avans.IN13SAh.sudoku;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -51,21 +50,23 @@ public class SudokuTitleScreen extends Activity {
 			}
 		});
 	}
-	
+
 	protected void showAbout() {
-        // Inflate the about message contents
-        View messageView = getLayoutInflater().inflate(R.layout.about, null, false);
- 
-        // When linking text, force to always use default color. This works
-        // around a pressed color state bug.
-        TextView textView = (TextView) messageView.findViewById(R.id.about_credits);
-        int defaultColor = textView.getTextColors().getDefaultColor();
-        textView.setTextColor(defaultColor);
- 
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle(R.string.app_name);
-        builder.setView(messageView);
-        builder.create();
-        builder.show();
-    }
+		// Inflate the about message contents
+		View messageView = getLayoutInflater().inflate(R.layout.about, null,
+				false);
+
+		// When linking text, force to always use default color. This works
+		// around a pressed color state bug.
+		TextView textView = (TextView) messageView
+				.findViewById(R.id.about_credits);
+		int defaultColor = textView.getTextColors().getDefaultColor();
+		textView.setTextColor(defaultColor);
+
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		builder.setTitle(R.string.app_name);
+		builder.setView(messageView);
+		builder.create();
+		builder.show();
+	}
 }
