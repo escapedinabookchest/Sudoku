@@ -64,6 +64,7 @@ class CanvasView extends View {
 			return super.onTouchEvent(event);
 
 		select((int) (event.getX() / width), (int) (event.getY() / height));
+		// De listener wordt aangeroepen. Belangrijk!
 		listener.OnSelectionChanged(this, selX, selY,
 				new Point((int) event.getX(), (int) event.getY()));
 		Log.d("PuzzleView", "onTouchEvent: " + selX + ", " + selY);
@@ -76,7 +77,6 @@ class CanvasView extends View {
 		selY = Math.min(Math.max(y, 0), 8);
 		getRect(selX, selY, selRect);
 		invalidate(selRect);
-		// De listener wordt aangeroepen. Belangrijk!
 		return true;
 	}
 

@@ -43,7 +43,6 @@ public class SudokuGrid extends SlidingActivity {
 	boolean popUpisShown = false;
 
 	Button b0, b1, b2, b3, b4, b5, b6, b7, b8, b9;
-	Point p; // popup plaats
 
 	/*
 	 * (non-Javadoc)
@@ -62,11 +61,6 @@ public class SudokuGrid extends SlidingActivity {
 				LinearLayout.LayoutParams.FILL_PARENT));
 		ll.setOrientation(LinearLayout.VERTICAL);
 
-		LinearLayout bll = new LinearLayout(this);
-		bll.setLayoutParams(new LinearLayout.LayoutParams(
-				LinearLayout.LayoutParams.MATCH_PARENT,
-				LinearLayout.LayoutParams.WRAP_CONTENT));
-
 		CanvasView view = new CanvasView(this);
 		view.setOnSudokuEventChangeListener(new OnSudokuEventChangeListener() {
 
@@ -76,47 +70,6 @@ public class SudokuGrid extends SlidingActivity {
 			}
 		});
 
-		b1 = new Button(this);
-
-		b1.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View arg0) {
-
-				// Open popup window
-				if (p != null)
-					showPopup(SudokuGrid.this, p);
-			}
-		});
-
-		b1.setText("1");
-		Button b2 = new Button(this);
-		b2.setText("2");
-		Button b3 = new Button(this);
-		b3.setText("3");
-		Button b4 = new Button(this);
-		b4.setText("4");
-		Button b5 = new Button(this);
-		b5.setText("5");
-		Button b6 = new Button(this);
-		b6.setText("6");
-		Button b7 = new Button(this);
-		b7.setText("7");
-		Button b8 = new Button(this);
-		b8.setText("8");
-		Button b9 = new Button(this);
-		b9.setText("9");
-
-		bll.addView(b1);
-		bll.addView(b2);
-		bll.addView(b3);
-		bll.addView(b4);
-		bll.addView(b5);
-		bll.addView(b6);
-		bll.addView(b7);
-		bll.addView(b8);
-		bll.addView(b9);
-
-		ll.addView(bll);
 		ll.addView(view);
 
 		setContentView(ll);
@@ -152,21 +105,6 @@ public class SudokuGrid extends SlidingActivity {
 		});
 	}
 
-	@Override
-	public void onWindowFocusChanged(boolean hasFocus) {
-
-		int[] location = new int[2];
-
-		// Get the x, y location and store it in the location[] array
-		// location[0] = x, location[1] = y.
-		b1.getLocationOnScreen(location);
-
-		// Initialize the Point with x, and y positions
-		p = new Point();
-		p.x = location[0];
-		p.y = location[1];
-	}
-
 	// The method that displays the popup.
 	private void showPopup(final Activity context, Point p) {
 		// If the popup is shown, do not draw another one, just ignore.
@@ -174,7 +112,7 @@ public class SudokuGrid extends SlidingActivity {
 			return;
 		popUpisShown = true;
 		int popupWidth = 300;
-		int popupHeight = 250;
+		int popupHeight = 350;
 
 		// Inflate the popup_layout.xml
 		LinearLayout viewGroup = (LinearLayout) context
