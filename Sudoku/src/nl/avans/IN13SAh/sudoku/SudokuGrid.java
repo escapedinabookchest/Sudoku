@@ -37,7 +37,7 @@ public class SudokuGrid extends Activity {
 
 		LinearLayout bll = new LinearLayout(this);
 		bll.setLayoutParams(new LinearLayout.LayoutParams(
-				LinearLayout.LayoutParams.WRAP_CONTENT,
+				LinearLayout.LayoutParams.MATCH_PARENT,
 				LinearLayout.LayoutParams.WRAP_CONTENT));
 
 		CanvasView view = new CanvasView(this);
