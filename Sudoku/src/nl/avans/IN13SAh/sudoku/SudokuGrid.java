@@ -7,13 +7,17 @@ import java.util.List;
 import nl.avans.game.Game;
 import android.content.Context;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.jeremyfeinstein.slidingmenu.lib.app.SlidingActivity;
@@ -99,18 +103,12 @@ public class SudokuGrid extends SlidingActivity {
 		getSlidingMenu().setBehindOffset(100);
 
 		final ListView listview = (ListView) findViewById(R.id.slidingmenulistview);
-		String[] values = new String[] { "Android", "iPhone", "WindowsMobile",
-				"Blackberry", "WebOS", "Ubuntu", "Windows7", "Max OS X",
-				"Linux", "OS/2", "Ubuntu", "Windows7", "Max OS X", "Linux",
-				"OS/2", "Ubuntu", "Windows7", "Max OS X", "Linux", "OS/2",
-				"Android", "iPhone", "WindowsMobile" };
 
 		final ArrayList<String> list = new ArrayList<String>();
 		for (int i = 0; i < values.length; ++i)
 			list.add(values[i]);
 
-		final StableArrayAdapter adapter = new StableArrayAdapter(this,
-				R.layout.slidingmenulistviewitem, list);
+		final GameArrayAdapter adapter = new GameArrayAdapter(this, list);
 		listview.setAdapter(adapter);
 
 		listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -125,16 +123,37 @@ public class SudokuGrid extends SlidingActivity {
 
 	}
 
-	private class StableArrayAdapter extends ArrayAdapter<String> {
+	String[] values = new String[] { "Android", "iPhone", "WindowsMobile",
+			"Blackberry", "WebOS", "Ubuntu", "Windows7", "Max OS X", "Linux",
+			"OS/2", "Ubuntu", "Windows7", "Max OS X", "Linux", "OS/2",
+			"Ubuntu", "Windows7", "Max OS X", "Linux", "OS/2", "Android",
+			"iPhone", "WindowsMobile" };
 
+	private class GameArrayAdapter extends ArrayAdapter<String> {
+
+		private final Context context;
 		HashMap<String, Integer> mIdMap = new HashMap<String, Integer>();
 
-		public StableArrayAdapter(Context context, int textViewResourceId,
-				List<String> objects) {
-			super(context, textViewResourceId, objects);
-			for (int i = 0; i < objects.size(); ++i) {
+		public GameArrayAdapter(Context context, List<String> objects) {
+			super(context, R.layout.slidingmenulistviewitem, objects);
+			this.context = context;
+
+			for (int i = 0; i < objects.size(); ++i)
 				mIdMap.put(objects.get(i), i);
-			}
+		}
+
+		@Override
+		public View getView(int position, View convertView, ViewGroup parent) {
+			LayoutInflater inflater = (LayoutInflater) context
+					.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+			View rowView = inflater.inflate(R.layout.slidingmenulistviewitem,
+					parent, false);
+			TextView textView = (TextView) rowView
+					.findViewById(R.id.secondLine);
+			ImageView imageView = (ImageView) rowView.findViewById(R.id.icon);
+			textView.setText(values[position]);
+
+			return rowView;
 		}
 
 		@Override
