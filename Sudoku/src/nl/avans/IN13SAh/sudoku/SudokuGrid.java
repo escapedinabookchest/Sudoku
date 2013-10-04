@@ -7,6 +7,8 @@ import android.widget.Button;
 import android.widget.GridView;
 import android.widget.LinearLayout;
 
+import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
+
 // TODO: Auto-generated Javadoc
 /**
  * The Class SudokuGrid. THis class contains logic and handlers for the playing
@@ -76,5 +78,15 @@ public class SudokuGrid extends Activity {
 
 		setContentView(ll);
 		view.requestFocus();
+
+		SlidingMenu menu = new SlidingMenu(this);
+		menu.setMode(SlidingMenu.LEFT);
+		menu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
+		// menu.setShadowWidthRes(R.dimen.shadow_width);
+		// menu.setShadowDrawable(R.drawable.shadow);
+		// menu.setBehindOffsetRes(R.dimen.slidingmenu_offset);
+		menu.setFadeDegree(0.35f);
+		menu.attachToActivity(this, SlidingMenu.SLIDING_CONTENT);
+		// menu.setMenu(R.layout.menu);
 	}
 }
