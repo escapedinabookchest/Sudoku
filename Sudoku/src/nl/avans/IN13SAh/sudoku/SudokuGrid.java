@@ -1,20 +1,29 @@
 package nl.avans.IN13SAh.sudoku;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
 import nl.avans.game.Game;
-import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
+import com.jeremyfeinstein.slidingmenu.lib.app.SlidingActivity;
 
 // TODO: Auto-generated Javadoc
 /**
  * The Class SudokuGrid. THis class contains logic and handlers for the playing
  * field screen.
  */
-public class SudokuGrid extends Activity {
+public class SudokuGrid extends SlidingActivity {
 
 	GridView MyGrid; // The gridview object that will be displayed on the
 						// screen.
@@ -77,16 +86,67 @@ public class SudokuGrid extends Activity {
 		ll.addView(view);
 
 		setContentView(ll);
+		setBehindContentView(R.layout.slidingmenulistview);
+
 		view.requestFocus();
 
-		SlidingMenu menu = new SlidingMenu(this);
-		menu.setMode(SlidingMenu.LEFT);
-		menu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
-		// menu.setShadowWidthRes(R.dimen.shadow_width);
-		// menu.setShadowDrawable(R.drawable.shadow);
-		// menu.setBehindOffsetRes(R.dimen.slidingmenu_offset);
-		menu.setFadeDegree(0.35f);
-		menu.attachToActivity(this, SlidingMenu.SLIDING_CONTENT);
-		// menu.setMenu(R.layout.menu);
+		getSlidingMenu().setMode(SlidingMenu.LEFT);
+		getSlidingMenu().setTouchModeAbove(SlidingMenu.TOUCHMODE_MARGIN);
+		getSlidingMenu().setBehindScrollScale(0.25f);
+		getSlidingMenu().setFadeDegree(0.25f);
+		getSlidingMenu().setSlidingEnabled(true);
+		getSlidingMenu().setMenu(R.layout.slidingmenulistview);
+		getSlidingMenu().setBehindOffset(100);
+
+		final ListView listview = (ListView) findViewById(R.id.slidingmenulistview);
+		String[] values = new String[] { "Android", "iPhone", "WindowsMobile",
+				"Blackberry", "WebOS", "Ubuntu", "Windows7", "Max OS X",
+				"Linux", "OS/2", "Ubuntu", "Windows7", "Max OS X", "Linux",
+				"OS/2", "Ubuntu", "Windows7", "Max OS X", "Linux", "OS/2",
+				"Android", "iPhone", "WindowsMobile" };
+
+		final ArrayList<String> list = new ArrayList<String>();
+		for (int i = 0; i < values.length; ++i)
+			list.add(values[i]);
+
+		final StableArrayAdapter adapter = new StableArrayAdapter(this,
+				R.layout.slidingmenulistviewitem, list);
+		listview.setAdapter(adapter);
+
+		listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, final View view,
+					int position, long id) {
+				SudokuGrid.this.toggle();
+			}
+
+		});
+
+	}
+
+	private class StableArrayAdapter extends ArrayAdapter<String> {
+
+		HashMap<String, Integer> mIdMap = new HashMap<String, Integer>();
+
+		public StableArrayAdapter(Context context, int textViewResourceId,
+				List<String> objects) {
+			super(context, textViewResourceId, objects);
+			for (int i = 0; i < objects.size(); ++i) {
+				mIdMap.put(objects.get(i), i);
+			}
+		}
+
+		@Override
+		public long getItemId(int position) {
+			String item = getItem(position);
+			return mIdMap.get(item);
+		}
+
+		@Override
+		public boolean hasStableIds() {
+			return true;
+		}
+
 	}
 }

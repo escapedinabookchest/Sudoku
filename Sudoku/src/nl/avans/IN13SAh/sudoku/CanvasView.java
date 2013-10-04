@@ -26,8 +26,6 @@ class CanvasView extends View {
 		this.selRect = new Rect();
 		setFocusable(true);
 		setFocusableInTouchMode(true);
-		// setId(PuzzleView.id)
-		Log.d("PuzzleView", "constructed");
 	}
 
 	@Override
@@ -51,7 +49,7 @@ class CanvasView extends View {
 
 	@Override
 	public boolean onTouchEvent(MotionEvent event) {
-		if (event.getAction() != MotionEvent.ACTION_DOWN)
+		if (event.getAction() == MotionEvent.EDGE_LEFT)
 			return super.onTouchEvent(event);
 
 		select((int) (event.getX() / width), (int) (event.getY() / height));
