@@ -5,6 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Paint.FontMetrics;
 import android.graphics.Paint.Style;
+import android.graphics.Point;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.os.Parcelable;
@@ -14,10 +15,15 @@ import android.view.View;
 
 class CanvasView extends View {
 
+	private OnSudokuEventChangeListener listener;
 	private int selX;
 	private int selY;
 	private Rect selRect;
 	private int height, width;
+
+	public interface OnSudokuEventChangeListener {
+		void OnSelectionChanged(View v, int selX, int selY, Point p);
+	}
 
 	public CanvasView(Context context) {
 		super(context);
@@ -26,6 +32,11 @@ class CanvasView extends View {
 		this.selRect = new Rect();
 		setFocusable(true);
 		setFocusableInTouchMode(true);
+	}
+
+	public void setOnSudokuEventChangeListener(
+			OnSudokuEventChangeListener listener) {
+		this.listener = listener;
 	}
 
 	@Override
@@ -53,6 +64,8 @@ class CanvasView extends View {
 			return super.onTouchEvent(event);
 
 		select((int) (event.getX() / width), (int) (event.getY() / height));
+		listener.OnSelectionChanged(this, selX, selY,
+				new Point((int) event.getX(), (int) event.getY()));
 		Log.d("PuzzleView", "onTouchEvent: " + selX + ", " + selY);
 		return true;
 	}
@@ -63,6 +76,7 @@ class CanvasView extends View {
 		selY = Math.min(Math.max(y, 0), 8);
 		getRect(selX, selY, selRect);
 		invalidate(selRect);
+		// De listener wordt aangeroepen. Belangrijk!
 		return true;
 	}
 

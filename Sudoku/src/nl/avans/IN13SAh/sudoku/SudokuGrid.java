@@ -4,11 +4,17 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import nl.avans.IN13SAh.sudoku.CanvasView.OnSudokuEventChangeListener;
 import nl.avans.game.Game;
+import android.app.Activity;
 import android.content.Context;
+import android.graphics.Point;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -17,6 +23,8 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.PopupWindow;
+import android.widget.PopupWindow.OnDismissListener;
 import android.widget.TextView;
 
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
@@ -32,6 +40,10 @@ public class SudokuGrid extends SlidingActivity {
 	GridView MyGrid; // The gridview object that will be displayed on the
 						// screen.
 	Game game;
+	boolean popUpisShown = false;
+
+	Button b0, b1, b2, b3, b4, b5, b6, b7, b8, b9;
+	Point p; // popup plaats
 
 	/*
 	 * (non-Javadoc)
@@ -56,8 +68,26 @@ public class SudokuGrid extends SlidingActivity {
 				LinearLayout.LayoutParams.WRAP_CONTENT));
 
 		CanvasView view = new CanvasView(this);
+		view.setOnSudokuEventChangeListener(new OnSudokuEventChangeListener() {
 
-		Button b1 = new Button(this);
+			@Override
+			public void OnSelectionChanged(View v, int selX, int selY, Point p) {
+				showPopup(SudokuGrid.this, p);
+			}
+		});
+
+		b1 = new Button(this);
+
+		b1.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View arg0) {
+
+				// Open popup window
+				if (p != null)
+					showPopup(SudokuGrid.this, p);
+			}
+		});
+
 		b1.setText("1");
 		Button b2 = new Button(this);
 		b2.setText("2");
@@ -120,7 +150,75 @@ public class SudokuGrid extends SlidingActivity {
 			}
 
 		});
+	}
 
+	@Override
+	public void onWindowFocusChanged(boolean hasFocus) {
+
+		int[] location = new int[2];
+
+		// Get the x, y location and store it in the location[] array
+		// location[0] = x, location[1] = y.
+		b1.getLocationOnScreen(location);
+
+		// Initialize the Point with x, and y positions
+		p = new Point();
+		p.x = location[0];
+		p.y = location[1];
+	}
+
+	// The method that displays the popup.
+	private void showPopup(final Activity context, Point p) {
+		// If the popup is shown, do not draw another one, just ignore.
+		if (popUpisShown)
+			return;
+		popUpisShown = true;
+		int popupWidth = 300;
+		int popupHeight = 250;
+
+		// Inflate the popup_layout.xml
+		LinearLayout viewGroup = (LinearLayout) context
+				.findViewById(R.id.popup);
+		LayoutInflater layoutInflater = (LayoutInflater) context
+				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+		View layout = layoutInflater.inflate(R.layout.popuplayout, viewGroup);
+
+		// Creating the PopupWindow
+		final PopupWindow popup = new PopupWindow(context);
+		popup.setContentView(layout);
+		popup.setWidth(popupWidth);
+		popup.setHeight(popupHeight);
+		popup.setFocusable(true);
+		popup.setOnDismissListener(new OnDismissListener() {
+
+			@Override
+			public void onDismiss() {
+				SudokuGrid.this.popUpisShown = false;
+			}
+		});
+
+		// Some offset to align the popup a bit to the right, and a bit down,
+		// relative to button's position.
+		int OFFSET_X = 30;
+		int OFFSET_Y = 30;
+
+		// Clear the default translucent background
+		popup.setBackgroundDrawable(new BitmapDrawable());
+
+		// Displaying the popup at the specified location, + offsets.
+		popup.showAtLocation(layout, Gravity.NO_GRAVITY, p.x + OFFSET_X, p.y
+				+ OFFSET_Y);
+
+		// Getting a reference to Close button, and close the popup when
+		// clicked.
+		Button close = (Button) layout.findViewById(R.id.b1);
+		close.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				popup.dismiss();
+			}
+		});
 	}
 
 	String[] values = new String[] { "Android", "iPhone", "WindowsMobile",
