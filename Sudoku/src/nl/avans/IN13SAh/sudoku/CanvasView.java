@@ -68,12 +68,14 @@ class CanvasView extends View {
 	public boolean onTouchEvent(MotionEvent event) {
 		if (!enableTouch)
 			return false;
+		if (event.getAction() == MotionEvent.ACTION_UP) {
 
-		select((int) (event.getX() / width), (int) (event.getY() / height));
-		// De listener wordt aangeroepen. Belangrijk!
-		listener.OnSelectionChanged(this, selX, selY,
-				new Point((int) event.getX(), (int) event.getY()));
-		Log.d("PuzzleView", "onTouchEvent: " + selX + ", " + selY);
+			select((int) (event.getX() / width), (int) (event.getY() / height));
+			// De listener wordt aangeroepen. Belangrijk!
+			listener.OnSelectionChanged(this, selX, selY,
+					new Point((int) event.getX(), (int) event.getY()));
+			Log.d("PuzzleView", "onTouchEvent: " + selX + ", " + selY);
+		}
 		return true;
 	}
 
