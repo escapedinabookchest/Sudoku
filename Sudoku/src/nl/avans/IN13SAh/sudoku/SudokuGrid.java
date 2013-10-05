@@ -8,6 +8,7 @@ import nl.avans.game.Game;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
+import android.graphics.Color;
 import android.graphics.Point;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
@@ -46,6 +47,7 @@ public class SudokuGrid extends SlidingActivity {
 	Game currentGame;
 
 	CanvasView view;
+	PopupWindow popup;
 
 	/*
 	 * (non-Javadoc)
@@ -67,8 +69,10 @@ public class SudokuGrid extends SlidingActivity {
 
 			@Override
 			public void OnSelectionChanged(View v, int selX, int selY, Point p) {
-				showPopup(SudokuGrid.this, p);
-				SudokuGrid.this.view.enableTouch(false);
+				if (SudokuGrid.this.currentGame != null) {
+					showPopup(SudokuGrid.this, p);
+					SudokuGrid.this.view.enableTouch(false);
+				}
 			}
 
 			@Override
@@ -93,7 +97,7 @@ public class SudokuGrid extends SlidingActivity {
 		getSlidingMenu().setFadeDegree(0.25f);
 		getSlidingMenu().setSlidingEnabled(true);
 		getSlidingMenu().setMenu(R.layout.slidingmenulistview);
-		getSlidingMenu().setSecondaryMenu(R.layout.sudokutitlescreen_main);
+		getSlidingMenu().setSecondaryMenu(R.layout.secondmenu);
 		getSlidingMenu().setBehindOffset(100);
 
 		final ListView listview = (ListView) findViewById(R.id.slidingmenulistview);
@@ -113,6 +117,7 @@ public class SudokuGrid extends SlidingActivity {
 				SudokuGrid.this.toggle();
 				currentGame = lijst.get(position);
 				SudokuGrid.this.view.setBoardSize(currentGame.getSize());
+				adapter.setSelection(SudokuGrid.this.lijst.indexOf(currentGame));
 				adapter.notifyDataSetChanged();
 			}
 
@@ -124,6 +129,7 @@ public class SudokuGrid extends SlidingActivity {
 			public boolean onItemLongClick(AdapterView<?> parent,
 					final View view, int position, long id) {
 				lijst.remove(position);
+				adapter.removeSelection();
 				adapter.notifyDataSetChanged();
 				SudokuGrid.this.currentGame = null;
 				SudokuGrid.this.view.invalidate();
@@ -162,9 +168,15 @@ public class SudokuGrid extends SlidingActivity {
 					@Override
 					public void onClick(View v) {
 						// Create a new game and add it to the list.
-						SudokuGrid.this.lijst.add(new Game(gameSizeSeekerBar
-								.getProgress(), difficultySeekBar.getProgress()));
+						Game newGame = new Game(
+								gameSizeSeekerBar.getProgress(),
+								difficultySeekBar.getProgress());
+						SudokuGrid.this.lijst.add(newGame);
+						adapter.setSelection((SudokuGrid.this.lijst.size() - 1));
 						adapter.notifyDataSetChanged();
+						currentGame = newGame;
+						SudokuGrid.this.view.setBoardSize(currentGame.getSize());
+						SudokuGrid.this.toggle();
 						dialog.dismiss();
 					}
 				});
@@ -199,7 +211,7 @@ public class SudokuGrid extends SlidingActivity {
 		View layout = layoutInflater.inflate(R.layout.popuplayout, viewGroup);
 
 		// Creating the PopupWindow
-		final PopupWindow popup = new PopupWindow(context);
+		popup = new PopupWindow(context);
 		popup.setContentView(layout);
 		popup.setWidth(popupWidth);
 		popup.setHeight(popupHeight);
@@ -232,6 +244,7 @@ public class SudokuGrid extends SlidingActivity {
 			int number = Integer.parseInt(b.getText().toString());
 			currentGame.setCurrentValue(view.getSelX(), view.getSelY(), number);
 			view.invalidate();
+			popup.dismiss();
 		}
 	}
 
@@ -239,11 +252,20 @@ public class SudokuGrid extends SlidingActivity {
 
 		private final Context context;
 		List<Game> games;
+		int selection = -1;
 
 		public GameArrayAdapter(Context context, List<Game> objects) {
 			super(context, R.layout.slidingmenulistviewitem, objects);
 			this.context = context;
 			this.games = objects;
+		}
+
+		public void setSelection(int selection) {
+			this.selection = selection;
+		}
+
+		public void removeSelection() {
+			this.selection = -1;
 		}
 
 		@Override
@@ -259,6 +281,10 @@ public class SudokuGrid extends SlidingActivity {
 					.findViewById(R.id.firstLine);
 			textview2.setText("Sudoku " + games.get(position).getSize() + "x"
 					+ games.get(position).getSize());
+
+			rowView.setBackgroundColor(Color.WHITE);
+			if (position == selection)
+				rowView.setBackgroundColor(Color.LTGRAY);
 
 			return rowView;
 		}
