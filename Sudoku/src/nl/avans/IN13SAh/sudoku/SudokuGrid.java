@@ -106,7 +106,6 @@ public class SudokuGrid extends SlidingActivity {
 		final GameArrayAdapter adapter = new GameArrayAdapter(this, lijst);
 		listview.setAdapter(adapter);
 
-		lijst.add(new Game(9, 0));
 		adapter.notifyDataSetChanged();
 
 		listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
