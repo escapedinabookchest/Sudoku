@@ -20,6 +20,7 @@ class CanvasView extends View {
 	private int selY;
 	private Rect selRect;
 	private int height, width;
+	private boolean enableTouch = true;
 
 	public interface OnSudokuEventChangeListener {
 		void OnSelectionChanged(View v, int selX, int selY, Point p);
@@ -37,6 +38,11 @@ class CanvasView extends View {
 	public void setOnSudokuEventChangeListener(
 			OnSudokuEventChangeListener listener) {
 		this.listener = listener;
+	}
+
+	/* Methode om de view aan of uit te zetten. */
+	public void enableTouch(boolean newValue) {
+		this.enableTouch = newValue;
 	}
 
 	@Override
@@ -60,8 +66,8 @@ class CanvasView extends View {
 
 	@Override
 	public boolean onTouchEvent(MotionEvent event) {
-		if (event.getAction() == MotionEvent.EDGE_LEFT)
-			return super.onTouchEvent(event);
+		if (!enableTouch)
+			return false;
 
 		select((int) (event.getX() / width), (int) (event.getY() / height));
 		// De listener wordt aangeroepen. Belangrijk!

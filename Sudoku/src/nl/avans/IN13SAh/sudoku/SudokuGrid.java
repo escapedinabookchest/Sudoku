@@ -44,6 +44,8 @@ public class SudokuGrid extends SlidingActivity {
 
 	Button b0, b1, b2, b3, b4, b5, b6, b7, b8, b9;
 
+	CanvasView view;
+
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -61,12 +63,13 @@ public class SudokuGrid extends SlidingActivity {
 				LinearLayout.LayoutParams.FILL_PARENT));
 		ll.setOrientation(LinearLayout.VERTICAL);
 
-		CanvasView view = new CanvasView(this);
+		view = new CanvasView(this);
 		view.setOnSudokuEventChangeListener(new OnSudokuEventChangeListener() {
 
 			@Override
 			public void OnSelectionChanged(View v, int selX, int selY, Point p) {
 				showPopup(SudokuGrid.this, p);
+				SudokuGrid.this.view.enableTouch(false);
 			}
 		});
 
@@ -132,6 +135,7 @@ public class SudokuGrid extends SlidingActivity {
 			@Override
 			public void onDismiss() {
 				SudokuGrid.this.popUpisShown = false;
+				SudokuGrid.this.view.enableTouch(true);
 			}
 		});
 
