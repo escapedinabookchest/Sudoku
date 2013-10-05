@@ -6,6 +6,7 @@ import java.util.List;
 import nl.avans.IN13SAh.sudoku.CanvasView.OnSudokuEventChangeListener;
 import nl.avans.game.Game;
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Point;
 import android.graphics.drawable.BitmapDrawable;
@@ -14,6 +15,7 @@ import android.os.Vibrator;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -23,6 +25,7 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.PopupWindow.OnDismissListener;
+import android.widget.SeekBar;
 import android.widget.TextView;
 
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
@@ -129,6 +132,53 @@ public class SudokuGrid extends SlidingActivity {
 				return false;
 			}
 
+		});
+
+		Button newGamebutton = (Button) findViewById(R.id.newGameButton);
+		newGamebutton.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				final Dialog dialog = new Dialog(SudokuGrid.this);
+				dialog.setTitle("New Game");
+				LayoutInflater inflater = (LayoutInflater) SudokuGrid.this
+						.getSystemService(LAYOUT_INFLATER_SERVICE);
+				View layout = inflater.inflate(R.layout.newgamepopup,
+						(ViewGroup) findViewById(R.id.newGameRootElement));
+				dialog.setContentView(layout);
+
+				Button okButton = (Button) layout
+						.findViewById(R.id.newGamePopupOk);
+				Button cancelButton = (Button) layout
+						.findViewById(R.id.newGamePopupCancel);
+
+				final SeekBar gameSizeSeekerBar = (SeekBar) layout
+						.findViewById(R.id.gameSizeSeekbar);
+				final SeekBar difficultySeekBar = (SeekBar) layout
+						.findViewById(R.id.difficultySeekBar);
+
+				okButton.setOnClickListener(new OnClickListener() {
+
+					@Override
+					public void onClick(View v) {
+						// Create a new game and add it to the list.
+						SudokuGrid.this.lijst.add(new Game(gameSizeSeekerBar
+								.getProgress(), difficultySeekBar.getProgress()));
+						adapter.notifyDataSetChanged();
+						dialog.dismiss();
+					}
+				});
+
+				cancelButton.setOnClickListener(new OnClickListener() {
+
+					@Override
+					public void onClick(View v) {
+						dialog.dismiss();
+					}
+				});
+
+				dialog.show();
+			}
 		});
 	}
 
