@@ -14,7 +14,6 @@ import android.os.Vibrator;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -43,8 +42,6 @@ public class SudokuGrid extends SlidingActivity {
 	List<Game> lijst;
 	Game currentGame;
 
-	Button b0, b1, b2, b3, b4, b5, b6, b7, b8, b9;
-
 	CanvasView view;
 
 	/*
@@ -62,7 +59,7 @@ public class SudokuGrid extends SlidingActivity {
 				LinearLayout.LayoutParams.FILL_PARENT));
 		ll.setOrientation(LinearLayout.VERTICAL);
 
-		view = new CanvasView(this);
+		view = new CanvasView(this, 9);
 		view.setOnSudokuEventChangeListener(new OnSudokuEventChangeListener() {
 
 			@Override
@@ -103,7 +100,6 @@ public class SudokuGrid extends SlidingActivity {
 		listview.setAdapter(adapter);
 
 		lijst.add(new Game(9, 0));
-		lijst.add(new Game(9, 0));
 		adapter.notifyDataSetChanged();
 
 		listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -113,7 +109,7 @@ public class SudokuGrid extends SlidingActivity {
 					int position, long id) {
 				SudokuGrid.this.toggle();
 				currentGame = lijst.get(position);
-				view.invalidate();
+				SudokuGrid.this.view.setBoardSize(currentGame.getSize());
 				adapter.notifyDataSetChanged();
 			}
 
@@ -178,17 +174,15 @@ public class SudokuGrid extends SlidingActivity {
 		// Displaying the popup at the specified location, + offsets.
 		popup.showAtLocation(layout, Gravity.NO_GRAVITY, p.x + OFFSET_X, p.y
 				+ OFFSET_Y);
+	}
 
-		// Getting a reference to Close button, and close the popup when
-		// clicked.
-		Button close = (Button) layout.findViewById(R.id.b1);
-		close.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				popup.dismiss();
-			}
-		});
+	public void popUpButtonHandle(View v) {
+		Button b = (Button) v;
+		if (currentGame != null) {
+			int number = Integer.parseInt(b.getText().toString());
+			currentGame.setCurrentValue(view.getSelX(), view.getSelY(), number);
+			view.invalidate();
+		}
 	}
 
 	private class GameArrayAdapter extends ArrayAdapter<Game> {
@@ -211,6 +205,10 @@ public class SudokuGrid extends SlidingActivity {
 			TextView textView = (TextView) rowView
 					.findViewById(R.id.secondLine);
 			textView.setText(games.get(position).toString());
+			TextView textview2 = (TextView) rowView
+					.findViewById(R.id.firstLine);
+			textview2.setText("Sudoku " + games.get(position).getSize() + "x"
+					+ games.get(position).getSize());
 
 			return rowView;
 		}

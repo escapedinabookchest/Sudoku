@@ -20,6 +20,7 @@ class CanvasView extends View {
 	private int selY;
 	private Rect selRect;
 	private int height, width;
+	private float boardSize;
 	private boolean enableTouch = true;
 
 	public interface OnSudokuEventChangeListener {
@@ -28,10 +29,11 @@ class CanvasView extends View {
 		int OnGetCurrentValueOfPosition(View v, int x, int y);
 	}
 
-	public CanvasView(Context context) {
+	public CanvasView(Context context, int boardSize) {
 		super(context);
 		selX = 0;
 		selY = 0;
+		this.boardSize = boardSize;
 		this.selRect = new Rect();
 		setFocusable(true);
 		setFocusableInTouchMode(true);
@@ -45,6 +47,18 @@ class CanvasView extends View {
 	/* Methode om de view aan of uit te zetten. */
 	public void enableTouch(boolean newValue) {
 		this.enableTouch = newValue;
+	}
+
+	public int getSelX() {
+		return (int) selX;
+	}
+
+	public int getSelY() {
+		return (int) selY;
+	}
+
+	public void setBoardSize(int newSize) {
+		this.boardSize = newSize;
 	}
 
 	@Override
@@ -177,8 +191,8 @@ class CanvasView extends View {
 	@Override
 	protected void onSizeChanged(int w, int h, int oldw, int oldh) {
 		Log.d("PuzzleView", "size changed: #{w}x#{h}");
-		width = (int) (w / 9.0);
-		height = (int) (h / 9.0);
+		width = (int) (w / boardSize);
+		height = (int) (h / boardSize);
 		getRect(selX, selY, selRect);
 		super.onSizeChanged(w, h, oldw, oldh);
 	}
