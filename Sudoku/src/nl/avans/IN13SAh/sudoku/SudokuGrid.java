@@ -1,7 +1,6 @@
 package nl.avans.IN13SAh.sudoku;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 import nl.avans.IN13SAh.sudoku.CanvasView.OnSudokuEventChangeListener;
@@ -11,6 +10,7 @@ import android.content.Context;
 import android.graphics.Point;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,7 +20,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.GridView;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.PopupWindow;
@@ -39,8 +38,10 @@ public class SudokuGrid extends SlidingActivity {
 
 	GridView MyGrid; // The gridview object that will be displayed on the
 						// screen.
-	Game game;
+
 	boolean popUpisShown = false;
+	List<Game> lijst;
+	Game currentGame;
 
 	Button b0, b1, b2, b3, b4, b5, b6, b7, b8, b9;
 
@@ -54,8 +55,6 @@ public class SudokuGrid extends SlidingActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
-		game = new Game(9, 0);
 
 		LinearLayout ll = new LinearLayout(this);
 		ll.setLayoutParams(new LinearLayout.LayoutParams(
@@ -71,6 +70,14 @@ public class SudokuGrid extends SlidingActivity {
 				showPopup(SudokuGrid.this, p);
 				SudokuGrid.this.view.enableTouch(false);
 			}
+
+			@Override
+			public int OnGetCurrentValueOfPosition(View v, int x, int y) {
+				if (currentGame != null)
+					return currentGame.getCurrentValue(x, y);
+				else
+					return 0;
+			}
 		});
 
 		ll.addView(view);
@@ -80,22 +87,24 @@ public class SudokuGrid extends SlidingActivity {
 
 		view.requestFocus();
 
-		getSlidingMenu().setMode(SlidingMenu.LEFT);
+		getSlidingMenu().setMode(SlidingMenu.LEFT_RIGHT);
 		getSlidingMenu().setTouchModeAbove(SlidingMenu.TOUCHMODE_MARGIN);
 		getSlidingMenu().setBehindScrollScale(0.25f);
 		getSlidingMenu().setFadeDegree(0.25f);
 		getSlidingMenu().setSlidingEnabled(true);
 		getSlidingMenu().setMenu(R.layout.slidingmenulistview);
+		getSlidingMenu().setSecondaryMenu(R.layout.sudokutitlescreen_main);
 		getSlidingMenu().setBehindOffset(100);
 
 		final ListView listview = (ListView) findViewById(R.id.slidingmenulistview);
 
-		final ArrayList<String> list = new ArrayList<String>();
-		for (int i = 0; i < values.length; ++i)
-			list.add(values[i]);
-
-		final GameArrayAdapter adapter = new GameArrayAdapter(this, list);
+		lijst = new ArrayList<Game>();
+		final GameArrayAdapter adapter = new GameArrayAdapter(this, lijst);
 		listview.setAdapter(adapter);
+
+		lijst.add(new Game(9, 0));
+		lijst.add(new Game(9, 0));
+		adapter.notifyDataSetChanged();
 
 		listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
@@ -103,6 +112,25 @@ public class SudokuGrid extends SlidingActivity {
 			public void onItemClick(AdapterView<?> parent, final View view,
 					int position, long id) {
 				SudokuGrid.this.toggle();
+				currentGame = lijst.get(position);
+				view.invalidate();
+				adapter.notifyDataSetChanged();
+			}
+
+		});
+
+		listview.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+
+			@Override
+			public boolean onItemLongClick(AdapterView<?> parent,
+					final View view, int position, long id) {
+				lijst.remove(position);
+				adapter.notifyDataSetChanged();
+				SudokuGrid.this.currentGame = null;
+				SudokuGrid.this.view.invalidate();
+				Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+				v.vibrate(300);
+				return false;
 			}
 
 		});
@@ -163,23 +191,15 @@ public class SudokuGrid extends SlidingActivity {
 		});
 	}
 
-	String[] values = new String[] { "Android", "iPhone", "WindowsMobile",
-			"Blackberry", "WebOS", "Ubuntu", "Windows7", "Max OS X", "Linux",
-			"OS/2", "Ubuntu", "Windows7", "Max OS X", "Linux", "OS/2",
-			"Ubuntu", "Windows7", "Max OS X", "Linux", "OS/2", "Android",
-			"iPhone", "WindowsMobile" };
-
-	private class GameArrayAdapter extends ArrayAdapter<String> {
+	private class GameArrayAdapter extends ArrayAdapter<Game> {
 
 		private final Context context;
-		HashMap<String, Integer> mIdMap = new HashMap<String, Integer>();
+		List<Game> games;
 
-		public GameArrayAdapter(Context context, List<String> objects) {
+		public GameArrayAdapter(Context context, List<Game> objects) {
 			super(context, R.layout.slidingmenulistviewitem, objects);
 			this.context = context;
-
-			for (int i = 0; i < objects.size(); ++i)
-				mIdMap.put(objects.get(i), i);
+			this.games = objects;
 		}
 
 		@Override
@@ -190,21 +210,9 @@ public class SudokuGrid extends SlidingActivity {
 					parent, false);
 			TextView textView = (TextView) rowView
 					.findViewById(R.id.secondLine);
-			ImageView imageView = (ImageView) rowView.findViewById(R.id.icon);
-			textView.setText(values[position]);
+			textView.setText(games.get(position).toString());
 
 			return rowView;
-		}
-
-		@Override
-		public long getItemId(int position) {
-			String item = getItem(position);
-			return mIdMap.get(item);
-		}
-
-		@Override
-		public boolean hasStableIds() {
-			return true;
 		}
 
 	}

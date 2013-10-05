@@ -24,6 +24,8 @@ class CanvasView extends View {
 
 	public interface OnSudokuEventChangeListener {
 		void OnSelectionChanged(View v, int selX, int selY, Point p);
+
+		int OnGetCurrentValueOfPosition(View v, int x, int y);
 	}
 
 	public CanvasView(Context context) {
@@ -142,8 +144,13 @@ class CanvasView extends View {
 		while (i < 9) {
 			j = 0;
 			while (j < 9) {
-				canvas.drawText("1" /* game.getTileString(i, j) */, i * width
-						+ x, j * height + y, foreground);
+				int celwaarde = listener
+						.OnGetCurrentValueOfPosition(this, i, j);
+				// lege string bij nul.
+				String celtext = celwaarde == 0 ? "" : "" + celwaarde;
+
+				canvas.drawText(celtext, i * width + x, j * height + y,
+						foreground);
 				j++;
 			}
 			i++;
