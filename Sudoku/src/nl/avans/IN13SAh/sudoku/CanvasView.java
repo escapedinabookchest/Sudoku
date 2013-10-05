@@ -88,14 +88,6 @@ class CanvasView extends View {
 		return true;
 	}
 
-	/*
-	 * private boolean setSelectedTile(int tile) { if
-	 * (@game.setTileIfValid(@selX, @selY, tile)) { invalidate else
-	 * Log.d("PuzzleView", "setSelectedTile: invalid #{tile}")
-	 * startAnimation(AnimationUtils.loadAnimation(@game, R.anim.shake)) end }
-	 * return true; }
-	 */
-
 	@Override
 	protected void onDraw(Canvas canvas) {
 		Log.d("PuzzleView", "drawing bg");
