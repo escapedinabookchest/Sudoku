@@ -21,7 +21,6 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.GridView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.PopupWindow;
@@ -34,19 +33,27 @@ import com.jeremyfeinstein.slidingmenu.lib.app.SlidingActivity;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class SudokuGrid. THis class contains logic and handlers for the playing
+ * The Class SudokuGrid. This class contains logic and handlers for the playing
  * field screen.
  */
 public class SudokuGrid extends SlidingActivity {
 
-	GridView MyGrid; // The gridview object that will be displayed on the
-						// screen.
-
+	/** Boolean value for stopping multiple instances of the number input popup. */
 	boolean popUpisShown = false;
+
+	/**
+	 * Game object array that is shown in the left slidemenu. use
+	 * adapter.notifydatasetchanged() after an edit.
+	 */
 	List<Game> lijst;
+
+	/** The current game. Object that is being viewed. */
 	Game currentGame;
 
+	/** Pointer to a the custom view. */
 	CanvasView view;
+
+	/** The popup window that is shown when tapping on the sudoku board. */
 	PopupWindow popup;
 
 	/*
@@ -65,6 +72,7 @@ public class SudokuGrid extends SlidingActivity {
 		ll.setOrientation(LinearLayout.VERTICAL);
 
 		view = new CanvasView(this, 9);
+
 		view.setOnSudokuEventChangeListener(new OnSudokuEventChangeListener() {
 
 			@Override
@@ -194,6 +202,14 @@ public class SudokuGrid extends SlidingActivity {
 	}
 
 	// The method that displays the popup.
+	/**
+	 * Show popup.
+	 * 
+	 * @param context
+	 *            the context (activity, should be SudokuGrid)
+	 * @param p
+	 *            the point where the popup should be drawn.
+	 */
 	private void showPopup(final Activity context, Point p) {
 		// If the popup is shown, do not draw another one, just ignore.
 		if (popUpisShown)
@@ -237,6 +253,12 @@ public class SudokuGrid extends SlidingActivity {
 				+ OFFSET_Y);
 	}
 
+	/**
+	 * Pop up button handle. Called from xml layout buttons of the popup.
+	 * 
+	 * @param v
+	 *            the view object that calls this method from xml.
+	 */
 	public void popUpButtonHandle(View v) {
 		Button b = (Button) v;
 		if (currentGame != null) {
@@ -247,26 +269,65 @@ public class SudokuGrid extends SlidingActivity {
 		}
 	}
 
+	/**
+	 * The Class GameArrayAdapter. Adapter class for the list view on the side
+	 * of the class.
+	 */
 	private class GameArrayAdapter extends ArrayAdapter<Game> {
 
+		/** The context. Should be an activity. */
 		private final Context context;
+
+		/**
+		 * Adapter internal representation of game objects. (remember, just
+		 * pointers)
+		 */
 		List<Game> games;
+
+		/**
+		 * The selection. Used for representing the currently selected game
+		 * object.
+		 */
 		int selection = -1;
 
+		/**
+		 * Instantiates a new game array adapter.
+		 * 
+		 * @param context
+		 *            the context, i.e. an activity.
+		 * @param objects
+		 *            important parameter used for binding a list to this
+		 *            adapter.
+		 */
 		public GameArrayAdapter(Context context, List<Game> objects) {
 			super(context, R.layout.slidingmenulistviewitem, objects);
 			this.context = context;
 			this.games = objects;
 		}
 
+		/**
+		 * Sets the selection.
+		 * 
+		 * @param selection
+		 *            the new selection
+		 */
 		public void setSelection(int selection) {
 			this.selection = selection;
 		}
 
+		/**
+		 * Removes the selection.
+		 */
 		public void removeSelection() {
 			this.selection = -1;
 		}
 
+		/*
+		 * (non-Javadoc)
+		 * 
+		 * @see android.widget.ArrayAdapter#getView(int, android.view.View,
+		 * android.view.ViewGroup)
+		 */
 		@Override
 		public View getView(int position, View convertView, ViewGroup parent) {
 			LayoutInflater inflater = (LayoutInflater) context
