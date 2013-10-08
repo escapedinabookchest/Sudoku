@@ -27,6 +27,7 @@ import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.PopupWindow.OnDismissListener;
 import android.widget.SeekBar;
+import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
 
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
@@ -193,6 +194,11 @@ public class SudokuGrid extends SlidingActivity {
 						(ViewGroup) findViewById(R.id.newGameRootElement));
 				dialog.setContentView(layout);
 
+				final TextView gamesizeValue = (TextView) layout
+						.findViewById(R.id.gamesizeValue);
+				final TextView diffcultyValue = (TextView) layout
+						.findViewById(R.id.difficultyValue);
+
 				Button okButton = (Button) layout
 						.findViewById(R.id.newGamePopupOk);
 				Button cancelButton = (Button) layout
@@ -202,6 +208,46 @@ public class SudokuGrid extends SlidingActivity {
 						.findViewById(R.id.gameSizeSeekbar);
 				final SeekBar difficultySeekBar = (SeekBar) layout
 						.findViewById(R.id.difficultySeekBar);
+
+				diffcultyValue.setText("0");
+				gamesizeValue.setText("9x9");
+
+				gameSizeSeekerBar
+						.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
+
+							@Override
+							public void onStopTrackingTouch(SeekBar arg0) {
+							}
+
+							@Override
+							public void onStartTrackingTouch(SeekBar arg0) {
+							}
+
+							@Override
+							public void onProgressChanged(SeekBar seekBar,
+									int progress, boolean fromUser) {
+								gamesizeValue.setText("" + progress + "x"
+										+ progress);
+							}
+						});
+
+				difficultySeekBar
+						.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
+
+							@Override
+							public void onStopTrackingTouch(SeekBar arg0) {
+							}
+
+							@Override
+							public void onStartTrackingTouch(SeekBar arg0) {
+							}
+
+							@Override
+							public void onProgressChanged(SeekBar seekBar,
+									int progress, boolean fromUser) {
+								diffcultyValue.setText("" + progress);
+							}
+						});
 
 				okButton.setOnClickListener(new OnClickListener() {
 

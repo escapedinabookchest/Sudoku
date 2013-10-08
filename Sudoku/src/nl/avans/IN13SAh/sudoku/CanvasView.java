@@ -13,9 +13,11 @@ import android.os.Bundle;
 import android.os.Parcelable;
 import android.os.Vibrator;
 import android.util.Log;
+import android.view.Display;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.WindowManager;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -140,8 +142,17 @@ class CanvasView extends View {
 		super(context);
 		selX = -1;
 		selY = -1;
+
+		/* achtergrond plaatje laden en schalen naar device size */
+		WindowManager wm = (WindowManager) getContext().getSystemService(
+				Context.WINDOW_SERVICE);
+		Display display = wm.getDefaultDisplay();
+
 		this.background = BitmapFactory.decodeResource(getResources(),
 				R.drawable.startup_background);
+		this.background = Bitmap.createScaledBitmap(this.background,
+				display.getWidth(), display.getHeight(), true);
+
 		this.boardSize = boardSize;
 		this.selRect = new Rect();
 		setFocusable(true);
@@ -271,8 +282,6 @@ class CanvasView extends View {
 		// Dit is waarschijnlijk traag als fuck
 
 		if (!listener.ShouldDrawSelection()) { // geen selectie, wel plaatje
-			this.background = Bitmap.createScaledBitmap(this.background,
-					this.getWidth(), this.getHeight(), true);
 			canvas.drawBitmap(this.background, 0f, 0f, background);
 		} else {
 			canvas.drawRect(0.0f, 0.0f, (float) getWidth(),

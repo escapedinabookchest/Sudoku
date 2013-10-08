@@ -14,6 +14,14 @@
 	    android:textColor="#FFFFFF"
 	    android:gravity="center" />
     
+    <TextView
+        android:id="@+id/gamesizeValue" 
+        android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:text="game size value"
+	    android:textColor="#FFFFFF"
+	    android:gravity="center" />
+    
     <SeekBar
 	    android:id="@+id/gameSizeSeekbar"
 	    android:layout_width="fill_parent"
@@ -25,6 +33,14 @@
         android:layout_width="fill_parent"
 	    android:layout_height="wrap_content"
 	    android:text="Difficulty"
+	    android:textColor="#FFFFFF"
+	    android:gravity="center" />
+   	
+   	<TextView
+        android:id="@+id/difficultyValue" 
+        android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:text="difficulty value"
 	    android:textColor="#FFFFFF"
 	    android:gravity="center" />
     
