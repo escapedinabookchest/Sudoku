@@ -94,6 +94,14 @@ public class SudokuGrid extends SlidingActivity {
 				else
 					return 0;
 			}
+
+			@Override
+			public boolean ShouldDrawSelection() {
+				if (SudokuGrid.this.currentGame != null)
+					return true;
+				else
+					return false;
+			}
 		});
 
 		ll.addView(view);

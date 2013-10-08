@@ -80,6 +80,8 @@ class CanvasView extends View {
 		 * @return the int value of a specific field
 		 */
 		int OnGetCurrentValueOfPosition(View v, int x, int y);
+
+		boolean ShouldDrawSelection();
 	}
 
 	/**
@@ -92,8 +94,8 @@ class CanvasView extends View {
 	 */
 	public CanvasView(Context context, int boardSize) {
 		super(context);
-		selX = 0;
-		selY = 0;
+		selX = -1;
+		selY = -1;
 		this.boardSize = boardSize;
 		this.selRect = new Rect();
 		setFocusable(true);
@@ -300,9 +302,13 @@ class CanvasView extends View {
 		 */
 
 		// draw selection
-		Paint selected = loadColor(R.color.puzzle_selected);
-		selected.setAlpha(80);
-		canvas.drawRect(selRect, selected);
+		if (listener.ShouldDrawSelection()) {
+			Paint selected = loadColor(R.color.puzzle_selected);
+			selected.setAlpha(80);
+			canvas.drawRect(selRect, selected);
+		}
+
+		// Draw call!
 		super.onDraw(canvas);
 	}
 
