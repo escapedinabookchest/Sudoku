@@ -6,6 +6,7 @@ import java.util.List;
 import nl.avans.IN13SAh.sudoku.CanvasView.OnSudokuEventChangeListener;
 import nl.avans.game.Game;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Color;
@@ -55,6 +56,9 @@ public class SudokuGrid extends SlidingActivity {
 
 	/** The popup window that is shown when tapping on the sudoku board. */
 	PopupWindow popup;
+
+	/** Info button in the right menu */
+	Button infoButton;
 
 	/*
 	 * (non-Javadoc)
@@ -197,6 +201,32 @@ public class SudokuGrid extends SlidingActivity {
 				});
 
 				dialog.show();
+			}
+		});
+
+		/* Info dialog */
+		infoButton = (Button) findViewById(R.id.infoButton);
+		infoButton.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				View messageView = getLayoutInflater().inflate(R.layout.about,
+						null, false);
+
+				// When linking text, force to always use default color. This
+				// works
+				// around a pressed color state bug.
+				TextView textView = (TextView) messageView
+						.findViewById(R.id.about_credits);
+				int defaultColor = textView.getTextColors().getDefaultColor();
+				textView.setTextColor(defaultColor);
+
+				AlertDialog.Builder builder = new AlertDialog.Builder(
+						SudokuGrid.this);
+				builder.setTitle(R.string.app_name);
+				builder.setView(messageView);
+				builder.create();
+				builder.show();
 			}
 		});
 	}
