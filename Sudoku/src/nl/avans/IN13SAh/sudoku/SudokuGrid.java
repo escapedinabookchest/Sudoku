@@ -168,9 +168,10 @@ public class SudokuGrid extends SlidingActivity {
 
 				// nieuwe terug
 				if (!lijst.isEmpty()) {
-					currentGame = lijst.get(0);
+					currentGame = lijst.get(lijst.size() - 1);
 					SudokuGrid.this.view.setBoardSize(currentGame.getSize());
-					adapter.setSelection(0);
+					adapter.setSelection(SudokuGrid.this.lijst
+							.indexOf(currentGame));
 					adapter.notifyDataSetChanged();
 				}
 
