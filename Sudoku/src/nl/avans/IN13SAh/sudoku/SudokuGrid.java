@@ -157,6 +157,7 @@ public class SudokuGrid extends SlidingActivity {
 			@Override
 			public boolean onItemLongClick(AdapterView<?> parent,
 					final View view, int position, long id) {
+				// oude weg
 				lijst.remove(position);
 				adapter.removeSelection();
 				adapter.notifyDataSetChanged();
@@ -164,6 +165,15 @@ public class SudokuGrid extends SlidingActivity {
 				SudokuGrid.this.view.invalidate();
 				Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
 				v.vibrate(300);
+
+				// nieuwe terug
+				if (!lijst.isEmpty()) {
+					currentGame = lijst.get(0);
+					SudokuGrid.this.view.setBoardSize(currentGame.getSize());
+					adapter.setSelection(0);
+					adapter.notifyDataSetChanged();
+				}
+
 				return false;
 			}
 

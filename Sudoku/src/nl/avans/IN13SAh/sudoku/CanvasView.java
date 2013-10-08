@@ -1,6 +1,8 @@
 package nl.avans.IN13SAh.sudoku;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Paint.FontMetrics;
@@ -124,6 +126,8 @@ class CanvasView extends View {
 		void OnLongPressAction(View v, int x, int y);
 	}
 
+	Bitmap background; // maar 1 keer inladen.
+
 	/**
 	 * Instantiates a new canvas view.
 	 * 
@@ -136,11 +140,12 @@ class CanvasView extends View {
 		super(context);
 		selX = -1;
 		selY = -1;
+		this.background = BitmapFactory.decodeResource(getResources(),
+				R.drawable.startup_background);
 		this.boardSize = boardSize;
 		this.selRect = new Rect();
 		setFocusable(true);
 		setFocusableInTouchMode(true);
-
 	}
 
 	/**
@@ -263,80 +268,87 @@ class CanvasView extends View {
 		Log.d("PuzzleView", "drawing bg");
 		// draw background
 		Paint background = loadColor(R.color.puzzle_background);
-		canvas.drawRect(0.0f, 0.0f, (float) getWidth(), (float) getHeight(),
-				background);
+		// Dit is waarschijnlijk traag als fuck
 
-		Log.d("PuzzleView", "drawing lines");
-		// draw board
-		// line colors
-		Paint dark = loadColor(R.color.puzzle_dark);
-		dark.setStrokeWidth(2);
-		Paint hilite = loadColor(R.color.puzzle_hilite);
-		Paint light = loadColor(R.color.puzzle_light);
+		if (!listener.ShouldDrawSelection()) { // geen selectie, wel plaatje
+			this.background = Bitmap.createScaledBitmap(this.background,
+					this.getWidth(), this.getHeight(), true);
+			canvas.drawBitmap(this.background, 0f, 0f, background);
+		} else {
+			canvas.drawRect(0.0f, 0.0f, (float) getWidth(),
+					(float) getHeight(), background);
 
-		// draw lines
-		int i = 0;
-		while (i < 9) {
-			// minor lines
-			canvas.drawLine(0, i * height, getWidth(), i * height, light);
-			canvas.drawLine(0, i * height + 1, getWidth(), i * height + 1,
-					hilite);
-			canvas.drawLine(i * width, 0, i * width, getHeight(), light);
-			canvas.drawLine(i * width + 1, 0, i * width + 1, getHeight(),
-					hilite);
-			// major lines
-			if (i % 3 == 0) {
-				canvas.drawLine(0, i * height, getWidth(), i * height, dark);
+			Log.d("PuzzleView", "drawing lines");
+			// draw board
+			// line colors
+			Paint dark = loadColor(R.color.puzzle_dark);
+			dark.setStrokeWidth(2);
+			Paint hilite = loadColor(R.color.puzzle_hilite);
+			Paint light = loadColor(R.color.puzzle_light);
+
+			// draw lines
+			int i = 0;
+			while (i < 9) {
+				// minor lines
+				canvas.drawLine(0, i * height, getWidth(), i * height, light);
 				canvas.drawLine(0, i * height + 1, getWidth(), i * height + 1,
 						hilite);
-				canvas.drawLine(i * width, 0, i * width, getHeight(), dark);
+				canvas.drawLine(i * width, 0, i * width, getHeight(), light);
 				canvas.drawLine(i * width + 1, 0, i * width + 1, getHeight(),
 						hilite);
+				// major lines
+				if (i % 3 == 0) {
+					canvas.drawLine(0, i * height, getWidth(), i * height, dark);
+					canvas.drawLine(0, i * height + 1, getWidth(), i * height
+							+ 1, hilite);
+					canvas.drawLine(i * width, 0, i * width, getHeight(), dark);
+					canvas.drawLine(i * width + 1, 0, i * width + 1,
+							getHeight(), hilite);
+				}
+				i++;
 			}
-			i++;
-		}
 
-		// draw numbers
-		Log.d("PuzzleView", "drawing numbers");
-		Paint foreground = loadColor(R.color.puzzle_foreground);
-		foreground.setStyle(Style.FILL);
-		foreground.setTextSize((float) (height * 0.75));
-		foreground.setTextScaleX(width / height);
-		foreground.setTextAlign(Paint.Align.CENTER);
+			// draw numbers
+			Log.d("PuzzleView", "drawing numbers");
+			Paint foreground = loadColor(R.color.puzzle_foreground);
+			foreground.setStyle(Style.FILL);
+			foreground.setTextSize((float) (height * 0.75));
+			foreground.setTextScaleX(width / height);
+			foreground.setTextAlign(Paint.Align.CENTER);
 
-		FontMetrics fm = foreground.getFontMetrics();
-		float x = width / 2;
-		float y = height / 2 - (fm.ascent + fm.descent) / 2;
-		i = 0;
-		int j = 0;
-		while (i < 9) {
-			j = 0;
-			while (j < 9) {
-				int celwaarde = listener
-						.OnGetCurrentValueOfPosition(this, i, j);
-				// lege string bij nul.
-				String celtext = celwaarde == 0 ? "" : "" + celwaarde;
+			FontMetrics fm = foreground.getFontMetrics();
+			float x = width / 2;
+			float y = height / 2 - (fm.ascent + fm.descent) / 2;
+			i = 0;
+			int j = 0;
+			while (i < 9) {
+				j = 0;
+				while (j < 9) {
+					int celwaarde = listener.OnGetCurrentValueOfPosition(this,
+							i, j);
+					// lege string bij nul.
+					String celtext = celwaarde == 0 ? "" : "" + celwaarde;
 
-				canvas.drawText(celtext, i * width + x, j * height + y,
-						foreground);
-				j++;
+					canvas.drawText(celtext, i * width + x, j * height + y,
+							foreground);
+					j++;
+				}
+				i++;
 			}
-			i++;
-		}
 
-		// draw hints
-		/*
-		 * if (Prefs.getHints(getContext)) colors = [
-		 * loadColor(R.color.puzzle_hint_0), loadColor(R.color.puzzle_hint_1),
-		 * loadColor(R.color.puzzle_hint_2) ] r = Rect.new i = 0 while (i<9) j =
-		 * 0 while (j<9) used =@game.getUsedTiles(i,j) moves_left = 9 -
-		 * used.size if (moves_left < colors.size) getRect(i, j, r)
-		 * canvas.drawRect(r,Paint(colors.get(moves_left))) end j+=1 end i+=1
-		 * end end
-		 */
+			// draw hints
+			/*
+			 * if (Prefs.getHints(getContext)) colors = [
+			 * loadColor(R.color.puzzle_hint_0),
+			 * loadColor(R.color.puzzle_hint_1),
+			 * loadColor(R.color.puzzle_hint_2) ] r = Rect.new i = 0 while (i<9)
+			 * j = 0 while (j<9) used =@game.getUsedTiles(i,j) moves_left = 9 -
+			 * used.size if (moves_left < colors.size) getRect(i, j, r)
+			 * canvas.drawRect(r,Paint(colors.get(moves_left))) end j+=1 end
+			 * i+=1 end end
+			 */
 
-		// draw selection
-		if (listener.ShouldDrawSelection()) {
+			// draw selection
 			Paint selected = loadColor(R.color.puzzle_selected);
 			selected.setAlpha(80);
 			canvas.drawRect(selRect, selected);
