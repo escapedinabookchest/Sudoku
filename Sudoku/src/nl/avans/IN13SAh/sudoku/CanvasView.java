@@ -279,11 +279,10 @@ class CanvasView extends View {
 		Log.d("PuzzleView", "drawing bg");
 		// draw background
 		Paint background = loadColor(R.color.puzzle_background);
-		// Dit is waarschijnlijk traag als fuck
 
-		if (!listener.ShouldDrawSelection()) { // geen selectie, wel plaatje
+		if (!listener.ShouldDrawSelection()) // geen selectie, wel plaatje
 			canvas.drawBitmap(this.background, 0f, 0f, background);
-		} else {
+		else {
 			canvas.drawRect(0.0f, 0.0f, (float) getWidth(),
 					(float) getHeight(), background);
 

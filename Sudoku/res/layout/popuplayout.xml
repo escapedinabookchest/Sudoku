@@ -5,7 +5,7 @@
    android:layout_height="fill_parent"
    android:shrinkColumns="*"  
    android:stretchColumns="*"
-   android:background="#808080"
+   android:background="#66808080"
    android:orientation="vertical">
     
 	  <TableRow

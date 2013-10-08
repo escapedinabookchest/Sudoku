@@ -11,7 +11,6 @@ import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Point;
-import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.view.Gravity;
@@ -321,7 +320,7 @@ public class SudokuGrid extends SlidingActivity {
 			return;
 		popUpisShown = true;
 		int popupWidth = 300;
-		int popupHeight = 350;
+		int popupHeight = 300;
 
 		// Inflate the popup_layout.xml
 		LinearLayout viewGroup = (LinearLayout) context
@@ -349,9 +348,6 @@ public class SudokuGrid extends SlidingActivity {
 		// relative to button's position.
 		int OFFSET_X = 30;
 		int OFFSET_Y = 30;
-
-		// Clear the default translucent background
-		popup.setBackgroundDrawable(new BitmapDrawable());
 
 		// Displaying the popup at the specified location, + offsets.
 		popup.showAtLocation(layout, Gravity.NO_GRAVITY, p.x + OFFSET_X, p.y
