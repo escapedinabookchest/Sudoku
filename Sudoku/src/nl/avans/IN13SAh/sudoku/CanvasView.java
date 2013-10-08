@@ -9,7 +9,9 @@ import android.graphics.Point;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.os.Parcelable;
+import android.os.Vibrator;
 import android.util.Log;
+import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 
@@ -39,6 +41,42 @@ class CanvasView extends View {
 
 	/** Value for enabeling touch responseness for the view. */
 	private boolean enableTouch = true;
+
+	final GestureDetector gestureDetector = new GestureDetector(getContext(),
+			new GestureDetector.SimpleOnGestureListener() {
+
+				@Override
+				public void onLongPress(MotionEvent e) {
+					Vibrator vib = (Vibrator) CanvasView.this.getContext()
+							.getSystemService(Context.VIBRATOR_SERVICE);
+					vib.vibrate(300);
+
+					listener.OnLongPressAction(CanvasView.this,
+							CanvasView.this.selX, CanvasView.this.selY);
+				}
+
+				@Override
+				public boolean onDoubleTap(MotionEvent e) {
+					gestureDetector.setIsLongpressEnabled(false);
+					return true;
+				};
+
+				@Override
+				public boolean onSingleTapConfirmed(MotionEvent e) {
+
+					if (!enableTouch)
+						return true;
+
+					select((int) (e.getX() / width), (int) (e.getY() / height));
+					// De listener wordt aangeroepen. Belangrijk!
+					listener.OnSelectionChanged(CanvasView.this, selX, selY,
+							new Point((int) e.getX(), (int) e.getY()));
+					Log.d("PuzzleView", "onTouchEvent: " + selX + ", " + selY);
+
+					return true;
+				};
+
+			});
 
 	/**
 	 * The listener interface for receiving onSudokuEventChange events. The
@@ -82,6 +120,8 @@ class CanvasView extends View {
 		int OnGetCurrentValueOfPosition(View v, int x, int y);
 
 		boolean ShouldDrawSelection();
+
+		void OnLongPressAction(View v, int x, int y);
 	}
 
 	/**
@@ -100,6 +140,7 @@ class CanvasView extends View {
 		this.selRect = new Rect();
 		setFocusable(true);
 		setFocusableInTouchMode(true);
+
 	}
 
 	/**
@@ -188,16 +229,9 @@ class CanvasView extends View {
 	 */
 	@Override
 	public boolean onTouchEvent(MotionEvent event) {
-		if (!enableTouch)
-			return false;
-		if (event.getAction() == MotionEvent.ACTION_UP) {
+		gestureDetector.onTouchEvent(event);
+		gestureDetector.setIsLongpressEnabled(true);
 
-			select((int) (event.getX() / width), (int) (event.getY() / height));
-			// De listener wordt aangeroepen. Belangrijk!
-			listener.OnSelectionChanged(this, selX, selY,
-					new Point((int) event.getX(), (int) event.getY()));
-			Log.d("PuzzleView", "onTouchEvent: " + selX + ", " + selY);
-		}
 		return true;
 	}
 
