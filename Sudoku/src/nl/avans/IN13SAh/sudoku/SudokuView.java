@@ -23,7 +23,7 @@ import android.view.WindowManager;
 /**
  * The Class CanvasView. A custom view for drawing the sudoku field.
  */
-class CanvasView extends View {
+class SudokuView extends View {
 
 	/** The listener. Used for responding to view events. */
 	private OnSudokuEventChangeListener listener;
@@ -51,12 +51,12 @@ class CanvasView extends View {
 
 				@Override
 				public void onLongPress(MotionEvent e) {
-					Vibrator vib = (Vibrator) CanvasView.this.getContext()
+					Vibrator vib = (Vibrator) SudokuView.this.getContext()
 							.getSystemService(Context.VIBRATOR_SERVICE);
 					vib.vibrate(300);
 
-					listener.OnLongPressAction(CanvasView.this,
-							CanvasView.this.selX, CanvasView.this.selY);
+					listener.OnLongPressAction(SudokuView.this,
+							SudokuView.this.selX, SudokuView.this.selY);
 				}
 
 				@Override
@@ -73,7 +73,7 @@ class CanvasView extends View {
 
 					select((int) (e.getX() / width), (int) (e.getY() / height));
 					// De listener wordt aangeroepen. Belangrijk!
-					listener.OnSelectionChanged(CanvasView.this, selX, selY,
+					listener.OnSelectionChanged(SudokuView.this, selX, selY,
 							new Point((int) e.getX(), (int) e.getY()));
 					Log.d("PuzzleView", "onTouchEvent: " + selX + ", " + selY);
 
@@ -138,7 +138,7 @@ class CanvasView extends View {
 	 * @param boardSize
 	 *            the board size (for example 9 for 9x9)
 	 */
-	public CanvasView(Context context, int boardSize) {
+	public SudokuView(Context context, int boardSize) {
 		super(context);
 		selX = -1;
 		selY = -1;
@@ -280,9 +280,9 @@ class CanvasView extends View {
 		// draw background
 		Paint background = loadColor(R.color.puzzle_background);
 
-		if (!listener.ShouldDrawSelection()) // geen selectie, wel plaatje
+		if (!listener.ShouldDrawSelection()) { // geen selectie, wel plaatje
 			canvas.drawBitmap(this.background, 0f, 0f, background);
-		else {
+		} else {
 			canvas.drawRect(0.0f, 0.0f, (float) getWidth(),
 					(float) getHeight(), background);
 

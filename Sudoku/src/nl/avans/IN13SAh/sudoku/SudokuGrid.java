@@ -3,7 +3,7 @@ package nl.avans.IN13SAh.sudoku;
 import java.util.ArrayList;
 import java.util.List;
 
-import nl.avans.IN13SAh.sudoku.CanvasView.OnSudokuEventChangeListener;
+import nl.avans.IN13SAh.sudoku.SudokuView.OnSudokuEventChangeListener;
 import nl.avans.game.Game;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -52,7 +52,7 @@ public class SudokuGrid extends SlidingActivity {
 	Game currentGame;
 
 	/** Pointer to a the custom view. */
-	CanvasView view;
+	SudokuView view;
 
 	/** The popup window that is shown when tapping on the sudoku board. */
 	PopupWindow popup;
@@ -75,7 +75,7 @@ public class SudokuGrid extends SlidingActivity {
 				LinearLayout.LayoutParams.FILL_PARENT));
 		ll.setOrientation(LinearLayout.VERTICAL);
 
-		view = new CanvasView(this, 9);
+		view = new SudokuView(this, 9);
 
 		view.setOnSudokuEventChangeListener(new OnSudokuEventChangeListener() {
 
