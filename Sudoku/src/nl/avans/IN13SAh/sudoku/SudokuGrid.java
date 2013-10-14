@@ -13,11 +13,13 @@ import android.graphics.Color;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.os.Vibrator;
+import android.view.Display;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -319,8 +321,12 @@ public class SudokuGrid extends SlidingActivity {
 		if (popUpisShown)
 			return;
 		popUpisShown = true;
-		int popupWidth = 300;
-		int popupHeight = 300;
+
+		WindowManager wm = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
+		Display display = wm.getDefaultDisplay();
+
+		int popupWidth = display.getWidth() / 2;
+		int popupHeight = display.getHeight() / 3;
 
 		// Inflate the popup_layout.xml
 		LinearLayout viewGroup = (LinearLayout) context
