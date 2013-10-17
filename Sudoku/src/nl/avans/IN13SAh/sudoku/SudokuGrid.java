@@ -111,6 +111,7 @@ public class SudokuGrid extends SlidingActivity {
 					Vibrator vib = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
 					vib.vibrate(300);
 					SudokuGrid.this.currentGame.setCurrentValue(x, y, 0);
+					view.invalidate();
 				}
 
 			}
