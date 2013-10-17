@@ -215,6 +215,10 @@ class SudokuView extends View {
 	 */
 	public void setBoardSize(int newSize) {
 		this.boardSize = newSize;
+		width = (int) (getWidth() / boardSize);
+		height = (int) (getHeight() / boardSize);
+		getRect(selX, selY, selRect);
+		invalidate();
 	}
 
 	/*
@@ -312,12 +316,8 @@ class SudokuView extends View {
 				canvas.drawLine(i * width, 0, i * width, getHeight(), light);
 				canvas.drawLine(i * width + 1, 0, i * width + 1, getHeight(),
 						hilite);
-				// major lines
-				if (i % (boardSize / (Math.sqrt(boardSize))) == 0) { // TODO
-																		// grootte
-																		// van
-																		// grid
-																		// ipv 3
+				// major lines x % width of set
+				if (i % (boardSize / (Math.sqrt(boardSize))) == 0) {
 					canvas.drawLine(0, i * height, getWidth(), i * height, dark);
 					canvas.drawLine(0, i * height + 1, getWidth(), i * height
 							+ 1, hilite);
@@ -365,18 +365,6 @@ class SudokuView extends View {
 				}
 				i++;
 			}
-
-			// draw hints
-			/*
-			 * if (Prefs.getHints(getContext)) colors = [
-			 * loadColor(R.color.puzzle_hint_0),
-			 * loadColor(R.color.puzzle_hint_1),
-			 * loadColor(R.color.puzzle_hint_2) ] r = Rect.new i = 0 while (i<9)
-			 * j = 0 while (j<9) used =@game.getUsedTiles(i,j) moves_left = 9 -
-			 * used.size if (moves_left < colors.size) getRect(i, j, r)
-			 * canvas.drawRect(r,Paint(colors.get(moves_left))) end j+=1 end
-			 * i+=1 end end
-			 */
 
 			// draw selection
 			Paint selected = loadColor(R.color.puzzle_selected);
