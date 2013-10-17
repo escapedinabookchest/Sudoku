@@ -313,7 +313,11 @@ class SudokuView extends View {
 				canvas.drawLine(i * width + 1, 0, i * width + 1, getHeight(),
 						hilite);
 				// major lines
-				if (i % (boardSize / 3) == 0) { // TODO grootte van grid ipv 3
+				if (i % (boardSize / (Math.sqrt(boardSize))) == 0) { // TODO
+																		// grootte
+																		// van
+																		// grid
+																		// ipv 3
 					canvas.drawLine(0, i * height, getWidth(), i * height, dark);
 					canvas.drawLine(0, i * height + 1, getWidth(), i * height
 							+ 1, hilite);
