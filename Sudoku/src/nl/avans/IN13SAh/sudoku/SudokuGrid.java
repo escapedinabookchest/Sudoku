@@ -468,7 +468,8 @@ public class SudokuGrid extends SlidingActivity {
 					parent, false);
 			TextView textView = (TextView) rowView
 					.findViewById(R.id.secondLine);
-			textView.setText(games.get(position).toString());
+			textView.setText(games.get(position).isWon() ? "Opgelost"
+					: "Nog niet opgelost");
 			TextView textview2 = (TextView) rowView
 					.findViewById(R.id.firstLine);
 			textview2.setText("Sudoku " + games.get(position).getSize() + "x"
