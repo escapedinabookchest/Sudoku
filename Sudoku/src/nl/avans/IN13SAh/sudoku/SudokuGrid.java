@@ -59,7 +59,7 @@ public class SudokuGrid extends SlidingActivity {
 	/** The popup window that is shown when tapping on the sudoku board. */
 	PopupWindow popup;
 
-	/** Info button in the right menu */
+	/** Info button in the right menu. */
 	Button infoButton;
 
 	/*
@@ -114,6 +114,20 @@ public class SudokuGrid extends SlidingActivity {
 					view.invalidate();
 				}
 
+			}
+
+			@Override
+			public boolean OnCheckCurrentValueIsAllowed(View v, int x, int y) {
+				boolean retVal = true;
+
+				if (SudokuGrid.this.currentGame != null) {
+					int currentValueOfPosition = SudokuGrid.this.currentGame
+							.getCurrentValue(x, y);
+					retVal = SudokuGrid.this.currentGame.isAllowed(x, y,
+							currentValueOfPosition);
+				}
+
+				return retVal;
 			}
 		});
 
@@ -278,6 +292,16 @@ public class SudokuGrid extends SlidingActivity {
 				});
 
 				dialog.show();
+			}
+		});
+
+		Button hintButton = (Button) findViewById(R.id.hintButton);
+		hintButton.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				if (currentGame != null)
+					; // TODO call game.getHint();
 			}
 		});
 

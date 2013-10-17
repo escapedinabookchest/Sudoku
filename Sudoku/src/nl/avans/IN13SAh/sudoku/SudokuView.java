@@ -41,7 +41,7 @@ class SudokuView extends View {
 	private int height, width;
 
 	/** The board size. (for example 9 meaning 9x9) */
-	private float boardSize;
+	private int boardSize;
 
 	/** Value for enabeling touch responseness for the view. */
 	private boolean enableTouch = true;
@@ -51,12 +51,18 @@ class SudokuView extends View {
 
 				@Override
 				public void onLongPress(MotionEvent e) {
-					Vibrator vib = (Vibrator) SudokuView.this.getContext()
-							.getSystemService(Context.VIBRATOR_SERVICE);
-					vib.vibrate(300);
+					if (listener.ShouldDrawSelection()) {
+						int x, y;
 
-					listener.OnLongPressAction(SudokuView.this,
-							SudokuView.this.selX, SudokuView.this.selY);
+						x = (int) (e.getX() / width);
+						y = (int) (e.getY() / height);
+
+						Vibrator vib = (Vibrator) SudokuView.this.getContext()
+								.getSystemService(Context.VIBRATOR_SERVICE);
+						vib.vibrate(300);
+
+						listener.OnLongPressAction(SudokuView.this, x, y);
+					}
 				}
 
 				@Override
@@ -126,6 +132,8 @@ class SudokuView extends View {
 		boolean ShouldDrawSelection();
 
 		void OnLongPressAction(View v, int x, int y);
+
+		boolean OnCheckCurrentValueIsAllowed(View v, int x, int y);
 	}
 
 	Bitmap background; // maar 1 keer inladen.
@@ -262,8 +270,8 @@ class SudokuView extends View {
 	 */
 	private boolean select(int x, int y) {
 		invalidate(selRect);
-		selX = Math.min(Math.max(x, 0), 8);
-		selY = Math.min(Math.max(y, 0), 8);
+		selX = Math.min(Math.max(x, 0), boardSize - 1);
+		selY = Math.min(Math.max(y, 0), boardSize - 1);
 		getRect(selX, selY, selRect);
 		invalidate(selRect);
 		return true;
@@ -296,7 +304,7 @@ class SudokuView extends View {
 
 			// draw lines
 			int i = 0;
-			while (i < 9) {
+			while (i < boardSize) {
 				// minor lines
 				canvas.drawLine(0, i * height, getWidth(), i * height, light);
 				canvas.drawLine(0, i * height + 1, getWidth(), i * height + 1,
@@ -305,7 +313,7 @@ class SudokuView extends View {
 				canvas.drawLine(i * width + 1, 0, i * width + 1, getHeight(),
 						hilite);
 				// major lines
-				if (i % 3 == 0) {
+				if (i % (boardSize / 3) == 0) { // TODO grootte van grid ipv 3
 					canvas.drawLine(0, i * height, getWidth(), i * height, dark);
 					canvas.drawLine(0, i * height + 1, getWidth(), i * height
 							+ 1, hilite);
@@ -329,9 +337,9 @@ class SudokuView extends View {
 			float y = height / 2 - (fm.ascent + fm.descent) / 2;
 			i = 0;
 			int j = 0;
-			while (i < 9) {
+			while (i < boardSize) {
 				j = 0;
-				while (j < 9) {
+				while (j < boardSize) {
 					int celwaarde = listener.OnGetCurrentValueOfPosition(this,
 							i, j);
 					// lege string bij nul.
@@ -339,6 +347,16 @@ class SudokuView extends View {
 
 					canvas.drawText(celtext, i * width + x, j * height + y,
 							foreground);
+
+					// draw isAllowed field marking
+					if (!listener.OnCheckCurrentValueIsAllowed(this, i, j)) {
+						Rect isAllowedRect = new Rect();
+						getRect(i, j, isAllowedRect);
+						Paint isAllowedPaint = loadColor(R.color.puzzle_wrongplace);
+						isAllowedPaint.setAlpha(80);
+						canvas.drawRect(isAllowedRect, isAllowedPaint);
+					}
+
 					j++;
 				}
 				i++;

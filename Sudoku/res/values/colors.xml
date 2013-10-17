@@ -6,4 +6,5 @@
     <color name="puzzle_light">#B6B6B4</color>
     <color name="puzzle_foreground">#000000</color>
     <color name="puzzle_selected">#0000FF</color>
+    <color name="puzzle_wrongplace">#FF0000</color>
 </resources>
