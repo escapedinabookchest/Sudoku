@@ -134,6 +134,8 @@ class SudokuView extends View {
 		void OnLongPressAction(View v, int x, int y);
 
 		boolean OnCheckCurrentValueIsAllowed(View v, int x, int y);
+
+		boolean OnCheckIsGeneratedField(View v, int x, int y);
 	}
 
 	Bitmap background; // maar 1 keer inladen.
@@ -359,6 +361,15 @@ class SudokuView extends View {
 						Paint isAllowedPaint = loadColor(R.color.puzzle_wrongplace);
 						isAllowedPaint.setAlpha(80);
 						canvas.drawRect(isAllowedRect, isAllowedPaint);
+					}
+
+					// draw isGenerated field marking
+					if (listener.OnCheckIsGeneratedField(this, i, j)) {
+						Rect isGeneratedRect = new Rect();
+						getRect(i, j, isGeneratedRect);
+						Paint isGeneratedPaint = loadColor(R.color.puzzle_isgenerated);
+						isGeneratedPaint.setAlpha(60);
+						canvas.drawRect(isGeneratedRect, isGeneratedPaint);
 					}
 
 					j++;

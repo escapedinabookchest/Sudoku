@@ -130,6 +130,16 @@ public class SudokuGrid extends SlidingActivity {
 
 				return retVal;
 			}
+
+			@Override
+			public boolean OnCheckIsGeneratedField(View v, int x, int y) {
+				boolean retVal = false;
+
+				if (currentGame != null)
+					retVal = currentGame.isGeneratedField(x, y);
+
+				return retVal;
+			}
 		});
 
 		ll.addView(view);
