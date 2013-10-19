@@ -30,6 +30,7 @@ import android.widget.PopupWindow.OnDismissListener;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.jeremyfeinstein.slidingmenu.lib.app.SlidingActivity;
@@ -280,6 +281,12 @@ public class SudokuGrid extends SlidingActivity {
 						SudokuGrid.this.view.setBoardSize(currentGame.getSize());
 						SudokuGrid.this.toggle();
 						dialog.dismiss();
+						Toast.makeText(SudokuGrid.this,
+								currentGame.getGeneratingBenchmarking(),
+								Toast.LENGTH_LONG).show();
+						Toast.makeText(SudokuGrid.this,
+								currentGame.getSolvingBenchmarking(),
+								Toast.LENGTH_LONG).show();
 					}
 				});
 
