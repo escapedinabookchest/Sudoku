@@ -330,6 +330,19 @@ public class SudokuGrid extends SlidingActivity {
 				builder.show();
 			}
 		});
+
+		/* Solve dialog */
+		Button solveButton = (Button) findViewById(R.id.solveButton);
+		solveButton.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				if (SudokuGrid.this.currentGame != null) {
+					SudokuGrid.this.currentGame.Solve();
+					SudokuGrid.this.view.invalidate();
+				}
+			}
+		});
 	}
 
 	// The method that displays the popup.
