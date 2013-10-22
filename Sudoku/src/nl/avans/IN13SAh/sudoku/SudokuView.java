@@ -355,7 +355,7 @@ class SudokuView extends View {
 							foreground);
 
 					// draw isAllowed field marking
-					if (listener.OnCheckCurrentValueIsAllowed(this, i, j)) {
+					if (!listener.OnCheckCurrentValueIsAllowed(this, i, j)) {
 						Rect isAllowedRect = new Rect();
 						getRect(i, j, isAllowedRect);
 						Paint isAllowedPaint = loadColor(R.color.puzzle_wrongplace);

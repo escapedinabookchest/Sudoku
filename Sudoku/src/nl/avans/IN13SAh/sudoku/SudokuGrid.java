@@ -124,7 +124,7 @@ public class SudokuGrid extends SlidingActivity {
 				if (SudokuGrid.this.currentGame != null) {
 					int currentValueOfPosition = SudokuGrid.this.currentGame
 							.getCurrentValue(x, y);
-					retVal = SudokuGrid.this.currentGame.isAllowed(x, y,
+					retVal = SudokuGrid.this.currentGame.isAllowed(x-1, y-1,
 							currentValueOfPosition);
 				}
 
