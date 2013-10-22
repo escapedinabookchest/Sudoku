@@ -354,14 +354,15 @@ class SudokuView extends View {
 					canvas.drawText(celtext, i * width + x, j * height + y,
 							foreground);
 
-					// draw isAllowed field marking
-					if (!listener.OnCheckCurrentValueIsAllowed(this, i, j)) {
-						Rect isAllowedRect = new Rect();
-						getRect(i, j, isAllowedRect);
-						Paint isAllowedPaint = loadColor(R.color.puzzle_wrongplace);
-						isAllowedPaint.setAlpha(80);
-						canvas.drawRect(isAllowedRect, isAllowedPaint);
-					}
+					// // draw isAllowed field marking
+					// if (!listener.OnCheckCurrentValueIsAllowed(this, i, j)) {
+					// Rect isAllowedRect = new Rect();
+					// getRect(i, j, isAllowedRect);
+					// Paint isAllowedPaint =
+					// loadColor(R.color.puzzle_wrongplace);
+					// isAllowedPaint.setAlpha(80);
+					// canvas.drawRect(isAllowedRect, isAllowedPaint);
+					// }
 
 					// draw isGenerated field marking
 					if (listener.OnCheckIsGeneratedField(this, i, j)) {

@@ -124,8 +124,8 @@ public class SudokuGrid extends SlidingActivity {
 				if (SudokuGrid.this.currentGame != null) {
 					int currentValueOfPosition = SudokuGrid.this.currentGame
 							.getCurrentValue(x, y);
-					retVal = SudokuGrid.this.currentGame.isAllowed(x-1, y-1,
-							currentValueOfPosition);
+					retVal = SudokuGrid.this.currentGame.isAllowed(x - 1,
+							y - 1, currentValueOfPosition);
 				}
 
 				return retVal;
@@ -317,8 +317,10 @@ public class SudokuGrid extends SlidingActivity {
 
 			@Override
 			public void onClick(View v) {
-				if (currentGame != null)
-					; // TODO call game.getHint();
+				if (currentGame != null) {
+					currentGame.getHint(); // TODO call game.getHint();
+					SudokuGrid.this.view.invalidate();
+				}
 			}
 		});
 

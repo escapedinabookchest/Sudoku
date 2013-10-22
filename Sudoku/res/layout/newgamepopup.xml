@@ -26,7 +26,7 @@
 	    android:id="@+id/gameSizeSeekbar"
 	    android:layout_width="fill_parent"
 	    android:layout_height="wrap_content"
-	    android:max="20"
+	    android:max="9"
 	    android:progress="9" />
     
    	<TextView 
